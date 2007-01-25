@@ -27,6 +27,13 @@ float Vector::length2() const
 {
 	return (mCoord[0]*mCoord[0] + mCoord[1]*mCoord[1] + mCoord[2]*mCoord[2]);
 }
+void Vector::normalize() 
+{
+	float l = length();
+	mCoord[0] = mCoord[0] / l; 
+	mCoord[1] = mCoord[1] / l; 
+	mCoord[2] = mCoord[2] / l; 
+}
 float Vector::dot(const Vector &v)
 {
 	return (mCoord[0]*v[0] + mCoord[1]*v[1] +	mCoord[2]*v[2]); 
@@ -56,6 +63,12 @@ Vector cross(const Vector &lhs, const Vector &rhs)
 float dot(const Vector &lhs, const Vector &rhs)
 {
 	return (lhs.mCoord[0]* rhs.mCoord[0] + lhs.mCoord[1]*rhs.mCoord[1] +	lhs.mCoord[2]*rhs.mCoord[2]); 
+}
+
+Vector normalize(const Vector &v)
+{
+	float l = v.length();
+	return v / l;
 }
 
 

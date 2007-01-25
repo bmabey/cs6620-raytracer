@@ -37,10 +37,12 @@ public:
 	//Useful math methods
 	float length() const;
 	float length2() const;  //The squared length
+	void normalize();
 	float dot(const Vector &v);
 	Vector cross(const Vector &v);
 	friend Vector cross(const Vector& lhs, const Vector& rhs); 
-	friend float dot(const Vector& lhs, const Vector& rhs); 
+	friend float dot(const Vector& lhs, const Vector& rhs);
+	friend Vector normalize(const Vector& v);  
 	
 	//Operations with other vectors, points
 	friend Vector operator+(const Vector& lhs, const Vector& rhs);
