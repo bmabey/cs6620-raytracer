@@ -3,7 +3,6 @@
  *  Raytracer
  *
  *  Created by Ben Mabey on 1/17/07.
- *  Copyright 2007. All rights reserved.
  *
  */
 
@@ -103,4 +102,23 @@ void Color::clamp()
 	if (mR < 0.0f) mR = 0.0f;
 	if (mG < 0.0f) mG = 0.0f;
 	if (mB < 0.0f) mB = 0.0f;
+}
+
+unsigned char const Color::charify(float value)
+{
+	//Bring it in our 0 - 255 scale
+	unsigned int scaled = (unsigned int)(256 * value);
+	//Now clamp it...
+	scaled = (scaled > 255) ? 255 : scaled;
+	return (unsigned char) scaled;
+}
+
+int const Color::intify(float value)
+{
+	//Bring it in our 0 - 255 scale
+	int scaled = (unsigned int)(256 * value);
+	//Now clamp it...
+	scaled = (scaled > 255) ? 255 : scaled;
+	scaled = (scaled < 0) ? 0 : scaled;
+	return scaled;
 }

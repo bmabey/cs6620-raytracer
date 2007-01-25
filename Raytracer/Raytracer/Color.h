@@ -3,9 +3,12 @@
  *  Raytracer
  *
  *  Created by Ben Mabey on 1/17/07.
- *  Copyright 2007. All rights reserved.
  *
  */
+
+#ifndef _COLOR_H_
+#define _COLOR_H_ 1
+
 
 class Color
 {
@@ -22,6 +25,12 @@ public:
 	float getR() const { return mR; }
 	float getG() const { return mG; }
 	float getB() const { return mB; }
+	unsigned char getCharR()  { return charify(mR); }
+	unsigned char getCharG()  { return charify(mG); }
+	unsigned char getCharB()  { return charify(mB); }
+	int getIntR()  { return intify(mR); }
+	int getIntG()  { return intify(mG); }
+	int getIntB()  { return intify(mB); }
 	
 	//Operations with other Color objects
 	//Make them friends so they share!
@@ -46,5 +55,9 @@ private:
 	float mR;
 	float mG;
 	float mB;
+	unsigned char const charify(float value);
+	int const intify(float value);
 
 };
+
+#endif

@@ -1,14 +1,30 @@
 #include <iostream>
+#include "Image.h"
+#include "Sphere.h"
+#include "Ray.h"
+#include "Color.h"
 
 int main (int argc, char * const argv[]) 
 {
-/*
+
+
+		int xres = 512;
+		int yres = 512;
+		
+		Image image(xres,yres);
+		image.setAll(Color(1.0f,1.0f,1.0f));
+		
+		//Our spheres
+		Sphere sphere1(Point(0.0f, 0.2f, 1.1f), 1.0f);
+		Sphere sphere2(Point(1.4f, 1.5f, 1.2f), 1.3f);
+		Sphere sphere3(Point(-1.5f,-0.5f, 1.0f), 1.9f);
+
     for(int i=0;i<yres;i++){ 
 		for(int j=0;j<xres;j++){ 
 			Color result; 
-			double x = 2 * (j - xres/2. + 0.5)/xres; 
-			double y = 2 * (i - yres/2. + 0.5)/yres; 
-			Ray ray(Point(0,0,-3), Vector(x, y, 1)); 
+			float x = 2 * (j - xres/2. + 0.5)/xres; 
+			float y = 2 * (i - yres/2. + 0.5)/yres; 
+			Ray ray(Point(0.0f,0.0f,-3.0f), Vector(x, y, 1.0f)); 
 			if(sphere1.intersects(ray)) 
 				result = Color(1, .4, 1); 
 			else if(sphere2.intersects(ray)) 
@@ -19,7 +35,10 @@ int main (int argc, char * const argv[])
 				result = Color(.2, .1, .5); 
 			image.set(j, i, result); 
 		} 
-	} 
-*/	
+	}
+	
+	image.writePPM();
+	  
     return 0;
 }
+
