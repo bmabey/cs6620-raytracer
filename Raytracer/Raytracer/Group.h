@@ -9,8 +9,10 @@
 #ifndef _GROUP_H_
 #define _GROUP_H_ 1
 
-#include "Object.h"
+
 #include <vector>
+#include "Object.h"
+
 using namespace std;
 
 class Group : public Object
@@ -22,8 +24,8 @@ public:
 	~Group();
 	
 	void preprocess(){}; 
-	void intersect(HitRecord& hit, const RenderContext& context, const Ray& ray);
-	void addObject(Object* object) { objects.push_back(object); num_objects++;}
+	void intersect(HitRecord& hit, const RenderContext& context, const Ray& ray) const;
+	void addObject(Object* object);
 	
 	vector<Object*> objects;
 	

@@ -9,8 +9,10 @@
 #ifndef _CAMERA_H_
 #define _CAMERA_H_ 1
 
-#include "Ray.h"
-#include "RenderContext.h"
+
+
+class Ray;
+class RenderContext;
 
 class Camera
 {

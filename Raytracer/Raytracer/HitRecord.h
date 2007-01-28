@@ -9,9 +9,8 @@
 #ifndef _HITRECORD_H_
 #define _HITRECORD_H_ 1
 
-#include "Ray.h"
-#include "Primitive.h"
-#include "Material.h"
+class Primitive;
+class Material;
 
 class HitRecord
 {

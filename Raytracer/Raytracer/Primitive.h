@@ -11,8 +11,8 @@
 #define _PRIMITIVE_H_ 1
 
 #include "Object.h"
-#include "Material.h"
 
+class Material;
 
 class Primitive : public Object
 {

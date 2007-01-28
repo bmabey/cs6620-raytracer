@@ -9,18 +9,24 @@
 #ifndef _SCENE_H_
 #define _SCENE_H_
 
+
 #include "Background.h"
-#include "Group.h"
-#include "Color.h"
-#include "Light.h"
-#include "Camera.h"
+#include "Object.h"
 #include <vector>
+
+
+class Group;
+using namespace std;
+
+class Camera;
+class Light;
+class Object;
+class Color;
 
 class Scene
 {
 public:
-	Scene() {world = new Group();}
-
+	Scene();
 	~Scene();
 	void renderScene(int xres, int yres);
 	
@@ -28,9 +34,9 @@ public:
 	void setBackground(Background* color) { background = color; }
 	void setAmbient(const Color& color) { ambient = color; }
 	void setCamera(Camera* cam) { camera = cam; } 
-	
+	void addObject(Object* object);
 	void addLight(Light* light) { lights.push_back(light); }
-	void addObject(Object* object) { world->addObject(object); }
+	
 	
 	
 	vector<Light*> lights;

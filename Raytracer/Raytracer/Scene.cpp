@@ -7,6 +7,16 @@
  */
 
 #include "Scene.h"
+#include "Object.h"
+#include "Group.h"
+#include "Color.h"
+#include "Light.h"
+#include "Camera.h"
+
+Scene::Scene() 
+{
+	world = new Group();
+}
 
 Scene::~Scene()
 {
@@ -17,4 +27,9 @@ Scene::~Scene()
 	int num = lights.size();
 	for(int i = 0; i < num; i++)
 		delete lights[i];
+}
+
+void Scene::addObject(Object* object) 
+{ 
+	world->addObject(object); 
 }

@@ -10,10 +10,7 @@
 #ifndef _MATERIAL_H_
 #define _MATERIAL_H_
 
-#include "RenderContext.h"
-#include "Ray.h"
-#include "HitRecord.h"
-#include "Color.h"
+
 
 class HitRecord;
 class Material

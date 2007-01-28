@@ -25,8 +25,6 @@
 		708BBA4A0B67DCC300951074 /* Ray.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 708BBA480B67DCC300951074 /* Ray.cpp */; };
 		708BBA550B67DDAB00951074 /* Sphere.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 708BBA530B67DDAB00951074 /* Sphere.h */; };
 		708BBA560B67DDAB00951074 /* Sphere.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 708BBA540B67DDAB00951074 /* Sphere.cpp */; };
-		708BBB500B68165F00951074 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 708BBB4F0B68165F00951074 /* OpenGL.framework */; };
-		708BBB540B68167000951074 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 708BBB530B68167000951074 /* GLUT.framework */; };
 		70D8D3CB0B5EB28400EC8467 /* Color.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 70D8D3C90B5EB28400EC8467 /* Color.h */; };
 		70D8D3CC0B5EB28400EC8467 /* Color.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70D8D3CA0B5EB28400EC8467 /* Color.cpp */; };
 		70D8D4980B5F295A00EC8467 /* Image.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 70D8D4960B5F295A00EC8467 /* Image.h */; };
@@ -89,8 +87,6 @@
 		708BBA480B67DCC300951074 /* Ray.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Ray.cpp; sourceTree = "<group>"; };
 		708BBA530B67DDAB00951074 /* Sphere.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sphere.h; sourceTree = "<group>"; };
 		708BBA540B67DDAB00951074 /* Sphere.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Sphere.cpp; sourceTree = "<group>"; };
-		708BBB4F0B68165F00951074 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = /Developer/SDKs/MacOSX10.4u.sdk/System/Library/Frameworks/OpenGL.framework; sourceTree = "<absolute>"; };
-		708BBB530B68167000951074 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = /Developer/SDKs/MacOSX10.4u.sdk/System/Library/Frameworks/GLUT.framework; sourceTree = "<absolute>"; };
 		70D8D3C90B5EB28400EC8467 /* Color.h */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.c.h; path = Color.h; sourceTree = "<group>"; tabWidth = 2; usesTabs = 1; };
 		70D8D3CA0B5EB28400EC8467 /* Color.cpp */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.cpp.cpp; path = Color.cpp; sourceTree = "<group>"; tabWidth = 2; usesTabs = 1; };
 		70D8D4960B5F295A00EC8467 /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; tabWidth = 2; usesTabs = 1; };
@@ -99,7 +95,7 @@
 		70D8D52B0B5F3FBF00EC8467 /* Point.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Point.cpp; sourceTree = "<group>"; };
 		70D8D53E0B5F42D400EC8467 /* Vector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vector.h; sourceTree = "<group>"; };
 		70D8D53F0B5F42D400EC8467 /* Vector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Vector.cpp; sourceTree = "<group>"; };
-		8DD76F6C0486A84900D96B5E /* Raytracer */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Raytracer; sourceTree = BUILT_PRODUCTS_DIR; };
+		8DD76F6C0486A84900D96B5E /* Raytracer */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "compiled.mach-o.executable"; path = Raytracer; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6859E8B029090EE04C91782 /* Raytracer.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = Raytracer.1; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -108,8 +104,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				708BBB500B68165F00951074 /* OpenGL.framework in Frameworks */,
-				708BBB540B68167000951074 /* GLUT.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,8 +113,6 @@
 		08FB7794FE84155DC02AAC07 /* Raytracer */ = {
 			isa = PBXGroup;
 			children = (
-				708BBB530B68167000951074 /* GLUT.framework */,
-				708BBB4F0B68165F00951074 /* OpenGL.framework */,
 				08FB7795FE84155DC02AAC07 /* Source */,
 				C6859E8C029090F304C91782 /* Documentation */,
 				1AB674ADFE9D54B511CA2CBB /* Products */,
