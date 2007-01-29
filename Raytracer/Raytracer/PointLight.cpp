@@ -7,8 +7,9 @@
  */
 
 #include "PointLight.h"
+#include "Vector.h"
 
-float getLight(Color& light_color, Vector& light_direction,
+void PointLight::getLight(Color& light_color, Vector& light_direction,
 											const RenderContext& context, const Point& pos) const
 {
 	light_color = color;

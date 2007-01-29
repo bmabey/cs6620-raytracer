@@ -3,42 +3,51 @@
 #include "Sphere.h"
 #include "Ray.h"
 #include "Color.h"
+#include "Scene.h"
+#include "Plane.h"
+#include "SolidBackground.h"
+#include "PinholeCamera.h"
+#include "LambertianMaterial.h"
+#include "Vector.h"
+#include "Point.h"
+#include "PointLight.h"
+
+
+Scene* make_scene()
+{
+  Scene* scene = new Scene();
+  scene->setBackground(new SolidBackground(Color(.5, .8, .9)));
+  scene->addObject(new Sphere(new LambertianMaterial(Color(.1, .3, .9), .7, .3),
+                              Point(1.5, 3.5, 4), 2.4));
+  scene->addObject(new Sphere(new LambertianMaterial(Color(1, .2, .2), .7, .3),
+                              Point(-0.5, -1.5, 2), 1.8));
+  scene->addObject(new Sphere(new LambertianMaterial(Color(1,.9,.1), .6, .4),
+                              Point(0.5, 1.0, 1), 1));
+  scene->addObject(new Sphere(new LambertianMaterial(Color(1,1,1), .5, .5),
+                              Point(25,25,120), 10));
+  scene->addObject(new Plane(new LambertianMaterial(Color(.4, .4, .7), .4, .6),
+                             Vector(0,0,1), Point(0,0,-0.1)));
+
+  scene->setAmbient(Color(.6, .6, .6));
+  scene->addLight(new PointLight(Point(-30, -20, 80), Color(.7,.9,.9)));
+  scene->addLight(new PointLight(Point(-20, -50, 40), Color(.6,.1,.1)));
+
+  scene->setCamera(new PinholeCamera(Point(-24, -2, 5.2),
+                                     Point(1,1, 2.4),
+                                     Vector(0, 0, 1),
+                                     22.0f));
+
+  return scene;
+}
+
 
 int main (int argc, char * const argv[]) 
 {
 
-/*
-		int xres = 512;
-		int yres = 512;
-		
-		Image image(xres,yres);
-		image.setAll(Color(1.0f,1.0f,1.0f));
-		
-		//Our spheres
-		Sphere sphere1(Point(0.0f, 0.2f, 1.1f), 1.0f);
-		Sphere sphere2(Point(1.4f, 1.5f, 1.2f), 1.3f);
-		Sphere sphere3(Point(-1.5f,-0.5f, 1.0f), 1.9f);
-
-    for(int i=0;i<yres;i++){ 
-		for(int j=0;j<xres;j++){ 
-			Color result; 
-			float x = 2 * (j - xres/2. + 0.5)/xres; 
-			float y = 2 * (i - yres/2. + 0.5)/yres; 
-			Ray ray(Point(0.0f,0.0f,-3.0f), Vector(x, y, 1.0f)); 
-			if(sphere1.intersects(ray)) 
-				result = Color(1, .4, 1); 
-			else if(sphere2.intersects(ray)) 
-				result = Color(.2, .3, 1); 
-			else if(sphere3.intersects(ray)) 
-				result = Color(1, .3, .2); 
-			else 
-				result = Color(.2, .1, .5); 
-			image.set(j, i, result); 
-		} 
-	}
-	
-	image.writePPM();
-*/	  
+	Scene* scene = make_scene();
+	scene->render(512,512);
+	scene->image->writePPM();
+	  
     return 0;
 }
 

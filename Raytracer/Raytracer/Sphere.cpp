@@ -11,12 +11,12 @@
 #include "HitRecord.h"
 #include "RenderContext.h"
 
-void Sphere::intersect(HitRecord& hit, const RenderContext& context, const Ray& ray) const
+bool Sphere::intersect(HitRecord& hit, const RenderContext& context, const Ray& ray) const
 {
-	Vector o_minus_c = ray.o - center;
+	Vector o_minus_c = ray.o - mCenter;
 	double a = dot(ray.d, ray.d);
 	double b = 2.0 * dot(ray.d, o_minus_c);
-	double c = dot(o_minus_c, o_minus_c) - (radius*radius);
+	double c = dot(o_minus_c, o_minus_c) - (mRadius2);
 	
 	double disc = b*b - 4.0*a*c;
 	
@@ -25,13 +25,18 @@ void Sphere::intersect(HitRecord& hit, const RenderContext& context, const Ray& 
 	{
 		disc = sqrt(disc);
 		double t = (-b - disc) / (2.0*a);
-		hit.hit(t, this, material);
+		//Early termination
+		if (hit.hit(t, this, material)) return true;
 		t = ( -b + disc) / (2.0*a);
-		hit.hit(t, this, material);	
+		return (hit.hit(t, this, material));	
 	}
+	return false;
+	
+	
 }
 
 void Sphere::getNormal(Vector& N, const HitRecord& record, const Point& pos) const
 {
-	
+	N = pos - mCenter;
+	N.normalize();
 }

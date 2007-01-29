@@ -11,11 +11,12 @@
 
 #include "Point.h"
 #include "Vector.h"
+class Background;
 class Ray
 {
 public:
 	Ray() { }
-	Ray(Point p, Vector v) { o = p; d = v; }
+	Ray(Point p, Vector v) : o(p), d(v) { }
 	Ray(const Ray& rhs) { *this = rhs; }
 	void normalize() { d.normalize();}
 	Point origin() const { return o;}

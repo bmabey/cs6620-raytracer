@@ -93,6 +93,18 @@
 		perUserProjectItems = {
 			704CB3200B6D95A300B15ACE /* PBXTextBookmark */ = 704CB3200B6D95A300B15ACE /* PBXTextBookmark */;
 			704CB3210B6D95A300B15ACE /* PBXTextBookmark */ = 704CB3210B6D95A300B15ACE /* PBXTextBookmark */;
+			704CB3540B6E5BEB00B15ACE /* PBXTextBookmark */ = 704CB3540B6E5BEB00B15ACE /* PBXTextBookmark */;
+			704CB3550B6E5BEB00B15ACE /* PBXTextBookmark */ = 704CB3550B6E5BEB00B15ACE /* PBXTextBookmark */;
+			704CB3580B6E5BEB00B15ACE /* PBXTextBookmark */ = 704CB3580B6E5BEB00B15ACE /* PBXTextBookmark */;
+			704CB3590B6E5BEB00B15ACE /* PBXTextBookmark */ = 704CB3590B6E5BEB00B15ACE /* PBXTextBookmark */;
+			704CB3640B6E5C1700B15ACE /* PBXTextBookmark */ = 704CB3640B6E5C1700B15ACE /* PBXTextBookmark */;
+			704CB3650B6E5C1700B15ACE /* PBXTextBookmark */ = 704CB3650B6E5C1700B15ACE /* PBXTextBookmark */;
+			704CB3660B6E620B00B15ACE /* PBXTextBookmark */ = 704CB3660B6E620B00B15ACE /* PBXTextBookmark */;
+			704CB3670B6E620B00B15ACE /* PBXTextBookmark */ = 704CB3670B6E620B00B15ACE /* PBXTextBookmark */;
+			704CB3680B6E63AB00B15ACE /* PBXTextBookmark */ = 704CB3680B6E63AB00B15ACE /* PBXTextBookmark */;
+			704CB3690B6E63AB00B15ACE /* PBXTextBookmark */ = 704CB3690B6E63AB00B15ACE /* PBXTextBookmark */;
+			704CB36A0B6E856100B15ACE /* PBXTextBookmark */ = 704CB36A0B6E856100B15ACE /* PBXTextBookmark */;
+			704CB36B0B6E856100B15ACE /* PBXTextBookmark */ = 704CB36B0B6E856100B15ACE /* PBXTextBookmark */;
 		};
 		sourceControlManager = 70718F6C0B5EB06900723B9B /* Source Control */;
 		userBuildSettings = {
@@ -154,6 +166,134 @@
 			sepNavVisRect = "{{0, 0}, {819, 296}}";
 			sepNavWindowFrame = "{{-1196, 463}, {858, 369}}";
 		};
+	};
+	704CB33A0B6DA8D000B15ACE /* PinholeCamera.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {819, 448}}";
+			sepNavSelRange = "{556, 0}";
+			sepNavVisRect = "{{0, 152}, {819, 296}}";
+		};
+	};
+	704CB3460B6E5BB100B15ACE /* Plane.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {819, 490}}";
+			sepNavSelRange = "{618, 0}";
+			sepNavVisRect = "{{0, 112}, {819, 296}}";
+		};
+	};
+	704CB3540B6E5BEB00B15ACE /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 704CB3460B6E5BB100B15ACE /* Plane.h */;
+		rLen = 0;
+		rLoc = "-2147483293";
+		rType = 0;
+	};
+	704CB3550B6E5BEB00B15ACE /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 704CB3460B6E5BB100B15ACE /* Plane.h */;
+		name = "Plane.h: 19";
+		rLen = 0;
+		rLoc = 225;
+		rType = 0;
+		vrLen = 411;
+		vrLoc = 77;
+	};
+	704CB3580B6E5BEB00B15ACE /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 704CB33A0B6DA8D000B15ACE /* PinholeCamera.h */;
+		rLen = 0;
+		rLoc = "-2147483245";
+		rType = 0;
+	};
+	704CB3590B6E5BEB00B15ACE /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 704CB33A0B6DA8D000B15ACE /* PinholeCamera.h */;
+		name = "PinholeCamera.h: PinholeCamera";
+		rLen = 0;
+		rLoc = 321;
+		rType = 0;
+		vrLen = 411;
+		vrLoc = 137;
+	};
+	704CB3640B6E5C1700B15ACE /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 704CB3460B6E5BB100B15ACE /* Plane.h */;
+		name = "Plane.h: 29";
+		rLen = 0;
+		rLoc = 485;
+		rType = 0;
+		vrLen = 415;
+		vrLoc = 77;
+	};
+	704CB3650B6E5C1700B15ACE /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 704CB33A0B6DA8D000B15ACE /* PinholeCamera.h */;
+		name = "PinholeCamera.h: PinholeCamera";
+		rLen = 0;
+		rLoc = 321;
+		rType = 0;
+		vrLen = 411;
+		vrLoc = 137;
+	};
+	704CB3660B6E620B00B15ACE /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 704CB3460B6E5BB100B15ACE /* Plane.h */;
+		name = "Plane.h: 31";
+		rLen = 0;
+		rLoc = 581;
+		rType = 0;
+		vrLen = 498;
+		vrLoc = 77;
+	};
+	704CB3670B6E620B00B15ACE /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 704CB33A0B6DA8D000B15ACE /* PinholeCamera.h */;
+		name = "PinholeCamera.h: PinholeCamera";
+		rLen = 0;
+		rLoc = 321;
+		rType = 0;
+		vrLen = 411;
+		vrLoc = 137;
+	};
+	704CB3680B6E63AB00B15ACE /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 704CB33A0B6DA8D000B15ACE /* PinholeCamera.h */;
+		name = "PinholeCamera.h: PinholeCamera";
+		rLen = 0;
+		rLoc = 321;
+		rType = 0;
+		vrLen = 411;
+		vrLoc = 137;
+	};
+	704CB3690B6E63AB00B15ACE /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 704CB3460B6E5BB100B15ACE /* Plane.h */;
+		name = "Plane.h: 35";
+		rLen = 0;
+		rLoc = 618;
+		rType = 0;
+		vrLen = 528;
+		vrLoc = 77;
+	};
+	704CB36A0B6E856100B15ACE /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 704CB3460B6E5BB100B15ACE /* Plane.h */;
+		name = "Plane.h: 35";
+		rLen = 0;
+		rLoc = 618;
+		rType = 0;
+		vrLen = 528;
+		vrLoc = 77;
+	};
+	704CB36B0B6E856100B15ACE /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 704CB33A0B6DA8D000B15ACE /* PinholeCamera.h */;
+		name = "PinholeCamera.h: 32";
+		rLen = 0;
+		rLoc = 556;
+		rType = 0;
+		vrLen = 419;
+		vrLoc = 137;
 	};
 	705381640B6BD8EB006649E0 /* Object.h */ = {
 		uiCtxt = {

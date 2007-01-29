@@ -10,30 +10,33 @@
 #define _SCENE_H_
 
 
-#include "Background.h"
 #include "Object.h"
+#include "Color.h"
 #include <vector>
 
 
 class Group;
 using namespace std;
 
+class Background;
 class Camera;
 class Light;
 class Object;
-class Color;
+class RenderContext;
+class Image;
 
 class Scene
 {
 public:
 	Scene();
 	~Scene();
-	void renderScene(int xres, int yres);
-	
+	//void render(int xres, int yres, const RenderContext* context);
+	void render(int xres, int yres);
 	//Setters
 	void setBackground(Background* color) { background = color; }
 	void setAmbient(const Color& color) { ambient = color; }
-	void setCamera(Camera* cam) { camera = cam; } 
+	void setCamera(Camera* cam) { camera = cam; }
+	void setImage(Image* i) { image = i;} 
 	void addObject(Object* object);
 	void addLight(Light* light) { lights.push_back(light); }
 	
@@ -44,6 +47,7 @@ public:
 	Background* background;
 	Color ambient;
 	Group* world;
+	Image* image;
 	
 };
 

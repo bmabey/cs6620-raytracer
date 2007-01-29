@@ -7,13 +7,15 @@
  */
 
 #include "PinholeCamera.h"
-
+#include "Ray.h"
+#include "Vector.h"
+#include "Point.h"
+#include "RenderContext.h"
 #include <math.h>
 
 PinholeCamera::PinholeCamera(const Point& pos, const Point& lookAt, const Vector& up, float angle, float aspect)
-: posiction(pos)
+: position(pos), g((lookAt - pos))
 {
-	g = lookAt - position;
 	g.normalize();
 	
 	u = cross(g, up);
@@ -22,7 +24,7 @@ PinholeCamera::PinholeCamera(const Point& pos, const Point& lookAt, const Vector
 	u.normalize();
 	v.normalize();
 	u = u*tan( (angle / 2.0) * Vector::PI / 180.0);
-	v = v*tan( (angle / 2.0) * Vector::PI / 180.0)/ aspect;
+	v = v*tan( (angle / 2.0) * Vector::PI / 180.0) / aspect;
 }
 
 void PinholeCamera::makeRay(Ray& ray, const RenderContext& context, double x, double y) const

@@ -22,7 +22,7 @@ public:
 	Light() {};
 	virtual ~Light() {};
 	virtual void preprocess() {};  
-	virtual float getLight(Color& light_color, Vector& light_direction,
+	virtual void getLight(Color& light_color, Vector& light_direction,
 												const RenderContext& context, const Point& pos) const = 0;
 
 	

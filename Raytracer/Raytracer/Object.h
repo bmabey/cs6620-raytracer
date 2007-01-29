@@ -22,7 +22,7 @@ public:
 	Object() { }
 	virtual ~Object() { }
 	virtual void preprocess() { } 
-	virtual void intersect(HitRecord& hit, const RenderContext& context, const Ray& ray) const = 0;
+	virtual bool intersect(HitRecord& hit, const RenderContext& context, const Ray& ray) const = 0;
 
 	
 };

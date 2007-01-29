@@ -9,17 +9,21 @@
 #ifndef _HITRECORD_H_
 #define _HITRECORD_H_ 1
 
+#include <limits>
+#include "Material.h"
+using std::numeric_limits;
+
 class Primitive;
-class Material;
+
 
 class HitRecord
 {
 
 public:
 	
-	HitRecord() {}
+	HitRecord() : t(numeric_limits<double>::infinity()) {}
 	bool hit(double hit_t, const Primitive* hit_prim, const Material* hit_matl);
-	
+	void setTinf() { t = numeric_limits<double>::infinity(); }
 	double t;
 	const Primitive* primitive;
 	const Material* material;

@@ -17,10 +17,13 @@ Group::~Group()
 		delete objects[i];
 }
 //virtual void preprocess(); 
-void Group::intersect(HitRecord& hit, const RenderContext& context, const Ray& ray) const
+bool Group::intersect(HitRecord& hit, const RenderContext& context, const Ray& ray) const
 {
+	bool intersected = false;
 	for (int i = 0; i < num_objects; i++)
-		objects[i]->intersect(hit, context, ray);
+		intersected = objects[i]->intersect(hit, context, ray) || intersected;
+		
+	return intersected;
 }
 
 void Group::addObject(Object* object) 

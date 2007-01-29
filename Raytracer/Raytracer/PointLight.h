@@ -20,7 +20,7 @@ public:
 	PointLight(const Point& p, const Color& c) : position(p), color(c) { }
 	~PointLight() {}
 	
-	float getLight(Color& light_color, Vector& light_direction,
+	void getLight(Color& light_color, Vector& light_direction,
 												const RenderContext& context, const Point& pos) const;
 
 	Point position;

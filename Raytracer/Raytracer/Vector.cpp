@@ -41,6 +41,18 @@ float Vector::dot(const Vector &v)
 {
 	return (mCoord[0]*v[0] + mCoord[1]*v[1] +	mCoord[2]*v[2]); 
 }
+void Vector::inverse()
+{
+	mCoord[0] = -mCoord[0];
+	mCoord[1] = -mCoord[1];
+	mCoord[2] = -mCoord[2];
+}
+
+Vector Vector::operator-()
+{
+	return Vector(-mCoord[0], -mCoord[1], -mCoord[2]);
+}
+
 Vector Vector::cross(const Vector &v)
 {
 	Vector product;

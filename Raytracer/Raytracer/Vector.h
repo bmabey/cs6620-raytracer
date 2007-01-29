@@ -43,11 +43,14 @@ public:
 	friend Vector cross(const Vector& lhs, const Vector& rhs); 
 	friend float dot(const Vector& lhs, const Vector& rhs);
 	friend Vector normalize(const Vector& v);  
+	void inverse();
+	Vector operator-();
 	
 	//Operations with other vectors, points
 	friend Vector operator+(const Vector& lhs, const Vector& rhs);
 	friend Vector operator-(const Vector& lhs, const Vector& rhs);
 	friend Vector operator-(const Point& lhs, const Point& rhs);
+	
 	
 	//With scalars...
 	friend Vector operator*(const Vector& vector, float scalar);

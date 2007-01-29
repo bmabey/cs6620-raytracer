@@ -9,20 +9,22 @@
 #ifndef _SOLIDBACKGROUND_H_
 #define _SOLIDBACKGROUND_H_ 1
 
-#include "Ray.h"
-#include "Color.h"
-#include "RenderContext.h"
 
-class SolidBackground
+#include "Color.h"
+#include "Background.h"
+class Ray;
+class RenderContext;
+
+class SolidBackground : public Background
 {
 
 public:
 	
 	SolidBackground() {}; 
-	SolidBackground(const Color& bg) { color = bg; };
-	void getBackgroundColor(Color& result, const RenderContext& context, const Ray& ray) { result = color};//Syntax probably wrong...
-	
-	Color* color;
+	SolidBackground(const Color& bg) : mColor(bg) { };
+	void getBackgroundColor(Color& result, const RenderContext& context, const Ray& ray) { result = mColor; };//Syntax probably wrong...
+private:
+	Color mColor;
 
 	
 };
