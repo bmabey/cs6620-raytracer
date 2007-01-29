@@ -21,8 +21,8 @@ public:
 	bool hit(double hit_t, const Primitive* hit_prim, const Material* hit_matl);
 	
 	double t;
-	Primitive* primitive;
-	Material* material;
+	const Primitive* primitive;
+	const Material* material;
 	
 };
 

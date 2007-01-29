@@ -22,10 +22,6 @@ public:
 	
 	float getLight(Color& light_color, Vector& light_direction,
 												const RenderContext& context, const Point& pos) const;
-	bool getLight(Color& light_color,
-				  Vector& light_direction,
-				  const RenderContext& context,
-				  const Point& pos) const;
 
 	Point position;
 	Color color;
