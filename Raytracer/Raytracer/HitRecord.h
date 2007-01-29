@@ -18,9 +18,9 @@ class HitRecord
 public:
 	
 	HitRecord() {}
-	bool hit(float hit_t, const Primitive* hit_prim, const Material* hit_matl);
+	bool hit(double hit_t, const Primitive* hit_prim, const Material* hit_matl);
 	
-	float t;
+	double t;
 	Primitive* primitive;
 	Material* material;
 	

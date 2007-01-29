@@ -7,28 +7,31 @@
  */
 
 #include "Sphere.h"
+#include "Material.h"
+#include "HitRecord.h"
+#include "RenderContext.h"
 
-bool Sphere::intersects(const Ray& ray)
+void Sphere::intersect(HitRecord& hit, const RenderContext& context, const Ray& ray) const
+{
+	Vector o_minus_c = ray.o - center;
+	double a = dot(ray.d, ray.d);
+	double b = 2.0 * dot(ray.d, o_minus_c);
+	double c = dot(o_minus_c, o_minus_c) - (radius*radius);
+	
+	double disc = b*b - 4.0*a*c;
+	
+	//Does it intersect?
+	if (disc > 0)
+	{
+		disc = sqrt(disc);
+		double t = (-b - disc) / (2.0*a);
+		hit.hit(t, this, material);
+		t = ( -b + disc) / (2.0*a);
+		hit.hit(t, this, material);	
+	}
+}
+
+void Sphere::getNormal(Vector& N, const HitRecord& record, const Point& pos) const
 {
 	
-	Vector o_minus_c = ray.o - center;
-	float a = dot(ray.d, ray.d);
-	float b = 2 * dot(ray.d, o_minus_c);
-	float c = dot(o_minus_c, o_minus_c) - (radius*radius);
-	
-	float disc = b*b - 4*a*c;
-	
-	return (disc > 0);
-	/*
-	Vector o_minus_c = ray.o - center;
-	Vector d = ray.d;
-	float d_dot_d = d.dot(ray.d);
-	Vector temp = o_minus_c;
-	float o_minus_c_dot = temp.dot(o_minus_c); 
-	float r2 = radius * radius;
-	float d_dot_o_minus_c = d.dot(o_minus_c);
-	float disc = (d_dot_o_minus_c * d_dot_o_minus_c) - (d_dot_d*( o_minus_c_dot * r2));
-	return (disc > 0.0f); 
-	*/
-	return false;
 }

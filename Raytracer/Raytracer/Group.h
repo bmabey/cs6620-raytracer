@@ -23,7 +23,6 @@ public:
 	Group() : num_objects(0) { }
 	~Group();
 	
-	void preprocess(){}; 
 	void intersect(HitRecord& hit, const RenderContext& context, const Ray& ray) const;
 	void addObject(Object* object);
 	

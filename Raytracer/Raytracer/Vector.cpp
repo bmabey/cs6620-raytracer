@@ -10,6 +10,9 @@
 
 #include "Point.h"
 
+const double Vector::PI = 3.14159265358979323846;
+
+
 Vector::Vector(float x, float y, float z)
 {
 	mCoord[0] = x;

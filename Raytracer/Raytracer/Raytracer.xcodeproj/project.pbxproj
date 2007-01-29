@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		704CB3130B6D911500B15ACE /* LambertianMaterial.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 704CB3110B6D911500B15ACE /* LambertianMaterial.h */; };
+		704CB3140B6D911500B15ACE /* LambertianMaterial.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 704CB3120B6D911500B15ACE /* LambertianMaterial.cpp */; };
+		704CB32D0B6DA18300B15ACE /* HitRecord.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 704CB32C0B6DA18300B15ACE /* HitRecord.cpp */; };
+		704CB3360B6DA2EA00B15ACE /* PointLight.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 704CB3340B6DA2EA00B15ACE /* PointLight.h */; };
+		704CB3370B6DA2EA00B15ACE /* PointLight.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 704CB3350B6DA2EA00B15ACE /* PointLight.cpp */; };
+		704CB33C0B6DA8D000B15ACE /* PinholeCamera.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 704CB33A0B6DA8D000B15ACE /* PinholeCamera.h */; };
+		704CB33D0B6DA8D000B15ACE /* PinholeCamera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 704CB33B0B6DA8D000B15ACE /* PinholeCamera.cpp */; };
 		705381650B6BD8EB006649E0 /* Object.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 705381640B6BD8EB006649E0 /* Object.h */; };
 		705381730B6BDC58006649E0 /* HitRecord.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 705381720B6BDC58006649E0 /* HitRecord.h */; };
 		7053817D0B6BDE54006649E0 /* Primitive.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7053817C0B6BDE54006649E0 /* Primitive.h */; };
@@ -62,6 +69,9 @@
 				705381D50B6BE78C006649E0 /* Scene.h in CopyFiles */,
 				7053826B0B6BF5AA006649E0 /* Group.h in CopyFiles */,
 				705382AE0B6BFB08006649E0 /* Material.h in CopyFiles */,
+				704CB3130B6D911500B15ACE /* LambertianMaterial.h in CopyFiles */,
+				704CB3360B6DA2EA00B15ACE /* PointLight.h in CopyFiles */,
+				704CB33C0B6DA8D000B15ACE /* PinholeCamera.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
@@ -69,6 +79,13 @@
 
 /* Begin PBXFileReference section */
 		08FB7796FE84155DC02AAC07 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		704CB3110B6D911500B15ACE /* LambertianMaterial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LambertianMaterial.h; sourceTree = "<group>"; };
+		704CB3120B6D911500B15ACE /* LambertianMaterial.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LambertianMaterial.cpp; sourceTree = "<group>"; };
+		704CB32C0B6DA18300B15ACE /* HitRecord.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HitRecord.cpp; sourceTree = "<group>"; };
+		704CB3340B6DA2EA00B15ACE /* PointLight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PointLight.h; sourceTree = "<group>"; };
+		704CB3350B6DA2EA00B15ACE /* PointLight.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PointLight.cpp; sourceTree = "<group>"; };
+		704CB33A0B6DA8D000B15ACE /* PinholeCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PinholeCamera.h; sourceTree = "<group>"; };
+		704CB33B0B6DA8D000B15ACE /* PinholeCamera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PinholeCamera.cpp; sourceTree = "<group>"; };
 		705381640B6BD8EB006649E0 /* Object.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Object.h; sourceTree = "<group>"; };
 		705381720B6BDC58006649E0 /* HitRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HitRecord.h; sourceTree = "<group>"; };
 		7053817C0B6BDE54006649E0 /* Primitive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Primitive.h; sourceTree = "<group>"; };
@@ -95,7 +112,7 @@
 		70D8D52B0B5F3FBF00EC8467 /* Point.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Point.cpp; sourceTree = "<group>"; };
 		70D8D53E0B5F42D400EC8467 /* Vector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vector.h; sourceTree = "<group>"; };
 		70D8D53F0B5F42D400EC8467 /* Vector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Vector.cpp; sourceTree = "<group>"; };
-		8DD76F6C0486A84900D96B5E /* Raytracer */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "compiled.mach-o.executable"; path = Raytracer; sourceTree = BUILT_PRODUCTS_DIR; };
+		8DD76F6C0486A84900D96B5E /* Raytracer */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Raytracer; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6859E8B029090EE04C91782 /* Raytracer.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = Raytracer.1; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -150,6 +167,13 @@
 				08FB7796FE84155DC02AAC07 /* main.cpp */,
 				705381640B6BD8EB006649E0 /* Object.h */,
 				7053819E0B6BE24A006649E0 /* Light.h */,
+				704CB3110B6D911500B15ACE /* LambertianMaterial.h */,
+				704CB3120B6D911500B15ACE /* LambertianMaterial.cpp */,
+				704CB32C0B6DA18300B15ACE /* HitRecord.cpp */,
+				704CB3340B6DA2EA00B15ACE /* PointLight.h */,
+				704CB3350B6DA2EA00B15ACE /* PointLight.cpp */,
+				704CB33A0B6DA8D000B15ACE /* PinholeCamera.h */,
+				704CB33B0B6DA8D000B15ACE /* PinholeCamera.cpp */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -221,6 +245,10 @@
 				705381890B6BDFCC006649E0 /* RenderContext.cpp in Sources */,
 				705382570B6BF3A4006649E0 /* Scene.cpp in Sources */,
 				7053826C0B6BF5AA006649E0 /* Group.cpp in Sources */,
+				704CB3140B6D911500B15ACE /* LambertianMaterial.cpp in Sources */,
+				704CB32D0B6DA18300B15ACE /* HitRecord.cpp in Sources */,
+				704CB3370B6DA2EA00B15ACE /* PointLight.cpp in Sources */,
+				704CB33D0B6DA8D000B15ACE /* PinholeCamera.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

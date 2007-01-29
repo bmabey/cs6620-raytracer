@@ -7,7 +7,7 @@
 int main (int argc, char * const argv[]) 
 {
 
-
+/*
 		int xres = 512;
 		int yres = 512;
 		
@@ -38,7 +38,7 @@ int main (int argc, char * const argv[])
 	}
 	
 	image.writePPM();
-	  
+*/	  
     return 0;
 }
 

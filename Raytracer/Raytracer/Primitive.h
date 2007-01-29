@@ -11,8 +11,13 @@
 #define _PRIMITIVE_H_ 1
 
 #include "Object.h"
-
-class Material;
+#include "Material.h"
+//class Material;
+class Vector;
+class HitRecord;
+class RenderContext;
+class Ray;
+class Point;
 
 class Primitive : public Object
 {
@@ -20,9 +25,11 @@ class Primitive : public Object
 public:
 	
 	Primitive() {  }
-	~Primitive() { delete material; }
-	virtual void preprocess(); 
+	virtual ~Primitive() { delete material; }
+	virtual void preprocess() { }; 
 	virtual void intersect(HitRecord& hit, const RenderContext& context, const Ray& ray) const = 0;
+	virtual void getNormal(Vector& N, const HitRecord& hit, const Point& pos) const = 0;
+	
 	Material* material;
 	
 };
