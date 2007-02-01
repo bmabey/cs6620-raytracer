@@ -42,6 +42,7 @@
 		70D8D52D0B5F3FBF00EC8467 /* Point.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70D8D52B0B5F3FBF00EC8467 /* Point.cpp */; };
 		70D8D5400B5F42D400EC8467 /* Vector.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 70D8D53E0B5F42D400EC8467 /* Vector.h */; };
 		70D8D5410B5F42D400EC8467 /* Vector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70D8D53F0B5F42D400EC8467 /* Vector.cpp */; };
+		70E94C800B717341007F4F0C /* BlankMaterial.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 70E94C7F0B717341007F4F0C /* BlankMaterial.h */; };
 		8DD76F650486A84900D96B5E /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 08FB7796FE84155DC02AAC07 /* main.cpp */; settings = {ATTRIBUTES = (); }; };
 		8DD76F6A0486A84900D96B5E /* Raytracer.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = C6859E8B029090EE04C91782 /* Raytracer.1 */; };
 /* End PBXBuildFile section */
@@ -75,6 +76,7 @@
 				704CB3360B6DA2EA00B15ACE /* PointLight.h in CopyFiles */,
 				704CB33C0B6DA8D000B15ACE /* PinholeCamera.h in CopyFiles */,
 				704CB3480B6E5BB100B15ACE /* Plane.h in CopyFiles */,
+				70E94C800B717341007F4F0C /* BlankMaterial.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
@@ -117,6 +119,7 @@
 		70D8D52B0B5F3FBF00EC8467 /* Point.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Point.cpp; sourceTree = "<group>"; };
 		70D8D53E0B5F42D400EC8467 /* Vector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vector.h; sourceTree = "<group>"; };
 		70D8D53F0B5F42D400EC8467 /* Vector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Vector.cpp; sourceTree = "<group>"; };
+		70E94C7F0B717341007F4F0C /* BlankMaterial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlankMaterial.h; sourceTree = "<group>"; };
 		8DD76F6C0486A84900D96B5E /* Raytracer */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Raytracer; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6859E8B029090EE04C91782 /* Raytracer.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = Raytracer.1; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -138,6 +141,7 @@
 				08FB7795FE84155DC02AAC07 /* Source */,
 				C6859E8C029090F304C91782 /* Documentation */,
 				1AB674ADFE9D54B511CA2CBB /* Products */,
+				70E94C7F0B717341007F4F0C /* BlankMaterial.h */,
 			);
 			name = Raytracer;
 			sourceTree = "<group>";
