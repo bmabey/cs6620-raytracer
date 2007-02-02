@@ -9,20 +9,19 @@
 #ifndef _RAYTRACER_H_
 #define _RAYTRACER_H_ 1
 
-#include "Image.h"
-#include "Sphere.h"
-#include "Ray.h"
-#include "Color.h"
+class Scene;
 
 class Raytracer
 {
 
 public:
-	Raytracer() { };
-
+	Raytracer();
+	~Raytracer();
+	Scene* make_scene();
+	void addSnowman(float x, float y, float z, Scene* scene, bool faceless);
 	void run();
 	
-	Image image;
+	Scene* the_scene;
 
 	
 };

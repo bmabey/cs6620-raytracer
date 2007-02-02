@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		70261A3C0B73BCF100208D82 /* Point.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70261A3A0B73BCF100208D82 /* Point.cpp */; };
+		70261A3D0B73BCF100208D82 /* Point.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 70261A3B0B73BCF100208D82 /* Point.h */; };
 		70C82BC00B724B1F008F301F /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70C82BBF0B724B1F008F301F /* GLUT.framework */; };
 		70C82BC60B724B3D008F301F /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70C82BC50B724B3D008F301F /* OpenGL.framework */; };
 		70C82BD30B724B99008F301F /* glui.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 70C82BD00B724B99008F301F /* glui.h */; };
@@ -42,8 +44,6 @@
 		70C82C640B725204008F301F /* Raytracer.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 70C82C3D0B725204008F301F /* Raytracer.h */; };
 		70C82C650B725204008F301F /* RenderContext.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70C82C3E0B725204008F301F /* RenderContext.cpp */; };
 		70C82C660B725204008F301F /* RenderContext.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 70C82C3F0B725204008F301F /* RenderContext.h */; };
-		70C82C670B725204008F301F /* RPoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70C82C400B725204008F301F /* RPoint.cpp */; };
-		70C82C680B725204008F301F /* RPoint.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 70C82C410B725204008F301F /* RPoint.h */; };
 		70C82C690B725204008F301F /* Scene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70C82C420B725204008F301F /* Scene.cpp */; };
 		70C82C6A0B725204008F301F /* Scene.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 70C82C430B725204008F301F /* Scene.h */; };
 		70C82C6B0B725204008F301F /* SolidBackground.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 70C82C440B725204008F301F /* SolidBackground.h */; };
@@ -81,17 +81,19 @@
 				70C82C620B725204008F301F /* Ray.h in CopyFiles */,
 				70C82C640B725204008F301F /* Raytracer.h in CopyFiles */,
 				70C82C660B725204008F301F /* RenderContext.h in CopyFiles */,
-				70C82C680B725204008F301F /* RPoint.h in CopyFiles */,
 				70C82C6A0B725204008F301F /* Scene.h in CopyFiles */,
 				70C82C6B0B725204008F301F /* SolidBackground.h in CopyFiles */,
 				70C82C6D0B725204008F301F /* Sphere.h in CopyFiles */,
 				70C82C6F0B725204008F301F /* Vector.h in CopyFiles */,
+				70261A3D0B73BCF100208D82 /* Point.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		70261A3A0B73BCF100208D82 /* Point.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = Point.cpp; path = ../Raytracer/Point.cpp; sourceTree = SOURCE_ROOT; };
+		70261A3B0B73BCF100208D82 /* Point.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = Point.h; path = ../Raytracer/Point.h; sourceTree = SOURCE_ROOT; };
 		70C82BBF0B724B1F008F301F /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = /Developer/SDKs/MacOSX10.4u.sdk/System/Library/Frameworks/GLUT.framework; sourceTree = "<absolute>"; };
 		70C82BC50B724B3D008F301F /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = /Developer/SDKs/MacOSX10.4u.sdk/System/Library/Frameworks/OpenGL.framework; sourceTree = "<absolute>"; };
 		70C82BD00B724B99008F301F /* glui.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = glui.h; sourceTree = "<group>"; };
@@ -127,8 +129,6 @@
 		70C82C3D0B725204008F301F /* Raytracer.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = Raytracer.h; path = ../Raytracer/Raytracer.h; sourceTree = SOURCE_ROOT; };
 		70C82C3E0B725204008F301F /* RenderContext.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = RenderContext.cpp; path = ../Raytracer/RenderContext.cpp; sourceTree = SOURCE_ROOT; };
 		70C82C3F0B725204008F301F /* RenderContext.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = RenderContext.h; path = ../Raytracer/RenderContext.h; sourceTree = SOURCE_ROOT; };
-		70C82C400B725204008F301F /* RPoint.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = RPoint.cpp; path = ../Raytracer/RPoint.cpp; sourceTree = SOURCE_ROOT; };
-		70C82C410B725204008F301F /* RPoint.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = RPoint.h; path = ../Raytracer/RPoint.h; sourceTree = SOURCE_ROOT; };
 		70C82C420B725204008F301F /* Scene.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = Scene.cpp; path = ../Raytracer/Scene.cpp; sourceTree = SOURCE_ROOT; };
 		70C82C430B725204008F301F /* Scene.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = Scene.h; path = ../Raytracer/Scene.h; sourceTree = SOURCE_ROOT; };
 		70C82C440B725204008F301F /* SolidBackground.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = SolidBackground.h; path = ../Raytracer/SolidBackground.h; sourceTree = SOURCE_ROOT; };
@@ -167,6 +167,8 @@
 		08FB7795FE84155DC02AAC07 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				70261A3A0B73BCF100208D82 /* Point.cpp */,
+				70261A3B0B73BCF100208D82 /* Point.h */,
 				70C82C220B725204008F301F /* Background.h */,
 				70C82C230B725204008F301F /* BlankMaterial.cpp */,
 				70C82C240B725204008F301F /* BlankMaterial.h */,
@@ -197,8 +199,6 @@
 				70C82C3D0B725204008F301F /* Raytracer.h */,
 				70C82C3E0B725204008F301F /* RenderContext.cpp */,
 				70C82C3F0B725204008F301F /* RenderContext.h */,
-				70C82C400B725204008F301F /* RPoint.cpp */,
-				70C82C410B725204008F301F /* RPoint.h */,
 				70C82C420B725204008F301F /* Scene.cpp */,
 				70C82C430B725204008F301F /* Scene.h */,
 				70C82C440B725204008F301F /* SolidBackground.h */,
@@ -285,10 +285,10 @@
 				70C82C610B725204008F301F /* Ray.cpp in Sources */,
 				70C82C630B725204008F301F /* Raytracer.cpp in Sources */,
 				70C82C650B725204008F301F /* RenderContext.cpp in Sources */,
-				70C82C670B725204008F301F /* RPoint.cpp in Sources */,
 				70C82C690B725204008F301F /* Scene.cpp in Sources */,
 				70C82C6C0B725204008F301F /* Sphere.cpp in Sources */,
 				70C82C6E0B725204008F301F /* Vector.cpp in Sources */,
+				70261A3C0B73BCF100208D82 /* Point.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

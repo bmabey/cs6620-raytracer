@@ -31,7 +31,8 @@ public:
 	Scene();
 	~Scene();
 	//void render(int xres, int yres, const RenderContext* context);
-	void render(int xres, int yres);
+	void preprocess(int xres, int yres);
+	void render();
 	//Setters
 	void setBackground(Background* color) { background = color; }
 	void setAmbient(const Color& color) { ambient = color; }
@@ -48,7 +49,9 @@ public:
 	Color ambient;
 	Group* world;
 	Image* image;
-	
+private:
+	int mXRes;
+	int mYRes;
 };
 
-#endif 
+#endif

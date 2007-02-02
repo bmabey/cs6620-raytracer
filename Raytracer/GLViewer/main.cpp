@@ -6,6 +6,7 @@
 #include "Raytracer.h"
 #include "Image.h"
 #include "Scene.h"
+#include "Color.h"
 
 #include <math.h>
 
@@ -17,7 +18,7 @@ float lookat[3];
 
 
 //Raytracer pointers
-Raytracer* raytracer;
+Raytracer raytracer;
 Image* image;
 
 // pointers for all of the glui controls
@@ -267,56 +268,6 @@ void myGlutDisplay(	void )
 {
 	glClearColor(0, 0, 0, 0);
 	glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
-
-	// projection transform
-	glMatrixMode(GL_PROJECTION);
-	glLoadIdentity();
-	glFrustum(-1, 1, -1, 1, 1, 1000);
-
-	// camera transform
-	glMatrixMode(GL_MODELVIEW);
-	glLoadIdentity();
-	gluLookAt(eye[0], eye[1], eye[2], lookat[0], lookat[1], lookat[2], 0, 1, 0);
-
-	
-	//
-	// draw some stuff
-	//
-
-	if (live_draw_floor)
-	{
-		glBegin(GL_TRIANGLE_FAN);
-		glColor3f(0.4f, 0.4f, 0.4f);    // note: color is state and only needs to be set once
-		glVertex3f(-10, 0, -10);
-		glVertex3f( 10, 0, -10);
-		glVertex3f( 10, 0,  10);
-		glVertex3f(-10, 0,  10);
-		glEnd();
-	}
-
-	if (live_draw_object)
-	{
-		glColor3f(0, 1, 1);
-		
-		glPushMatrix();
-		glTranslatef(live_object_xz_trans[0], live_object_y_trans, -live_object_xz_trans[1]);
-		glMultMatrixf(live_object_rotation);
-
-		switch(live_object_type)
-		{
-		case 0:
-			glutSolidCube(2);
-			break;
-		case 1:
-			glutSolidSphere(2, 30, 30);
-			break;
-		case 2:
-			glutSolidTorus(0.5, 2, 30, 30);
-			break;
-		}
-
-		glPopMatrix();
-	}
 	glDrawPixels(512, 512, GL_RGB, GL_UNSIGNED_BYTE, image->RGBcanvas);
 	glutSwapBuffers();
 /*	
@@ -376,7 +327,7 @@ void glui_cb(int control)
 
 void *run_raytracer(void *p)
 {
-  raytracer->run();
+  raytracer.run();
 }
 
 #include "Color.h"
@@ -385,9 +336,19 @@ int main(int argc,	char* argv[])
 {
 	
 	//Create Raytracer
-	raytracer = new Raytracer();
-	image = raytracer->scene->image;
-	image->setAll(Color(1, 0, 0));
+	//Raytracer rt;
+	//raytracer = new Raytracer();
+	/*Scene* scene = rt.make_scene();
+	scene->preprocess(512,512);
+	scene->render();
+	scene->image->writePPM();*/
+	//rt.run();
+	
+	//raytracer = new Raytracer();
+	//image = rt.the_scene->image;
+	image = raytracer.the_scene->image;
+	//image = raytracer->the_scene->image;
+	//image->setAll(Color(1, 0, 0));
 	//raytracer->run();
 	//std::cout << image->getXRes() << " " << image->getYRes() << "\n";
 	//std::cout << image->RGBcanvas[0].r << " " << image->RGBcanvas[0].g <<  " " <<image->RGBcanvas[0].b <<"\n";

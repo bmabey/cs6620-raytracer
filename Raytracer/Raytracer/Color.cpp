@@ -56,7 +56,17 @@ Color& Color::operator/= (const Color &rhs_color)
 	*this = *this / rhs_color;
 	return *this;
 }
-
+/*
+Pixel Color::toPixel() const
+{
+	Pixel p;
+	p.r = charify(mR);
+	p.g = charify(mG);
+	p.b = charify(mB);
+	return p;
+	
+}
+*/
 //Operations with scalars	
 
 Color operator*(const Color &color, float scalar)
@@ -104,7 +114,7 @@ void Color::clamp()
 	if (mB < 0.0f) mB = 0.0f;
 }
 
-unsigned char const Color::charify(float value)
+unsigned char const Color::charify(float value) const
 {
 	//Bring it in our 0 - 255 scale
 	unsigned int scaled = (unsigned int)(256 * value);
