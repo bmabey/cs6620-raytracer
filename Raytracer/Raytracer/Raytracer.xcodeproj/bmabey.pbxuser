@@ -43,7 +43,7 @@
 				PBXFileTableDataSourceColumnWidthsKey = (
 					20,
 					1000,
-					82,
+					82.2085,
 				);
 				PBXFileTableDataSourceColumnsKey = (
 					PBXErrorsWarningsDataSource_TypeID,
@@ -70,7 +70,7 @@
 				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
 				PBXFileTableDataSourceColumnWidthsKey = (
 					20,
-					892,
+					315,
 					20,
 					48,
 					43,
@@ -87,12 +87,16 @@
 					PBXFileDataSource_Target_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 192003260;
-			PBXWorkspaceStateSaveDate = 192003260;
+			PBXPerProjectTemplateStateSaveDate = 191977787;
+			PBXWorkspaceStateSaveDate = 191977787;
 		};
 		perUserProjectItems = {
-			70C82CA00B725A0D008F301F /* PBXTextBookmark */ = 70C82CA00B725A0D008F301F /* PBXTextBookmark */;
-			70C82CA10B725A0D008F301F /* PBXTextBookmark */ = 70C82CA10B725A0D008F301F /* PBXTextBookmark */;
+			704CB3540B6E5BEB00B15ACE = 704CB3540B6E5BEB00B15ACE /* PBXTextBookmark */;
+			704CB3580B6E5BEB00B15ACE = 704CB3580B6E5BEB00B15ACE /* PBXTextBookmark */;
+			704CB36D0B6EBF7300B15ACE = 704CB36D0B6EBF7300B15ACE /* PBXTextBookmark */;
+			704CB36E0B6EBF7300B15ACE = 704CB36E0B6EBF7300B15ACE /* PBXTextBookmark */;
+			70E94C7B0B715940007F4F0C /* PBXTextBookmark */ = 70E94C7B0B715940007F4F0C /* PBXTextBookmark */;
+			70E94C7C0B715940007F4F0C /* PBXTextBookmark */ = 70E94C7C0B715940007F4F0C /* PBXTextBookmark */;
 		};
 		sourceControlManager = 70718F6C0B5EB06900723B9B /* Source Control */;
 		userBuildSettings = {
@@ -100,10 +104,10 @@
 	};
 	08FB7796FE84155DC02AAC07 /* main.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1090, 523}}";
-			sepNavSelRange = "{158, 0}";
-			sepNavVisRect = "{{0, 0}, {1090, 523}}";
-			sepNavWindowFrame = "{{439, 265}, {914, 565}}";
+			sepNavIntBoundsRect = "{{0, 0}, {875, 630}}";
+			sepNavSelRange = "{413, 0}";
+			sepNavVisRect = "{{0, 138}, {875, 492}}";
+			sepNavWindowFrame = "{{-994, 42}, {914, 565}}";
 		};
 	};
 	704CB3110B6D911500B15ACE /* LambertianMaterial.h */ = {
@@ -150,9 +154,43 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {819, 490}}";
 			sepNavSelRange = "{618, 0}";
-			sepNavVisRect = "{{0, 112}, {819, 296}}";
+			sepNavVisRect = "{{0, 124}, {819, 296}}";
 			sepNavWindowFrame = "{{1434, 389}, {858, 369}}";
 		};
+	};
+	704CB3540B6E5BEB00B15ACE /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 704CB3460B6E5BB100B15ACE /* Plane.h */;
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+	};
+	704CB3580B6E5BEB00B15ACE /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 704CB33A0B6DA8D000B15ACE /* PinholeCamera.h */;
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+	};
+	704CB36D0B6EBF7300B15ACE /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 704CB3460B6E5BB100B15ACE /* Plane.h */;
+		name = "Plane.h: 35";
+		rLen = 0;
+		rLoc = 618;
+		rType = 0;
+		vrLen = 528;
+		vrLoc = 77;
+	};
+	704CB36E0B6EBF7300B15ACE /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 704CB33A0B6DA8D000B15ACE /* PinholeCamera.h */;
+		name = "PinholeCamera.h: 32";
+		rLen = 0;
+		rLoc = 556;
+		rType = 0;
+		vrLen = 419;
+		vrLoc = 137;
 	};
 	705381640B6BD8EB006649E0 /* Object.h */ = {
 		uiCtxt = {
@@ -330,40 +368,6 @@
 			sepNavWindowFrame = "{{405, 231}, {840, 510}}";
 		};
 	};
-	70C82B930B724554008F301F /* Raytracer.cpp */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1090, 1582}}";
-			sepNavSelRange = "{1662, 0}";
-			sepNavVisRect = "{{0, 542}, {1090, 523}}";
-		};
-	};
-	70C82B940B724554008F301F /* Raytracer.h */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1090, 523}}";
-			sepNavSelRange = "{205, 0}";
-			sepNavVisRect = "{{0, 0}, {1090, 523}}";
-		};
-	};
-	70C82CA00B725A0D008F301F /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 08FB7796FE84155DC02AAC07 /* main.cpp */;
-		name = "new Raytracer();";
-		rLen = 16;
-		rLoc = 108;
-		rType = 0;
-		vrLen = 158;
-		vrLoc = 0;
-	};
-	70C82CA10B725A0D008F301F /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 08FB7796FE84155DC02AAC07 /* main.cpp */;
-		name = "main.cpp: 15";
-		rLen = 0;
-		rLoc = 158;
-		rType = 0;
-		vrLen = 158;
-		vrLoc = 0;
-	};
 	70D8D3C90B5EB28400EC8467 /* Color.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {628, 882}}";
@@ -374,9 +378,9 @@
 	};
 	70D8D3CA0B5EB28400EC8467 /* Color.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1090, 1750}}";
+			sepNavIntBoundsRect = "{{0, 0}, {628, 1750}}";
 			sepNavSelRange = "{140, 4}";
-			sepNavVisRect = "{{0, 0}, {1090, 523}}";
+			sepNavVisRect = "{{0, 0}, {628, 457}}";
 			sepNavWindowFrame = "{{-1267, 362}, {667, 530}}";
 		};
 	};
@@ -394,6 +398,22 @@
 			sepNavSelRange = "{1073, 0}";
 			sepNavVisRect = "{{0, 0}, {628, 457}}";
 			sepNavWindowFrame = "{{-1047, 143}, {667, 530}}";
+		};
+	};
+	70D8D52A0B5F3FBF00EC8467 /* Point.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {801, 714}}";
+			sepNavSelRange = "{964, 0}";
+			sepNavVisRect = "{{0, 207}, {801, 493}}";
+			sepNavWindowFrame = "{{346, 112}, {840, 566}}";
+		};
+	};
+	70D8D52B0B5F3FBF00EC8467 /* Point.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {801, 728}}";
+			sepNavSelRange = "{440, 0}";
+			sepNavVisRect = "{{0, 235}, {801, 493}}";
+			sepNavWindowFrame = "{{434, 293}, {840, 566}}";
 		};
 	};
 	70D8D53E0B5F42D400EC8467 /* Vector.h */ = {
@@ -418,13 +438,25 @@
 		objects = (
 		);
 	};
-	70E94C7F0B717341007F4F0C /* BlankMaterial.h */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {854, 434}}";
-			sepNavSelRange = "{558, 0}";
-			sepNavVisRect = "{{0, 0}, {819, 296}}";
-			sepNavWindowFrame = "{{15, 59}, {858, 369}}";
-		};
+	70E94C7B0B715940007F4F0C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 704CB3460B6E5BB100B15ACE /* Plane.h */;
+		name = "Plane.h: 35";
+		rLen = 0;
+		rLoc = 618;
+		rType = 0;
+		vrLen = 528;
+		vrLoc = 77;
+	};
+	70E94C7C0B715940007F4F0C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 704CB33A0B6DA8D000B15ACE /* PinholeCamera.h */;
+		name = "PinholeCamera.h: 32";
+		rLen = 0;
+		rLoc = 556;
+		rType = 0;
+		vrLen = 419;
+		vrLoc = 137;
 	};
 	8DD76F620486A84900D96B5E /* Raytracer */ = {
 		activeExec = 0;

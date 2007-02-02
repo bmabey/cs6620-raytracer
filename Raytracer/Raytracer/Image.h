@@ -17,10 +17,6 @@
 #include "Color.h"
 using namespace std;
 
-typedef struct {
-	unsigned char r, g, b;
-} Pixel;
-
 class Image
 {
 public:
@@ -31,12 +27,8 @@ public:
 	void setAll(Color color);
 	void writePPM(ostream& out);
 	void writePPM();
-	int getXRes() {return mWidth; }
-	int getYRes() {return mHeight; }
-
-	Pixel* RGBcanvas;
 	
-//private:
+private:
 	Color** mCanvas;
 	int mWidth;
 	int mHeight;

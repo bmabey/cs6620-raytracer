@@ -35,7 +35,7 @@ bool Sphere::intersect(HitRecord& hit, const RenderContext& context, const Ray& 
 	
 }
 
-void Sphere::getNormal(Vector& N, const HitRecord& record, const RPoint& pos) const
+void Sphere::getNormal(Vector& N, const HitRecord& record, const Point& pos) const
 {
 	N = pos - mCenter;
 	N.normalize();

@@ -34,14 +34,12 @@
 		708BBA4A0B67DCC300951074 /* Ray.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 708BBA480B67DCC300951074 /* Ray.cpp */; };
 		708BBA550B67DDAB00951074 /* Sphere.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 708BBA530B67DDAB00951074 /* Sphere.h */; };
 		708BBA560B67DDAB00951074 /* Sphere.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 708BBA540B67DDAB00951074 /* Sphere.cpp */; };
-		70C82B390B71BCED008F301F /* RPoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70C82B370B71BCED008F301F /* RPoint.cpp */; };
-		70C82B3A0B71BCED008F301F /* RPoint.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 70C82B380B71BCED008F301F /* RPoint.h */; };
-		70C82B950B724554008F301F /* Raytracer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70C82B930B724554008F301F /* Raytracer.cpp */; };
-		70C82B960B724554008F301F /* Raytracer.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 70C82B940B724554008F301F /* Raytracer.h */; };
 		70D8D3CB0B5EB28400EC8467 /* Color.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 70D8D3C90B5EB28400EC8467 /* Color.h */; };
 		70D8D3CC0B5EB28400EC8467 /* Color.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70D8D3CA0B5EB28400EC8467 /* Color.cpp */; };
 		70D8D4980B5F295A00EC8467 /* Image.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 70D8D4960B5F295A00EC8467 /* Image.h */; };
 		70D8D4990B5F295A00EC8467 /* Image.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70D8D4970B5F295A00EC8467 /* Image.cpp */; };
+		70D8D52C0B5F3FBF00EC8467 /* Point.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 70D8D52A0B5F3FBF00EC8467 /* Point.h */; };
+		70D8D52D0B5F3FBF00EC8467 /* Point.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70D8D52B0B5F3FBF00EC8467 /* Point.cpp */; };
 		70D8D5400B5F42D400EC8467 /* Vector.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 70D8D53E0B5F42D400EC8467 /* Vector.h */; };
 		70D8D5410B5F42D400EC8467 /* Vector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70D8D53F0B5F42D400EC8467 /* Vector.cpp */; };
 		70E94C800B717341007F4F0C /* BlankMaterial.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 70E94C7F0B717341007F4F0C /* BlankMaterial.h */; };
@@ -59,6 +57,7 @@
 				8DD76F6A0486A84900D96B5E /* Raytracer.1 in CopyFiles */,
 				70D8D3CB0B5EB28400EC8467 /* Color.h in CopyFiles */,
 				70D8D4980B5F295A00EC8467 /* Image.h in CopyFiles */,
+				70D8D52C0B5F3FBF00EC8467 /* Point.h in CopyFiles */,
 				70D8D5400B5F42D400EC8467 /* Vector.h in CopyFiles */,
 				708BBA490B67DCC300951074 /* Ray.h in CopyFiles */,
 				708BBA550B67DDAB00951074 /* Sphere.h in CopyFiles */,
@@ -78,8 +77,6 @@
 				704CB33C0B6DA8D000B15ACE /* PinholeCamera.h in CopyFiles */,
 				704CB3480B6E5BB100B15ACE /* Plane.h in CopyFiles */,
 				70E94C800B717341007F4F0C /* BlankMaterial.h in CopyFiles */,
-				70C82B3A0B71BCED008F301F /* RPoint.h in CopyFiles */,
-				70C82B960B724554008F301F /* Raytracer.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
@@ -114,14 +111,12 @@
 		708BBA480B67DCC300951074 /* Ray.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Ray.cpp; sourceTree = "<group>"; };
 		708BBA530B67DDAB00951074 /* Sphere.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sphere.h; sourceTree = "<group>"; };
 		708BBA540B67DDAB00951074 /* Sphere.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Sphere.cpp; sourceTree = "<group>"; };
-		70C82B370B71BCED008F301F /* RPoint.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; path = RPoint.cpp; sourceTree = "<group>"; };
-		70C82B380B71BCED008F301F /* RPoint.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = RPoint.h; sourceTree = "<group>"; };
-		70C82B930B724554008F301F /* Raytracer.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; path = Raytracer.cpp; sourceTree = "<group>"; };
-		70C82B940B724554008F301F /* Raytracer.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = Raytracer.h; sourceTree = "<group>"; };
 		70D8D3C90B5EB28400EC8467 /* Color.h */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.c.h; path = Color.h; sourceTree = "<group>"; tabWidth = 2; usesTabs = 1; };
 		70D8D3CA0B5EB28400EC8467 /* Color.cpp */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.cpp.cpp; path = Color.cpp; sourceTree = "<group>"; tabWidth = 2; usesTabs = 1; };
 		70D8D4960B5F295A00EC8467 /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; tabWidth = 2; usesTabs = 1; };
 		70D8D4970B5F295A00EC8467 /* Image.cpp */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.cpp.cpp; path = Image.cpp; sourceTree = "<group>"; tabWidth = 2; usesTabs = 1; };
+		70D8D52A0B5F3FBF00EC8467 /* Point.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Point.h; sourceTree = "<group>"; };
+		70D8D52B0B5F3FBF00EC8467 /* Point.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Point.cpp; sourceTree = "<group>"; };
 		70D8D53E0B5F42D400EC8467 /* Vector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vector.h; sourceTree = "<group>"; };
 		70D8D53F0B5F42D400EC8467 /* Vector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Vector.cpp; sourceTree = "<group>"; };
 		70E94C7F0B717341007F4F0C /* BlankMaterial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlankMaterial.h; sourceTree = "<group>"; };
@@ -154,10 +149,6 @@
 		08FB7795FE84155DC02AAC07 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				70C82B930B724554008F301F /* Raytracer.cpp */,
-				70C82B940B724554008F301F /* Raytracer.h */,
-				70C82B370B71BCED008F301F /* RPoint.cpp */,
-				70C82B380B71BCED008F301F /* RPoint.h */,
 				705382690B6BF5AA006649E0 /* Group.h */,
 				705382AD0B6BFB08006649E0 /* Material.h */,
 				7053826A0B6BF5AA006649E0 /* Group.cpp */,
@@ -176,6 +167,8 @@
 				708BBA480B67DCC300951074 /* Ray.cpp */,
 				70D8D53E0B5F42D400EC8467 /* Vector.h */,
 				70D8D53F0B5F42D400EC8467 /* Vector.cpp */,
+				70D8D52A0B5F3FBF00EC8467 /* Point.h */,
+				70D8D52B0B5F3FBF00EC8467 /* Point.cpp */,
 				70D8D3C90B5EB28400EC8467 /* Color.h */,
 				70D8D4960B5F295A00EC8467 /* Image.h */,
 				70D8D4970B5F295A00EC8467 /* Image.cpp */,
@@ -256,6 +249,7 @@
 				8DD76F650486A84900D96B5E /* main.cpp in Sources */,
 				70D8D3CC0B5EB28400EC8467 /* Color.cpp in Sources */,
 				70D8D4990B5F295A00EC8467 /* Image.cpp in Sources */,
+				70D8D52D0B5F3FBF00EC8467 /* Point.cpp in Sources */,
 				70D8D5410B5F42D400EC8467 /* Vector.cpp in Sources */,
 				708BBA4A0B67DCC300951074 /* Ray.cpp in Sources */,
 				708BBA560B67DDAB00951074 /* Sphere.cpp in Sources */,
@@ -267,8 +261,6 @@
 				704CB3370B6DA2EA00B15ACE /* PointLight.cpp in Sources */,
 				704CB33D0B6DA8D000B15ACE /* PinholeCamera.cpp in Sources */,
 				704CB3490B6E5BB100B15ACE /* Plane.cpp in Sources */,
-				70C82B390B71BCED008F301F /* RPoint.cpp in Sources */,
-				70C82B950B724554008F301F /* Raytracer.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

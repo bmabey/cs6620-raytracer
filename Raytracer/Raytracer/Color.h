@@ -25,9 +25,9 @@ public:
 	float getR() const { return mR; }
 	float getG() const { return mG; }
 	float getB() const { return mB; }
-	unsigned char getCharR() const { return charify(mR); }
-	unsigned char getCharG() const { return charify(mG); }
-	unsigned char getCharB() const  { return charify(mB); }
+	unsigned char getCharR()  { return charify(mR); }
+	unsigned char getCharG()  { return charify(mG); }
+	unsigned char getCharB()  { return charify(mB); }
 	int getIntR()  { return intify(mR); }
 	int getIntG()  { return intify(mG); }
 	int getIntB()  { return intify(mB); }
@@ -55,7 +55,7 @@ private:
 	float mR;
 	float mG;
 	float mB;
-	unsigned char const charify(float value) const;
+	unsigned char const charify(float value);
 	int const intify(float value);
 
 };

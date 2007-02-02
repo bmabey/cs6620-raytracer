@@ -3,7 +3,7 @@
  *  Raytracer
  *
  *  Created by Ben Mabey on 1/27/07.
- **
+ *
  */
 
 
@@ -17,7 +17,7 @@ class Vector;
 class HitRecord;
 class RenderContext;
 class Ray;
-class RPoint;
+class Point;
 
 class Primitive : public Object
 {
@@ -28,7 +28,7 @@ public:
 	virtual ~Primitive() { delete material; }
 	virtual void preprocess() { }; 
 	virtual bool intersect(HitRecord& hit, const RenderContext& context, const Ray& ray) const = 0;
-	virtual void getNormal(Vector& N, const HitRecord& hit, const RPoint& pos) const = 0;
+	virtual void getNormal(Vector& N, const HitRecord& hit, const Point& pos) const = 0;
 
 	Material* material;
 	

@@ -8,7 +8,7 @@
 
 #include "BlankMaterial.h"
 #include "Color.h"
-#include "RPoint.h"
+#include "Point.h"
 #include "Vector.h"
 #include "HitRecord.h"
 #include "Primitive.h"

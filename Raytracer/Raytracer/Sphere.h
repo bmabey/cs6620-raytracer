@@ -10,18 +10,18 @@
 #define _SPHERE_H_ 1
 
 #include "Primitive.h"
-#include "RPoint.h"
+#include "Point.h"
 
 
 class Sphere : public Primitive
 {
 public:
 	Sphere() { }
-	Sphere(Material* m, RPoint c, float r) : mCenter(c), mRadius(r), mRadius2(r*r) { material = m;}
+	Sphere(Material* m, Point c, float r) : mCenter(c), mRadius(r), mRadius2(r*r) { material = m;}
 	bool intersect(HitRecord& hit, const RenderContext& context, const Ray& ray) const;
-	void getNormal(Vector& N, const HitRecord& hit, const RPoint& pos) const;
+	void getNormal(Vector& N, const HitRecord& hit, const Point& pos) const;
 private:		
-	RPoint mCenter;
+	Point mCenter;
 	float mRadius;
 	float mRadius2;
 

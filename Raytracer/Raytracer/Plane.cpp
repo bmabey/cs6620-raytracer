@@ -11,11 +11,11 @@
 #include "HitRecord.h"
 #include "RenderContext.h"
 #include "Vector.h"
-#include "RPoint.h"
+#include "Point.h"
 #include "Ray.h"
 
 bool Plane::intersect(HitRecord& hit, const RenderContext& context, const Ray& ray) const
 {
-	float t = dot( mNormalInv, ray.o - mRPoint ) / dot( mNormal, ray.d );
+	float t = dot( mNormalInv, ray.o - mPoint ) / dot( mNormal, ray.d );
 	return hit.hit(t, this, material);	
 }
