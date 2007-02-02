@@ -104,7 +104,7 @@ void Color::clamp()
 	if (mB < 0.0f) mB = 0.0f;
 }
 
-unsigned char const Color::charify(float value)
+unsigned char const Color::charify(float value) const
 {
 	//Bring it in our 0 - 255 scale
 	unsigned int scaled = (unsigned int)(256 * value);

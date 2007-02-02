@@ -10,22 +10,22 @@
 #define _PLANE_H_ 1
 
 #include "Primitive.h"
-#include "Point.h"
+#include "RPoint.h"
 #include "Vector.h"
 
 class Plane : public Primitive
 {
 public:
 	Plane() { }
-	Plane(Material* m, Vector N, Point c) : mPoint(c), mNormal(N) 
+	Plane(Material* m, Vector N, RPoint c) : mRPoint(c), mNormal(N) 
 	{ mNormal.normalize(); 
 		mNormalInv = -mNormal;
 		material = m; }
 		
 	bool intersect(HitRecord& hit, const RenderContext& context, const Ray& ray) const;
-	void getNormal(Vector& N, const HitRecord& hit, const Point& pos) const { N = mNormal;}
+	void getNormal(Vector& N, const HitRecord& hit, const RPoint& pos) const { N = mNormal;}
 private:		
-	Point mPoint;
+	RPoint mRPoint;
 	Vector mNormal;
 	Vector mNormalInv;
 

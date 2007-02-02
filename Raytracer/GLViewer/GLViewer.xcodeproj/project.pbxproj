@@ -1,0 +1,390 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 42;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		70C82BC00B724B1F008F301F /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70C82BBF0B724B1F008F301F /* GLUT.framework */; };
+		70C82BC60B724B3D008F301F /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70C82BC50B724B3D008F301F /* OpenGL.framework */; };
+		70C82BD30B724B99008F301F /* glui.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 70C82BD00B724B99008F301F /* glui.h */; };
+		70C82BD40B724B99008F301F /* libglui.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 70C82BD10B724B99008F301F /* libglui.a */; };
+		70C82BD50B724B99008F301F /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70C82BD20B724B99008F301F /* main.cpp */; };
+		70C82C490B725204008F301F /* Background.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 70C82C220B725204008F301F /* Background.h */; };
+		70C82C4A0B725204008F301F /* BlankMaterial.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70C82C230B725204008F301F /* BlankMaterial.cpp */; };
+		70C82C4B0B725204008F301F /* BlankMaterial.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 70C82C240B725204008F301F /* BlankMaterial.h */; };
+		70C82C4C0B725204008F301F /* Camera.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 70C82C250B725204008F301F /* Camera.h */; };
+		70C82C4D0B725204008F301F /* Color.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70C82C260B725204008F301F /* Color.cpp */; };
+		70C82C4E0B725204008F301F /* Color.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 70C82C270B725204008F301F /* Color.h */; };
+		70C82C4F0B725204008F301F /* Group.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70C82C280B725204008F301F /* Group.cpp */; };
+		70C82C500B725204008F301F /* Group.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 70C82C290B725204008F301F /* Group.h */; };
+		70C82C510B725204008F301F /* HitRecord.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70C82C2A0B725204008F301F /* HitRecord.cpp */; };
+		70C82C520B725204008F301F /* HitRecord.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 70C82C2B0B725204008F301F /* HitRecord.h */; };
+		70C82C530B725204008F301F /* Image.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70C82C2C0B725204008F301F /* Image.cpp */; };
+		70C82C540B725204008F301F /* Image.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 70C82C2D0B725204008F301F /* Image.h */; };
+		70C82C550B725204008F301F /* LambertianMaterial.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70C82C2E0B725204008F301F /* LambertianMaterial.cpp */; };
+		70C82C560B725204008F301F /* LambertianMaterial.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 70C82C2F0B725204008F301F /* LambertianMaterial.h */; };
+		70C82C570B725204008F301F /* Light.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 70C82C300B725204008F301F /* Light.h */; };
+		70C82C580B725204008F301F /* Material.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 70C82C310B725204008F301F /* Material.h */; };
+		70C82C590B725204008F301F /* Object.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 70C82C320B725204008F301F /* Object.h */; };
+		70C82C5A0B725204008F301F /* PinholeCamera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70C82C330B725204008F301F /* PinholeCamera.cpp */; };
+		70C82C5B0B725204008F301F /* PinholeCamera.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 70C82C340B725204008F301F /* PinholeCamera.h */; };
+		70C82C5C0B725204008F301F /* Plane.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70C82C350B725204008F301F /* Plane.cpp */; };
+		70C82C5D0B725204008F301F /* Plane.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 70C82C360B725204008F301F /* Plane.h */; };
+		70C82C5E0B725204008F301F /* PointLight.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70C82C370B725204008F301F /* PointLight.cpp */; };
+		70C82C5F0B725204008F301F /* PointLight.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 70C82C380B725204008F301F /* PointLight.h */; };
+		70C82C600B725204008F301F /* Primitive.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 70C82C390B725204008F301F /* Primitive.h */; };
+		70C82C610B725204008F301F /* Ray.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70C82C3A0B725204008F301F /* Ray.cpp */; };
+		70C82C620B725204008F301F /* Ray.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 70C82C3B0B725204008F301F /* Ray.h */; };
+		70C82C630B725204008F301F /* Raytracer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70C82C3C0B725204008F301F /* Raytracer.cpp */; };
+		70C82C640B725204008F301F /* Raytracer.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 70C82C3D0B725204008F301F /* Raytracer.h */; };
+		70C82C650B725204008F301F /* RenderContext.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70C82C3E0B725204008F301F /* RenderContext.cpp */; };
+		70C82C660B725204008F301F /* RenderContext.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 70C82C3F0B725204008F301F /* RenderContext.h */; };
+		70C82C670B725204008F301F /* RPoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70C82C400B725204008F301F /* RPoint.cpp */; };
+		70C82C680B725204008F301F /* RPoint.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 70C82C410B725204008F301F /* RPoint.h */; };
+		70C82C690B725204008F301F /* Scene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70C82C420B725204008F301F /* Scene.cpp */; };
+		70C82C6A0B725204008F301F /* Scene.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 70C82C430B725204008F301F /* Scene.h */; };
+		70C82C6B0B725204008F301F /* SolidBackground.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 70C82C440B725204008F301F /* SolidBackground.h */; };
+		70C82C6C0B725204008F301F /* Sphere.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70C82C450B725204008F301F /* Sphere.cpp */; };
+		70C82C6D0B725204008F301F /* Sphere.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 70C82C460B725204008F301F /* Sphere.h */; };
+		70C82C6E0B725204008F301F /* Vector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70C82C470B725204008F301F /* Vector.cpp */; };
+		70C82C6F0B725204008F301F /* Vector.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 70C82C480B725204008F301F /* Vector.h */; };
+		8DD76F6A0486A84900D96B5E /* GLViewer.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = C6859E8B029090EE04C91782 /* GLViewer.1 */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8DD76F690486A84900D96B5E /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 8;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				8DD76F6A0486A84900D96B5E /* GLViewer.1 in CopyFiles */,
+				70C82BD30B724B99008F301F /* glui.h in CopyFiles */,
+				70C82C490B725204008F301F /* Background.h in CopyFiles */,
+				70C82C4B0B725204008F301F /* BlankMaterial.h in CopyFiles */,
+				70C82C4C0B725204008F301F /* Camera.h in CopyFiles */,
+				70C82C4E0B725204008F301F /* Color.h in CopyFiles */,
+				70C82C500B725204008F301F /* Group.h in CopyFiles */,
+				70C82C520B725204008F301F /* HitRecord.h in CopyFiles */,
+				70C82C540B725204008F301F /* Image.h in CopyFiles */,
+				70C82C560B725204008F301F /* LambertianMaterial.h in CopyFiles */,
+				70C82C570B725204008F301F /* Light.h in CopyFiles */,
+				70C82C580B725204008F301F /* Material.h in CopyFiles */,
+				70C82C590B725204008F301F /* Object.h in CopyFiles */,
+				70C82C5B0B725204008F301F /* PinholeCamera.h in CopyFiles */,
+				70C82C5D0B725204008F301F /* Plane.h in CopyFiles */,
+				70C82C5F0B725204008F301F /* PointLight.h in CopyFiles */,
+				70C82C600B725204008F301F /* Primitive.h in CopyFiles */,
+				70C82C620B725204008F301F /* Ray.h in CopyFiles */,
+				70C82C640B725204008F301F /* Raytracer.h in CopyFiles */,
+				70C82C660B725204008F301F /* RenderContext.h in CopyFiles */,
+				70C82C680B725204008F301F /* RPoint.h in CopyFiles */,
+				70C82C6A0B725204008F301F /* Scene.h in CopyFiles */,
+				70C82C6B0B725204008F301F /* SolidBackground.h in CopyFiles */,
+				70C82C6D0B725204008F301F /* Sphere.h in CopyFiles */,
+				70C82C6F0B725204008F301F /* Vector.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		70C82BBF0B724B1F008F301F /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = /Developer/SDKs/MacOSX10.4u.sdk/System/Library/Frameworks/GLUT.framework; sourceTree = "<absolute>"; };
+		70C82BC50B724B3D008F301F /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = /Developer/SDKs/MacOSX10.4u.sdk/System/Library/Frameworks/OpenGL.framework; sourceTree = "<absolute>"; };
+		70C82BD00B724B99008F301F /* glui.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = glui.h; sourceTree = "<group>"; };
+		70C82BD10B724B99008F301F /* libglui.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libglui.a; sourceTree = "<group>"; };
+		70C82BD20B724B99008F301F /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		70C82C220B725204008F301F /* Background.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = Background.h; path = ../Raytracer/Background.h; sourceTree = SOURCE_ROOT; };
+		70C82C230B725204008F301F /* BlankMaterial.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = BlankMaterial.cpp; path = ../Raytracer/BlankMaterial.cpp; sourceTree = SOURCE_ROOT; };
+		70C82C240B725204008F301F /* BlankMaterial.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = BlankMaterial.h; path = ../Raytracer/BlankMaterial.h; sourceTree = SOURCE_ROOT; };
+		70C82C250B725204008F301F /* Camera.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = Camera.h; path = ../Raytracer/Camera.h; sourceTree = SOURCE_ROOT; };
+		70C82C260B725204008F301F /* Color.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = Color.cpp; path = ../Raytracer/Color.cpp; sourceTree = SOURCE_ROOT; };
+		70C82C270B725204008F301F /* Color.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = Color.h; path = ../Raytracer/Color.h; sourceTree = SOURCE_ROOT; };
+		70C82C280B725204008F301F /* Group.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = Group.cpp; path = ../Raytracer/Group.cpp; sourceTree = SOURCE_ROOT; };
+		70C82C290B725204008F301F /* Group.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = Group.h; path = ../Raytracer/Group.h; sourceTree = SOURCE_ROOT; };
+		70C82C2A0B725204008F301F /* HitRecord.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = HitRecord.cpp; path = ../Raytracer/HitRecord.cpp; sourceTree = SOURCE_ROOT; };
+		70C82C2B0B725204008F301F /* HitRecord.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = HitRecord.h; path = ../Raytracer/HitRecord.h; sourceTree = SOURCE_ROOT; };
+		70C82C2C0B725204008F301F /* Image.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = Image.cpp; path = ../Raytracer/Image.cpp; sourceTree = SOURCE_ROOT; };
+		70C82C2D0B725204008F301F /* Image.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = Image.h; path = ../Raytracer/Image.h; sourceTree = SOURCE_ROOT; };
+		70C82C2E0B725204008F301F /* LambertianMaterial.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = LambertianMaterial.cpp; path = ../Raytracer/LambertianMaterial.cpp; sourceTree = SOURCE_ROOT; };
+		70C82C2F0B725204008F301F /* LambertianMaterial.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = LambertianMaterial.h; path = ../Raytracer/LambertianMaterial.h; sourceTree = SOURCE_ROOT; };
+		70C82C300B725204008F301F /* Light.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = Light.h; path = ../Raytracer/Light.h; sourceTree = SOURCE_ROOT; };
+		70C82C310B725204008F301F /* Material.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = Material.h; path = ../Raytracer/Material.h; sourceTree = SOURCE_ROOT; };
+		70C82C320B725204008F301F /* Object.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = Object.h; path = ../Raytracer/Object.h; sourceTree = SOURCE_ROOT; };
+		70C82C330B725204008F301F /* PinholeCamera.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = PinholeCamera.cpp; path = ../Raytracer/PinholeCamera.cpp; sourceTree = SOURCE_ROOT; };
+		70C82C340B725204008F301F /* PinholeCamera.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = PinholeCamera.h; path = ../Raytracer/PinholeCamera.h; sourceTree = SOURCE_ROOT; };
+		70C82C350B725204008F301F /* Plane.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = Plane.cpp; path = ../Raytracer/Plane.cpp; sourceTree = SOURCE_ROOT; };
+		70C82C360B725204008F301F /* Plane.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = Plane.h; path = ../Raytracer/Plane.h; sourceTree = SOURCE_ROOT; };
+		70C82C370B725204008F301F /* PointLight.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = PointLight.cpp; path = ../Raytracer/PointLight.cpp; sourceTree = SOURCE_ROOT; };
+		70C82C380B725204008F301F /* PointLight.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = PointLight.h; path = ../Raytracer/PointLight.h; sourceTree = SOURCE_ROOT; };
+		70C82C390B725204008F301F /* Primitive.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = Primitive.h; path = ../Raytracer/Primitive.h; sourceTree = SOURCE_ROOT; };
+		70C82C3A0B725204008F301F /* Ray.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = Ray.cpp; path = ../Raytracer/Ray.cpp; sourceTree = SOURCE_ROOT; };
+		70C82C3B0B725204008F301F /* Ray.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = Ray.h; path = ../Raytracer/Ray.h; sourceTree = SOURCE_ROOT; };
+		70C82C3C0B725204008F301F /* Raytracer.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = Raytracer.cpp; path = ../Raytracer/Raytracer.cpp; sourceTree = SOURCE_ROOT; };
+		70C82C3D0B725204008F301F /* Raytracer.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = Raytracer.h; path = ../Raytracer/Raytracer.h; sourceTree = SOURCE_ROOT; };
+		70C82C3E0B725204008F301F /* RenderContext.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = RenderContext.cpp; path = ../Raytracer/RenderContext.cpp; sourceTree = SOURCE_ROOT; };
+		70C82C3F0B725204008F301F /* RenderContext.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = RenderContext.h; path = ../Raytracer/RenderContext.h; sourceTree = SOURCE_ROOT; };
+		70C82C400B725204008F301F /* RPoint.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = RPoint.cpp; path = ../Raytracer/RPoint.cpp; sourceTree = SOURCE_ROOT; };
+		70C82C410B725204008F301F /* RPoint.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = RPoint.h; path = ../Raytracer/RPoint.h; sourceTree = SOURCE_ROOT; };
+		70C82C420B725204008F301F /* Scene.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = Scene.cpp; path = ../Raytracer/Scene.cpp; sourceTree = SOURCE_ROOT; };
+		70C82C430B725204008F301F /* Scene.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = Scene.h; path = ../Raytracer/Scene.h; sourceTree = SOURCE_ROOT; };
+		70C82C440B725204008F301F /* SolidBackground.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = SolidBackground.h; path = ../Raytracer/SolidBackground.h; sourceTree = SOURCE_ROOT; };
+		70C82C450B725204008F301F /* Sphere.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = Sphere.cpp; path = ../Raytracer/Sphere.cpp; sourceTree = SOURCE_ROOT; };
+		70C82C460B725204008F301F /* Sphere.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = Sphere.h; path = ../Raytracer/Sphere.h; sourceTree = SOURCE_ROOT; };
+		70C82C470B725204008F301F /* Vector.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = Vector.cpp; path = ../Raytracer/Vector.cpp; sourceTree = SOURCE_ROOT; };
+		70C82C480B725204008F301F /* Vector.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = Vector.h; path = ../Raytracer/Vector.h; sourceTree = SOURCE_ROOT; };
+		8DD76F6C0486A84900D96B5E /* GLViewer */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = GLViewer; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6859E8B029090EE04C91782 /* GLViewer.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = GLViewer.1; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8DD76F660486A84900D96B5E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70C82BC00B724B1F008F301F /* GLUT.framework in Frameworks */,
+				70C82BC60B724B3D008F301F /* OpenGL.framework in Frameworks */,
+				70C82BD40B724B99008F301F /* libglui.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		08FB7794FE84155DC02AAC07 /* GLViewer */ = {
+			isa = PBXGroup;
+			children = (
+				08FB7795FE84155DC02AAC07 /* Source */,
+				C6859E8C029090F304C91782 /* Documentation */,
+				1AB674ADFE9D54B511CA2CBB /* Products */,
+			);
+			name = GLViewer;
+			sourceTree = "<group>";
+		};
+		08FB7795FE84155DC02AAC07 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				70C82C220B725204008F301F /* Background.h */,
+				70C82C230B725204008F301F /* BlankMaterial.cpp */,
+				70C82C240B725204008F301F /* BlankMaterial.h */,
+				70C82C250B725204008F301F /* Camera.h */,
+				70C82C260B725204008F301F /* Color.cpp */,
+				70C82C270B725204008F301F /* Color.h */,
+				70C82C280B725204008F301F /* Group.cpp */,
+				70C82C290B725204008F301F /* Group.h */,
+				70C82C2A0B725204008F301F /* HitRecord.cpp */,
+				70C82C2B0B725204008F301F /* HitRecord.h */,
+				70C82C2C0B725204008F301F /* Image.cpp */,
+				70C82C2D0B725204008F301F /* Image.h */,
+				70C82C2E0B725204008F301F /* LambertianMaterial.cpp */,
+				70C82C2F0B725204008F301F /* LambertianMaterial.h */,
+				70C82C300B725204008F301F /* Light.h */,
+				70C82C310B725204008F301F /* Material.h */,
+				70C82C320B725204008F301F /* Object.h */,
+				70C82C330B725204008F301F /* PinholeCamera.cpp */,
+				70C82C340B725204008F301F /* PinholeCamera.h */,
+				70C82C350B725204008F301F /* Plane.cpp */,
+				70C82C360B725204008F301F /* Plane.h */,
+				70C82C370B725204008F301F /* PointLight.cpp */,
+				70C82C380B725204008F301F /* PointLight.h */,
+				70C82C390B725204008F301F /* Primitive.h */,
+				70C82C3A0B725204008F301F /* Ray.cpp */,
+				70C82C3B0B725204008F301F /* Ray.h */,
+				70C82C3C0B725204008F301F /* Raytracer.cpp */,
+				70C82C3D0B725204008F301F /* Raytracer.h */,
+				70C82C3E0B725204008F301F /* RenderContext.cpp */,
+				70C82C3F0B725204008F301F /* RenderContext.h */,
+				70C82C400B725204008F301F /* RPoint.cpp */,
+				70C82C410B725204008F301F /* RPoint.h */,
+				70C82C420B725204008F301F /* Scene.cpp */,
+				70C82C430B725204008F301F /* Scene.h */,
+				70C82C440B725204008F301F /* SolidBackground.h */,
+				70C82C450B725204008F301F /* Sphere.cpp */,
+				70C82C460B725204008F301F /* Sphere.h */,
+				70C82C470B725204008F301F /* Vector.cpp */,
+				70C82C480B725204008F301F /* Vector.h */,
+				70C82BD00B724B99008F301F /* glui.h */,
+				70C82BD10B724B99008F301F /* libglui.a */,
+				70C82BD20B724B99008F301F /* main.cpp */,
+				70C82BC50B724B3D008F301F /* OpenGL.framework */,
+				70C82BBF0B724B1F008F301F /* GLUT.framework */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		1AB674ADFE9D54B511CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8DD76F6C0486A84900D96B5E /* GLViewer */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C6859E8C029090F304C91782 /* Documentation */ = {
+			isa = PBXGroup;
+			children = (
+				C6859E8B029090EE04C91782 /* GLViewer.1 */,
+			);
+			name = Documentation;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8DD76F620486A84900D96B5E /* GLViewer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DEB923108733DC60010E9CD /* Build configuration list for PBXNativeTarget "GLViewer" */;
+			buildPhases = (
+				8DD76F640486A84900D96B5E /* Sources */,
+				8DD76F660486A84900D96B5E /* Frameworks */,
+				8DD76F690486A84900D96B5E /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GLViewer;
+			productInstallPath = "$(HOME)/bin";
+			productName = GLViewer;
+			productReference = 8DD76F6C0486A84900D96B5E /* GLViewer */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		08FB7793FE84155DC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 1DEB923508733DC60010E9CD /* Build configuration list for PBXProject "GLViewer" */;
+			hasScannedForEncodings = 1;
+			mainGroup = 08FB7794FE84155DC02AAC07 /* GLViewer */;
+			projectDirPath = "";
+			targets = (
+				8DD76F620486A84900D96B5E /* GLViewer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8DD76F640486A84900D96B5E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70C82BD50B724B99008F301F /* main.cpp in Sources */,
+				70C82C4A0B725204008F301F /* BlankMaterial.cpp in Sources */,
+				70C82C4D0B725204008F301F /* Color.cpp in Sources */,
+				70C82C4F0B725204008F301F /* Group.cpp in Sources */,
+				70C82C510B725204008F301F /* HitRecord.cpp in Sources */,
+				70C82C530B725204008F301F /* Image.cpp in Sources */,
+				70C82C550B725204008F301F /* LambertianMaterial.cpp in Sources */,
+				70C82C5A0B725204008F301F /* PinholeCamera.cpp in Sources */,
+				70C82C5C0B725204008F301F /* Plane.cpp in Sources */,
+				70C82C5E0B725204008F301F /* PointLight.cpp in Sources */,
+				70C82C610B725204008F301F /* Ray.cpp in Sources */,
+				70C82C630B725204008F301F /* Raytracer.cpp in Sources */,
+				70C82C650B725204008F301F /* RenderContext.cpp in Sources */,
+				70C82C670B725204008F301F /* RPoint.cpp in Sources */,
+				70C82C690B725204008F301F /* Scene.cpp in Sources */,
+				70C82C6C0B725204008F301F /* Sphere.cpp in Sources */,
+				70C82C6E0B725204008F301F /* Vector.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1DEB923208733DC60010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_1)",
+				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED_1 = "\"$(SYSTEM_DEVELOPER_DIR)/SDKs/MacOSX10.4u.sdk/System/Library/Frameworks\"";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				INSTALL_PATH = "$(HOME)/bin";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_1)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)\"";
+				PRODUCT_NAME = GLViewer;
+				ZERO_LINK = YES;
+			};
+			name = Debug;
+		};
+		1DEB923308733DC60010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_1)",
+				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED_1 = "\"$(SYSTEM_DEVELOPER_DIR)/SDKs/MacOSX10.4u.sdk/System/Library/Frameworks\"";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = G5;
+				INSTALL_PATH = "$(HOME)/bin";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_1)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)\"";
+				PRODUCT_NAME = GLViewer;
+			};
+			name = Release;
+		};
+		1DEB923608733DC60010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+			};
+			name = Debug;
+		};
+		1DEB923708733DC60010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DEB923108733DC60010E9CD /* Build configuration list for PBXNativeTarget "GLViewer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB923208733DC60010E9CD /* Debug */,
+				1DEB923308733DC60010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1DEB923508733DC60010E9CD /* Build configuration list for PBXProject "GLViewer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB923608733DC60010E9CD /* Debug */,
+				1DEB923708733DC60010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 08FB7793FE84155DC02AAC07 /* Project object */;
+}

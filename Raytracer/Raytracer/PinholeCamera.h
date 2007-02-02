@@ -10,7 +10,7 @@
 #define _PINHOLECAMERA_H_
 
 #include "Camera.h"
-#include "Point.h"
+#include "RPoint.h"
 #include "Vector.h"
 
 class Ray;
@@ -20,12 +20,12 @@ class PinholeCamera : public Camera
 {
 public:
 	PinholeCamera() {}
-	PinholeCamera(const Point& pos, const Point& lookAt, const Vector& up,  float angle, float aspect = 1.0f);
+	PinholeCamera(const RPoint& pos, const RPoint& lookAt, const Vector& up,  float angle, float aspect = 1.0f);
 	~PinholeCamera() {}
 	void makeRay(Ray& ray, const RenderContext& context, double x, double y) const ;
 
 	
-	Point position;
+	RPoint position;
 	Vector g, u, v;
 };
 

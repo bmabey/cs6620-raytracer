@@ -10,20 +10,20 @@
 #define _POINTLIGHT_H_ 1
 
 #include "Light.h"
-#include "Point.h"
+#include "RPoint.h"
 #include "Color.h"
 
 class PointLight : public Light
 {
 public:
 	PointLight() {}
-	PointLight(const Point& p, const Color& c) : position(p), color(c) { }
+	PointLight(const RPoint& p, const Color& c) : position(p), color(c) { }
 	~PointLight() {}
 	
 	void getLight(Color& light_color, Vector& light_direction,
-												const RenderContext& context, const Point& pos) const;
+												const RenderContext& context, const RPoint& pos) const;
 
-	Point position;
+	RPoint position;
 	Color color;
 };
 

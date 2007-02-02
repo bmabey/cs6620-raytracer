@@ -11,7 +11,7 @@
 
 #include <math.h>
 
-class Point;
+class RPoint;
 
 class Vector
 {
@@ -49,7 +49,7 @@ public:
 	//Operations with other vectors, points
 	friend Vector operator+(const Vector& lhs, const Vector& rhs);
 	friend Vector operator-(const Vector& lhs, const Vector& rhs);
-	friend Vector operator-(const Point& lhs, const Point& rhs);
+	friend Vector operator-(const RPoint& lhs, const RPoint& rhs);
 	
 	
 	//With scalars...

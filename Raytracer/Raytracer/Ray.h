@@ -9,20 +9,20 @@
 #ifndef _RAY_H_
 #define _RAY_H_ 1
 
-#include "Point.h"
+#include "RPoint.h"
 #include "Vector.h"
 class Background;
 class Ray
 {
 public:
 	Ray() { }
-	Ray(Point p, Vector v) : o(p), d(v) { }
+	Ray(RPoint p, Vector v) : o(p), d(v) { }
 	Ray(const Ray& rhs) { *this = rhs; }
 	void normalize() { d.normalize();}
-	Point origin() const { return o;}
+	RPoint origin() const { return o;}
 	Vector direction() const { return d;}
-	Point pointAtParam(float t) const { return o + (t*d); }
-	Point o;
+	RPoint pointAtParam(float t) const { return o + (t*d); }
+	RPoint o;
 	Vector d;
 	
 };

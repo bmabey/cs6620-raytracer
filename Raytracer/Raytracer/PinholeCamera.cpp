@@ -9,11 +9,11 @@
 #include "PinholeCamera.h"
 #include "Ray.h"
 #include "Vector.h"
-#include "Point.h"
+#include "RPoint.h"
 #include "RenderContext.h"
 #include <math.h>
 
-PinholeCamera::PinholeCamera(const Point& pos, const Point& lookAt, const Vector& up, float angle, float aspect)
+PinholeCamera::PinholeCamera(const RPoint& pos, const RPoint& lookAt, const Vector& up, float angle, float aspect)
 : position(pos), g((lookAt - pos))
 {
 	g.normalize();

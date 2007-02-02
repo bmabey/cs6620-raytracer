@@ -8,7 +8,7 @@
 
 #include "Vector.h"
 
-#include "Point.h"
+#include "RPoint.h"
 
 const double Vector::PI = 3.14159265358979323846;
 
@@ -98,7 +98,7 @@ Vector operator-(const Vector& lhs, const Vector& rhs)
 	return Vector(lhs.mCoord[0]-rhs.mCoord[0], lhs.mCoord[1]-rhs.mCoord[1], lhs.mCoord[2]-rhs.mCoord[2]);
 }
 
-Vector operator-(const Point& lhs, const Point& rhs)
+Vector operator-(const RPoint& lhs, const RPoint& rhs)
 {
 	return Vector(lhs.mCoord[0]-rhs.mCoord[0], lhs.mCoord[1]-rhs.mCoord[1], lhs.mCoord[2]-rhs.mCoord[2]);
 }

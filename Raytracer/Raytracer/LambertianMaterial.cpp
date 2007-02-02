@@ -8,7 +8,7 @@
 
 #include "LambertianMaterial.h"
 #include "Color.h"
-#include "Point.h"
+#include "RPoint.h"
 #include "Vector.h"
 #include "HitRecord.h"
 #include "Primitive.h"
@@ -21,7 +21,7 @@
 void LambertianMaterial::shade(Color& result, const RenderContext& context, const Ray& ray, const HitRecord& hit, int depth) const
 {
 	//Compute hit position
-	Point hit_position = ray.pointAtParam(hit.t);
+	RPoint hit_position = ray.pointAtParam(hit.t);
 	//Get normal from primitive
 	Vector N;
 	hit.primitive->getNormal(N, hit, hit_position);

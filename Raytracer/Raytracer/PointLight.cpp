@@ -10,7 +10,7 @@
 #include "Vector.h"
 
 void PointLight::getLight(Color& light_color, Vector& light_direction,
-											const RenderContext& context, const Point& pos) const
+											const RenderContext& context, const RPoint& pos) const
 {
 	light_color = color;
 	light_direction = position - pos;
