@@ -25,7 +25,8 @@ class Primitive : public Object
 public:
 	
 	Primitive() {  }
-	virtual ~Primitive() { delete material; }
+	virtual ~Primitive() { //delete material; 
+	}
 	virtual void preprocess() { }; 
 	virtual bool intersect(HitRecord& hit, const RenderContext& context, const Ray& ray) const = 0;
 	virtual void getNormal(Vector& N, const HitRecord& hit, const Point& pos) const = 0;
