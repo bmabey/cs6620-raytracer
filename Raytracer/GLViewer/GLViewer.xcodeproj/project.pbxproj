@@ -9,6 +9,14 @@
 /* Begin PBXBuildFile section */
 		70261A3C0B73BCF100208D82 /* Point.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70261A3A0B73BCF100208D82 /* Point.cpp */; };
 		70261A3D0B73BCF100208D82 /* Point.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 70261A3B0B73BCF100208D82 /* Point.h */; };
+		703E054B0B784C3E00788D87 /* Triangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 703E05490B784C3E00788D87 /* Triangle.cpp */; };
+		703E054C0B784C3E00788D87 /* Triangle.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 703E054A0B784C3E00788D87 /* Triangle.h */; };
+		703E05A00B78560500788D87 /* Disk.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 703E059E0B78560500788D87 /* Disk.cpp */; };
+		703E05A10B78560500788D87 /* Disk.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 703E059F0B78560500788D87 /* Disk.h */; };
+		703E06750B785D9B00788D87 /* Ring.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 703E06730B785D9B00788D87 /* Ring.cpp */; };
+		703E06760B785D9B00788D87 /* Ring.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 703E06740B785D9B00788D87 /* Ring.h */; };
+		703E06DC0B78769500788D87 /* Box.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 703E06DA0B78769500788D87 /* Box.cpp */; };
+		703E06DD0B78769500788D87 /* Box.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 703E06DB0B78769500788D87 /* Box.h */; };
 		70C82BC00B724B1F008F301F /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70C82BBF0B724B1F008F301F /* GLUT.framework */; };
 		70C82BC60B724B3D008F301F /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70C82BC50B724B3D008F301F /* OpenGL.framework */; };
 		70C82BD30B724B99008F301F /* glui.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 70C82BD00B724B99008F301F /* glui.h */; };
@@ -86,6 +94,10 @@
 				70C82C6D0B725204008F301F /* Sphere.h in CopyFiles */,
 				70C82C6F0B725204008F301F /* Vector.h in CopyFiles */,
 				70261A3D0B73BCF100208D82 /* Point.h in CopyFiles */,
+				703E054C0B784C3E00788D87 /* Triangle.h in CopyFiles */,
+				703E05A10B78560500788D87 /* Disk.h in CopyFiles */,
+				703E06760B785D9B00788D87 /* Ring.h in CopyFiles */,
+				703E06DD0B78769500788D87 /* Box.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
@@ -94,6 +106,14 @@
 /* Begin PBXFileReference section */
 		70261A3A0B73BCF100208D82 /* Point.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = Point.cpp; path = ../Raytracer/Point.cpp; sourceTree = SOURCE_ROOT; };
 		70261A3B0B73BCF100208D82 /* Point.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = Point.h; path = ../Raytracer/Point.h; sourceTree = SOURCE_ROOT; };
+		703E05490B784C3E00788D87 /* Triangle.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = Triangle.cpp; path = ../Raytracer/Triangle.cpp; sourceTree = SOURCE_ROOT; };
+		703E054A0B784C3E00788D87 /* Triangle.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = Triangle.h; path = ../Raytracer/Triangle.h; sourceTree = SOURCE_ROOT; };
+		703E059E0B78560500788D87 /* Disk.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = Disk.cpp; path = ../Raytracer/Disk.cpp; sourceTree = SOURCE_ROOT; };
+		703E059F0B78560500788D87 /* Disk.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = Disk.h; path = ../Raytracer/Disk.h; sourceTree = SOURCE_ROOT; };
+		703E06730B785D9B00788D87 /* Ring.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = Ring.cpp; path = ../Raytracer/Ring.cpp; sourceTree = SOURCE_ROOT; };
+		703E06740B785D9B00788D87 /* Ring.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = Ring.h; path = ../Raytracer/Ring.h; sourceTree = SOURCE_ROOT; };
+		703E06DA0B78769500788D87 /* Box.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = Box.cpp; path = ../Raytracer/Box.cpp; sourceTree = SOURCE_ROOT; };
+		703E06DB0B78769500788D87 /* Box.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = Box.h; path = ../Raytracer/Box.h; sourceTree = SOURCE_ROOT; };
 		70C82BBF0B724B1F008F301F /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = /Developer/SDKs/MacOSX10.4u.sdk/System/Library/Frameworks/GLUT.framework; sourceTree = "<absolute>"; };
 		70C82BC50B724B3D008F301F /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = /Developer/SDKs/MacOSX10.4u.sdk/System/Library/Frameworks/OpenGL.framework; sourceTree = "<absolute>"; };
 		70C82BD00B724B99008F301F /* glui.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = glui.h; sourceTree = "<group>"; };
@@ -167,6 +187,14 @@
 		08FB7795FE84155DC02AAC07 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				703E06DA0B78769500788D87 /* Box.cpp */,
+				703E06DB0B78769500788D87 /* Box.h */,
+				703E06730B785D9B00788D87 /* Ring.cpp */,
+				703E06740B785D9B00788D87 /* Ring.h */,
+				703E059E0B78560500788D87 /* Disk.cpp */,
+				703E059F0B78560500788D87 /* Disk.h */,
+				703E05490B784C3E00788D87 /* Triangle.cpp */,
+				703E054A0B784C3E00788D87 /* Triangle.h */,
 				70261A3A0B73BCF100208D82 /* Point.cpp */,
 				70261A3B0B73BCF100208D82 /* Point.h */,
 				70C82C220B725204008F301F /* Background.h */,
@@ -289,6 +317,10 @@
 				70C82C6C0B725204008F301F /* Sphere.cpp in Sources */,
 				70C82C6E0B725204008F301F /* Vector.cpp in Sources */,
 				70261A3C0B73BCF100208D82 /* Point.cpp in Sources */,
+				703E054B0B784C3E00788D87 /* Triangle.cpp in Sources */,
+				703E05A00B78560500788D87 /* Disk.cpp in Sources */,
+				703E06750B785D9B00788D87 /* Ring.cpp in Sources */,
+				703E06DC0B78769500788D87 /* Box.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
