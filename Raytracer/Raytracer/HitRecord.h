@@ -11,6 +11,9 @@
 
 #include <limits>
 #include "Material.h"
+#include <assert.h>
+
+#define MAXSIZE 400
 using std::numeric_limits;
 
 class Primitive;
@@ -24,11 +27,16 @@ public:
 	HitRecord() : t(numeric_limits<double>::infinity()) {}
 	bool hit(double hit_t, const Primitive* hit_prim, const Material* hit_matl);
 	void setTinf() { t = numeric_limits<double>::infinity(); }
+	template<typename T> T* getScratchpad() const { assert(sizeof(T) <= MAXSIZE); return (T*)(data); }
+	
 	double t;
 	const Primitive* primitive;
 	const Material* material;
+	char data[MAXSIZE];
 	
 };
+
+
 
 
 #endif

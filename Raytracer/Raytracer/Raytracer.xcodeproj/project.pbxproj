@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		701A235C0B82C57F00563884 /* Heightfield.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 701A235A0B82C57F00563884 /* Heightfield.h */; };
+		701A235D0B82C57F00563884 /* Heightfield.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 701A235B0B82C57F00563884 /* Heightfield.cpp */; };
 		702619F20B73BA1800208D82 /* Raytracer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 702619F00B73BA1800208D82 /* Raytracer.cpp */; };
 		702619F30B73BA1800208D82 /* Raytracer.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 702619F10B73BA1800208D82 /* Raytracer.h */; };
 		703E04BA0B783F6700788D87 /* Triangle.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 703E04B80B783F6700788D87 /* Triangle.h */; };
@@ -92,6 +94,7 @@
 				703E05530B784EC700788D87 /* Disk.h in CopyFiles */,
 				703E064A0B785B6300788D87 /* Ring.h in CopyFiles */,
 				703E067A0B785DC800788D87 /* Box.h in CopyFiles */,
+				701A235C0B82C57F00563884 /* Heightfield.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
@@ -99,6 +102,8 @@
 
 /* Begin PBXFileReference section */
 		08FB7796FE84155DC02AAC07 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		701A235A0B82C57F00563884 /* Heightfield.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Heightfield.h; sourceTree = "<group>"; };
+		701A235B0B82C57F00563884 /* Heightfield.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Heightfield.cpp; sourceTree = "<group>"; };
 		702619F00B73BA1800208D82 /* Raytracer.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; path = Raytracer.cpp; sourceTree = "<group>"; };
 		702619F10B73BA1800208D82 /* Raytracer.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = Raytracer.h; sourceTree = "<group>"; };
 		703E04B80B783F6700788D87 /* Triangle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Triangle.h; sourceTree = "<group>"; };
@@ -220,6 +225,8 @@
 				703E06490B785B6300788D87 /* Ring.cpp */,
 				703E06780B785DC800788D87 /* Box.h */,
 				703E06790B785DC800788D87 /* Box.cpp */,
+				701A235A0B82C57F00563884 /* Heightfield.h */,
+				701A235B0B82C57F00563884 /* Heightfield.cpp */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -301,6 +308,7 @@
 				703E05540B784EC700788D87 /* Disk.cpp in Sources */,
 				703E064B0B785B6300788D87 /* Ring.cpp in Sources */,
 				703E067B0B785DC800788D87 /* Box.cpp in Sources */,
+				701A235D0B82C57F00563884 /* Heightfield.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

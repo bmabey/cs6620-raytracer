@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		701A23910B82D6D600563884 /* Heightfield.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 701A238F0B82D6D600563884 /* Heightfield.cpp */; };
+		701A23920B82D6D600563884 /* Heightfield.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 701A23900B82D6D600563884 /* Heightfield.h */; };
 		70261A3C0B73BCF100208D82 /* Point.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70261A3A0B73BCF100208D82 /* Point.cpp */; };
 		70261A3D0B73BCF100208D82 /* Point.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 70261A3B0B73BCF100208D82 /* Point.h */; };
 		703E054B0B784C3E00788D87 /* Triangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 703E05490B784C3E00788D87 /* Triangle.cpp */; };
@@ -98,12 +100,15 @@
 				703E05A10B78560500788D87 /* Disk.h in CopyFiles */,
 				703E06760B785D9B00788D87 /* Ring.h in CopyFiles */,
 				703E06DD0B78769500788D87 /* Box.h in CopyFiles */,
+				701A23920B82D6D600563884 /* Heightfield.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		701A238F0B82D6D600563884 /* Heightfield.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = Heightfield.cpp; path = ../Raytracer/Heightfield.cpp; sourceTree = SOURCE_ROOT; };
+		701A23900B82D6D600563884 /* Heightfield.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = Heightfield.h; path = ../Raytracer/Heightfield.h; sourceTree = SOURCE_ROOT; };
 		70261A3A0B73BCF100208D82 /* Point.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = Point.cpp; path = ../Raytracer/Point.cpp; sourceTree = SOURCE_ROOT; };
 		70261A3B0B73BCF100208D82 /* Point.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = Point.h; path = ../Raytracer/Point.h; sourceTree = SOURCE_ROOT; };
 		703E05490B784C3E00788D87 /* Triangle.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = Triangle.cpp; path = ../Raytracer/Triangle.cpp; sourceTree = SOURCE_ROOT; };
@@ -187,6 +192,8 @@
 		08FB7795FE84155DC02AAC07 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				701A238F0B82D6D600563884 /* Heightfield.cpp */,
+				701A23900B82D6D600563884 /* Heightfield.h */,
 				703E06DA0B78769500788D87 /* Box.cpp */,
 				703E06DB0B78769500788D87 /* Box.h */,
 				703E06730B785D9B00788D87 /* Ring.cpp */,
@@ -321,6 +328,7 @@
 				703E05A00B78560500788D87 /* Disk.cpp in Sources */,
 				703E06750B785D9B00788D87 /* Ring.cpp in Sources */,
 				703E06DC0B78769500788D87 /* Box.cpp in Sources */,
+				701A23910B82D6D600563884 /* Heightfield.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

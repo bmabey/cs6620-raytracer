@@ -72,6 +72,69 @@ bool Box::intersect(HitRecord& hit, const RenderContext& context, const Ray& ray
 	
 }
 
+//Overloaded for bounding box use
+bool Box::intersect(float& tnear, float& tfar, const Ray& ray) const
+{	
+	float txMin, txMax, tymMin, tymMax, tzmMin, tzmMax;
+	
+	if (ray.d.x() >= 0) 
+	{
+		txMin = (mMin.x() - ray.o.x()) / ray.d.x();
+		txMax = (mMax.x() - ray.o.x()) / ray.d.x();
+	}
+	else 
+	{
+		txMin = (mMax.x() - ray.o.x()) / ray.d.x();
+		txMax = (mMin.x() - ray.o.x()) / ray.d.x();
+	}
+	
+	if (ray.d.y() >= 0) 
+	{
+		tymMin = (mMin.y() - ray.o.y()) / ray.d.y();
+		
+		tymMax = (mMax.y() - ray.o.y()) / ray.d.y();
+	}
+	else 
+	{
+		tymMin = (mMax.y() - ray.o.y()) / ray.d.y();
+		tymMax = (mMin.y() - ray.o.y()) / ray.d.y();
+	}
+	
+	if ((txMin > tymMax) || (tymMin > txMax))
+		return false;
+	if (tymMin > txMin)
+		txMin = tymMin;
+	if (tymMax < txMax)
+		txMax = tymMax;
+	
+	if (ray.d.z() >= 0) 
+	{
+		tzmMin = (mMin.z() - ray.o.z()) / ray.d.z();
+		tzmMax = (mMax.z() - ray.o.z()) / ray.d.z();
+	}
+	else 
+	{
+		tzmMin = (mMax.z() - ray.o.z()) / ray.d.z();
+		tzmMax = (mMin.z() - ray.o.z()) / ray.d.z();
+	}
+	
+	if ( (txMin > tzmMax) || (tzmMin > txMax) ) return false;
+	if (tzmMin > txMin)
+		txMin = tzmMin;
+	if (tzmMax < txMax)
+		txMax = tzmMax;
+	
+	if((txMin < 10000000.0) && (txMax > .001))
+	{
+		tnear = (txMin < 0) ? 0 : txMin;
+		tfar = txMax;
+		return true;
+	}
+	
+	return false;
+	
+}
+
 void Box::getNormal(Vector& N, const HitRecord& record, const Point& pos) const
 {
 	float epsilon = .001f;

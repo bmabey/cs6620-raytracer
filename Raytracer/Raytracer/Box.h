@@ -21,6 +21,7 @@ public:
 	Box() { }
 	Box(Material* m, Point min, Point max) : mMin(min), mMax(max)	{ material = m; }
 	bool intersect(HitRecord& hit, const RenderContext& context, const Ray& ray) const;
+	bool intersect(float& tnear, float& tfar, const Ray& ray) const;
 	void getNormal(Vector& N, const HitRecord& hit, const Point& pos) const;
 private:		
 	Point mMin;

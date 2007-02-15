@@ -11,6 +11,7 @@
 #include <iostream>
 #include "Image.h"
 #include "Sphere.h"
+#include "Heightfield.h"
 #include "Triangle.h"
 #include "Disk.h"
 #include "Ring.h"
@@ -78,7 +79,94 @@ void addPyramid(Point b1, Point b2, float sphere_size, Scene* scene)
 
 }
 
+//Scene* Raytracer::make_scene()
+//{
+//  Scene* scene = new Scene();
+//  scene->setBackground(new SolidBackground(Color(0.0, 0.0, 0.0)));
+//
+//  Material* spherematl = new LambertianMaterial(Color(1, 1, 0), .6, .4);
+//  scene->addObject(new Sphere(spherematl,
+//                              Point(0, -2, 0), 3));
+//  
+//  Material* hfmatl = new LambertianMaterial(Color(.6, .6, .6), .8, .2);
+//
+//	  scene->addObject(new Heightfield(hfmatl,
+//                                   "mount_200_200.hf",
+//                                   Point(-10.5, -10.5, -1), Point(10.5, 10.5, 3)));
+//																	 
+//		  scene->addObject(new Heightfield(hfmatl,
+//                                   "mount_200_200.hf",
+//                                   Point(10.5, 10.5, -1), Point(20.5, 20.5, 3)));
+//
+//																		 
+//		  scene->addObject(new Heightfield(hfmatl,
+//                                   "mount_200_200.hf",
+//                                   Point(15.5, 15.5, -1), Point(35.5, 35.5, 3)));
+//
+//
+//
+//  scene->setAmbient(Color(.4, .4, .4));
+//  scene->addLight(new PointLight(Point(-40, -40, 100), Color(.8,.8,.8)));
+//  scene->addLight(new PointLight(Point(-20, -20, 20), Color(.3,.3,.9)));
+//	scene->addLight(new PointLight(Point(80, 20, 60), Color(.5,.3,.3)));
+//
+//  //scene->setCamera(new PinholeCamera(Point(-2.5, -20, 10),
+//  scene->setCamera(new PinholeCamera(Point(-10.5, -30, 20),
+//                                     Point(0.5, 0, 4.5),
+//                                     Vector(0, 1, 0),
+//                                     26));
+//
+//  return scene;
+//}
+Scene* Raytracer::make_scene()
+{
+  Scene* scene = new Scene();
+  scene->setBackground(new SolidBackground(Color(.3, .6, .5)));
+  Material* disk1matl = new LambertianMaterial(Color(1, .2, .2), .6, .4);
+  scene->addObject(new Disk(disk1matl,
+                            Point(3., -3.3, 2.5), Vector(-1, -1, 1), .5));
+  Material* disk2matl = new LambertianMaterial(Color(.2, 1, .2), .6, .4);
+  scene->addObject(new Disk(disk2matl,
+                            Point(2.5, -3.3, 2.5), Vector(-1, -1, 1), .5));
+  scene->addObject(new Disk(disk1matl,
+                            Point(2., -3.3, 2.5), Vector(-1, -1, 1), .5));
+  scene->addObject(new Disk(disk2matl,
+                            Point(1.5, -3.3, 2.5), Vector(-1, -1, 1), .5));
+  scene->addObject(new Disk(disk1matl,
+                            Point(1., -3.3, 2.5), Vector(-1, -1, 1), .5));
+  Material* spherematl = new LambertianMaterial(Color(1, 0, 0), .6, .4);
+  scene->addObject(new Sphere(spherematl,
+                              Point(-2, 2, 5), .8));
+  Material* ringmatl = new LambertianMaterial(Color(.25, .25, 1), .6, .4);
+  scene->addObject(new Ring(ringmatl,
+                            Point(-2, 2, 5), Vector(1, -1, 1), 1.2, 1.8));
+  scene->addObject(new Ring(ringmatl,
+                            Point(-2, 2, 5), Vector(1, -1, 1), 2.2, 2.8));
+  Material* trimatl = new LambertianMaterial(Color(1, 1, 0), .6, .4);
+  scene->addObject(new Triangle(trimatl,
+                                Point(1,1,4), Point(3,-.5,2), Point(3, 1.5, 6)));
+  Material* hfmatl = new LambertianMaterial(Color(.5, 1, 1), .8, .2);
+  scene->addObject(new Heightfield(hfmatl,
+                                   "mount_200_200.hf.original",
+                                   Point(-4.5, -4.5, -1), Point(4.5, 4.5, 3)));
 
+
+  scene->setAmbient(Color(.4, .4, .4));
+  scene->addLight(new PointLight(Point(-40, -40, 100), Color(.8,.8,.8)));
+  scene->addLight(new PointLight(Point(80, 20, 60), Color(.5,.3,.3)));
+
+  //scene->setCamera(new PinholeCamera(Point(-2.5, -20, 10),
+  scene->setCamera(new PinholeCamera(Point(-2.5, -20, 10),
+                                     Point(0.5, 0, 4.5),
+                                     Vector(0, 0, 1),
+                                     26));
+
+  return scene;
+}
+
+
+/* 
+Assignment 3
 
 Scene* Raytracer::make_scene()
 {
@@ -132,4 +220,5 @@ Scene* Raytracer::make_scene()
 
   return scene;
 }
+*/
 	
