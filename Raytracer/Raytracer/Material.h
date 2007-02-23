@@ -21,7 +21,7 @@ public:
 	Material() { }
 	virtual ~Material() { }
  	virtual void preprocess() {} 
- 	virtual void shade(Color& result, const RenderContext& context, const Ray& ray, const HitRecord& hit, int depth) const = 0; 
+ 	virtual void shade(Color& result, const RenderContext& context, const Ray& ray, const HitRecord& hit, float attenuation, int depth) const = 0; 
 	
 };
 

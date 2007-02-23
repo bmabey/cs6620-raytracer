@@ -105,6 +105,14 @@ Vector operator-(const Point& lhs, const Point& rhs)
 
 
 //With scalars...
+Vector operator+(float scalar, const Vector& vector)
+{
+	return Vector(vector.mCoord[0]+scalar,vector.mCoord[1]+scalar,vector.mCoord[2]+scalar);
+}
+Vector operator+(const Vector& vector, float scalar)
+{
+	return Vector(vector.mCoord[0]+scalar,vector.mCoord[1]+scalar,vector.mCoord[2]+scalar);
+}
 Vector operator*(const Vector& vector, float scalar)
 {
 	return Vector(vector.mCoord[0]*scalar,vector.mCoord[1]*scalar,vector.mCoord[2]*scalar);

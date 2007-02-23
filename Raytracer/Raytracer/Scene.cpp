@@ -95,7 +95,7 @@ void Scene::render()
 				//bool intersect(HitRecord& hit, const RenderContext& context, const Ray& ray) const;
 				if(world->intersect(record, context, ray))
 				{
-					record.material->shade(result, context, ray, record, 0);
+					record.material->shade(result, context, ray, record, 1.0, 1);
 				}
 				else
 				{

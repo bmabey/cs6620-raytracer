@@ -18,7 +18,7 @@ public:
 	LambertianMaterial() { }
 	LambertianMaterial(const Color& c, float kd, float ka) : mSurfaceColor(c), mKd(kd), mKa(ka) { }
 	~LambertianMaterial() { }
- 	void shade(Color& result, const RenderContext& context, const Ray& ray, const HitRecord& hit, int depth) const;
+ 	void shade(Color& result, const RenderContext& context, const Ray& ray, const HitRecord& hit, float attenuation, int depth) const;
 private:
 	Color mSurfaceColor;
 	float mKd;

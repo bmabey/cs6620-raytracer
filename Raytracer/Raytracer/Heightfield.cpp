@@ -232,10 +232,11 @@ void Heightfield::getNormal(Vector& N, const HitRecord& hit, const Point& pos) c
 	//Patch normals...
 	//Vector n( -( (mZu + mSy)/mCellsize.x() ), -( (mZv + (mZuv*mSx)) / mCellsize.x() ), 1.0f );
 	HeightfieldData* data = hit.getScratchpad<HeightfieldData>();
-	Vector n( -( (data->Zu + data->Sy)/mCellsize.x() ), -( (data->Zv + (data->Zuv*data->Sx)) / mCellsize.x() ), 1.0f );
+	Vector n( -( (data->Zu + data->Zuv*data->Sy)/mCellsize.x() ), -( (data->Zv + (data->Zuv*data->Sx)) / mCellsize.x() ), 1.0f );
 	
 	
 	n.normalize();
 	N = n;
+	
 }
 

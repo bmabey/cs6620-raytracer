@@ -40,7 +40,9 @@ public:
 	void setImage(Image* i) { image = i;} 
 	void addObject(Object* object);
 	void addLight(Light* light) { lights.push_back(light); }
-	
+	void setMaxRayDepth(int depth) {maxRayDepth = depth; }
+	void setMinAttenuation(float atten) {minAttenuation = atten; }
+
 	
 	
 	vector<Light*> lights;
@@ -49,9 +51,12 @@ public:
 	Color ambient;
 	Group* world;
 	Image* image;
+	int maxRayDepth;
+  float minAttenuation;
 private:
 	int mXRes;
 	int mYRes;
+
 };
 
 #endif

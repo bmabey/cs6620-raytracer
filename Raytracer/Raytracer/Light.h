@@ -13,6 +13,7 @@ class Vector;
 class Point;
 class Color;
 class RenderContext;
+class HitRecord;
 
 class Light
 {
@@ -23,7 +24,7 @@ public:
 	virtual ~Light() {};
 	virtual void preprocess() {};  
 	virtual void getLight(Color& light_color, Vector& light_direction,
-												const RenderContext& context, const Point& pos) const = 0;
+												const RenderContext& context, const Point& pos, HitRecord& record) const = 0;
 
 	
 };

@@ -22,7 +22,7 @@ public:
 	BlankMaterial() { }
 	BlankMaterial(const Color& c) : mSurfaceColor(c) { }
 	~BlankMaterial() { }
-  void shade(Color& result, const RenderContext& context, const Ray& ray, const HitRecord& hit, int depth) const { result = mSurfaceColor;}
+  void shade(Color& result, const RenderContext& context, const Ray& ray, const HitRecord& hit, float attenuation, int depth) const { result = mSurfaceColor;}
 private:
 	Color mSurfaceColor;
 	

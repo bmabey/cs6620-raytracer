@@ -53,6 +53,8 @@ public:
 	
 	
 	//With scalars...
+	friend Vector operator+(float scalar, const Vector& vector);
+	friend Vector operator+(const Vector& vector, float scalar);
 	friend Vector operator*(const Vector& vector, float scalar);
 	friend Vector operator*(float scalar, const Vector& vector);
 	friend Vector operator/(const Vector& vector, float scalar);

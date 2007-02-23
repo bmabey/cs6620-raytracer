@@ -31,6 +31,14 @@ Color operator/ (const Color &lhs_color,const Color &rhs_color)
 								lhs_color.mB / rhs_color.mB); 
 }
 
+Color operator-(float scalar, const Color& color)
+{
+	return Color(scalar - color.mR, scalar - color.mG, scalar - color.mB);
+}
+Color operator-(const Color& color, float scalar)
+{
+	return Color(color.mR - scalar,color.mG- scalar,color.mB- scalar);
+}
 Color& Color::operator= (const Color &rhs_color)
 {
 	mR = rhs_color.getR();

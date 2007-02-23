@@ -24,6 +24,9 @@
 #include "PinholeCamera.h"
 #include "BlankMaterial.h"
 #include "LambertianMaterial.h"
+#include "PhongMaterial.h"
+#include "MetalMaterial.h"
+#include "DielectricMaterial.h"
 #include "Vector.h"
 #include "Point.h"
 #include "PointLight.h"
@@ -45,79 +48,115 @@ void Raytracer::run()
 }
 
 
-int rv()
+Scene* Raytracer::make_scene()
 {
-	return (rand() % 100) > 50 ? 1 : -1;
-}
-
-void addPyramid(Point b1, Point b2, float sphere_size, Scene* scene)
-{
-  Material* box1matl = new LambertianMaterial(Color(1.0f, 1.0f, 0.0f), .6, .4);
-  scene->addObject(new Box(box1matl,
-                           b1, b2));
-	Material* trimatl = new LambertianMaterial(Color(1, 1, 0), .6, .4);
-	float x = (b1[0] < 0) ? (b1[0]+b2[0])/2 : b1[0]+(b2[0]-b1[0])/2; 
-	if (b1[0] < 0 && b2[0] < 0) x = b1[0]-(abs(b2[0])-abs(b1[0]))/2;
-	Point top = Point(x,(b2[2]-b1[2])/2,(b1[2]+b2[2])/2);
-	
-  scene->addObject(new Triangle(trimatl,Point(b1.x(),b2.y(),b1.z()), top, Point(b2.x(), b2.y(), b1.z())));	
-	scene->addObject(new Triangle(trimatl,Point(b1.x(),b2.y(),b2.z()), top, Point(b2.x(), b2.y(), b2.z())));	
-	scene->addObject(new Triangle(trimatl,Point(b1.x(),b2.y(),b1.z()), top, Point(b1.x(), b2.y(), b2.z())));											 											 
-	scene->addObject(new Triangle(trimatl,Point(b2.x(),b2.y(),b1.z()), top, Point(b2.x(), b2.y(), b2.z())));	
+  Scene* scene = new Scene();
+  scene->setBackground(new SolidBackground(Color(0.5, 0.8, 0.9)));
+  Material* groundmatl = new LambertianMaterial(Color(0.65, 0.75, 0.85), .6, .4);
+  scene->addObject(new Plane(groundmatl,
+                             Vector(0,0,1), Point(0,0,1.5)));
 
 
-	Material* spherematl = new LambertianMaterial(Color(1, 0, 0), .6, .4);
-  top.setY( top.y()+ 1.0);
-	scene->addObject(new Sphere(spherematl,
-                              top, sphere_size));
-  Material* ringmatl = new LambertianMaterial(Color(.25, .25, 1), .6, .4);
+  for(int i=0;i<4;i++){
+    double eta = 1 + i*0.5 + .05;
+    Material* transp_matl = new DielectricMaterial(eta, 100);
+    Point corner(i*1.3 - 4, -3, 1.51);
+    Vector size(0.20, 2.5, 1.4);
+    scene->addObject(new Box(transp_matl,
+                             corner, corner+size));
+  }
+
+
+  Material* ringmatl = new LambertianMaterial(Color(.9, .9, .1), .2, .8);
+  for(int i=0;i<15;i++){
+    double r = .30;
+    Point center(-9, 0, 1.6+r);
+    Vector offset(2.35*r, 0, 0);
+    scene->addObject(new Ring(ringmatl,
+                              center+offset*i, Vector(0.2, -1, -0.2), r*0.5, r));
+  }
   
-	scene->addObject(new Ring(ringmatl,
-                            top, Vector(rv(), rv(), rv()), sphere_size+0.4, sphere_size+1.0));
-  scene->addObject(new Ring(ringmatl,
-                            top, Vector(rv(), rv(), rv()), sphere_size+1.4, sphere_size+2.0));
+	Material* ball_matl = new MetalMaterial(Color(0.8, 0.8, 0.8), 100);
+  scene->addObject(new Sphere(ball_matl, Point(-7, 3.5, 2.4), 1.2));
+	
+	
+  Material* hfmatl = new PhongMaterial(Color(0.7, 0.1, .3), 0.6, 0.4, Color(1,1,1), 30);
 
+
+	scene->addObject(new Heightfield(hfmatl,
+                                   "mount_200_200.hf",
+                                   Point(-4.5, 2.0, 2), Point(-1.5, 5.0 , 4)));
+
+  scene->setAmbient(Color(.4, .4, .4));
+  scene->addLight(new PointLight(Point(20, -20, 100), Color(.9,.9,.9)));
+  scene->addLight(new PointLight(Point(-40, -30, 50), Color(.3,.1,.1)));
+
+  scene->setCamera(new PinholeCamera(Point(8, -18, 7.5),
+                                     Point(-4.7, 2.5, 1.5),
+                                     Vector(0, 0, 1),
+                                     15));
+
+/*
+	Point p( 8, -18, 7.5 );
+	Point lookat( -4.7, 2.5, 1.5 );
+	lookat = Point(-3, 3.5, 2);
+	Vector direction = lookat - p;
+	scene->setCamera( new PinholeCamera( p + ( 0.9 * direction ),
+		lookat,
+		Vector( 0, 0, 1 ),
+		15 ) );
+*/
+  scene->setMaxRayDepth(25);
+  scene->setMinAttenuation(.01);
+
+  return scene;
 }
 
-//Scene* Raytracer::make_scene()
-//{
-//  Scene* scene = new Scene();
-//  scene->setBackground(new SolidBackground(Color(0.0, 0.0, 0.0)));
-//
-//  Material* spherematl = new LambertianMaterial(Color(1, 1, 0), .6, .4);
-//  scene->addObject(new Sphere(spherematl,
-//                              Point(0, -2, 0), 3));
-//  
-//  Material* hfmatl = new LambertianMaterial(Color(.6, .6, .6), .8, .2);
-//
-//	  scene->addObject(new Heightfield(hfmatl,
-//                                   "mount_200_200.hf",
-//                                   Point(-10.5, -10.5, -1), Point(10.5, 10.5, 3)));
-//																	 
-//		  scene->addObject(new Heightfield(hfmatl,
-//                                   "mount_200_200.hf",
-//                                   Point(10.5, 10.5, -1), Point(20.5, 20.5, 3)));
-//
-//																		 
-//		  scene->addObject(new Heightfield(hfmatl,
-//                                   "mount_200_200.hf",
-//                                   Point(15.5, 15.5, -1), Point(35.5, 35.5, 3)));
-//
-//
-//
-//  scene->setAmbient(Color(.4, .4, .4));
-//  scene->addLight(new PointLight(Point(-40, -40, 100), Color(.8,.8,.8)));
-//  scene->addLight(new PointLight(Point(-20, -20, 20), Color(.3,.3,.9)));
-//	scene->addLight(new PointLight(Point(80, 20, 60), Color(.5,.3,.3)));
-//
-//  //scene->setCamera(new PinholeCamera(Point(-2.5, -20, 10),
-//  scene->setCamera(new PinholeCamera(Point(-10.5, -30, 20),
-//                                     Point(0.5, 0, 4.5),
-//                                     Vector(0, 1, 0),
-//                                     26));
-//
-//  return scene;
-//}
+
+/*
+//Assignment 4
+Scene* Raytracer::make_scene()
+{
+  Scene* scene = new Scene();
+  scene->setBackground(new SolidBackground(Color(0.0, 0.0, 0.0)));
+
+  Material* spherematl = new LambertianMaterial(Color(1, 1, 0), .6, .4);
+  scene->addObject(new Sphere(spherematl,
+                              Point(0, -2, 0), 3));
+  
+  Material* hfmatl = new LambertianMaterial(Color(.6, .6, .6), .8, .2);
+
+	  scene->addObject(new Heightfield(hfmatl,
+                                   "mount_200_200.hf",
+                                   Point(-10.5, -10.5, -1), Point(10.5, 10.5, 3)));
+																	 
+		  scene->addObject(new Heightfield(hfmatl,
+                                   "mount_200_200.hf",
+                                   Point(10.5, 10.5, -1), Point(20.5, 20.5, 3)));
+
+																		 
+		  scene->addObject(new Heightfield(hfmatl,
+                                   "mount_200_200.hf",
+                                   Point(15.5, 15.5, -1), Point(35.5, 35.5, 3)));
+
+
+
+  scene->setAmbient(Color(.4, .4, .4));
+  scene->addLight(new PointLight(Point(-40, -40, 100), Color(.8,.8,.8)));
+  scene->addLight(new PointLight(Point(-20, -20, 20), Color(.3,.3,.9)));
+	scene->addLight(new PointLight(Point(80, 20, 60), Color(.5,.3,.3)));
+
+  //scene->setCamera(new PinholeCamera(Point(-2.5, -20, 10),
+  scene->setCamera(new PinholeCamera(Point(-10.5, -30, 20),
+                                     Point(0.5, 0, 4.5),
+                                     Vector(0, 1, 0),
+                                     26));
+
+  return scene;
+}
+
+//#4 creative
+
 Scene* Raytracer::make_scene()
 {
   Scene* scene = new Scene();
@@ -164,9 +203,41 @@ Scene* Raytracer::make_scene()
   return scene;
 }
 
-
-/* 
 Assignment 3
+
+int rv()
+{
+	return (rand() % 100) > 50 ? 1 : -1;
+}
+
+void addPyramid(Point b1, Point b2, float sphere_size, Scene* scene)
+{
+  Material* box1matl = new LambertianMaterial(Color(1.0f, 1.0f, 0.0f), .6, .4);
+  scene->addObject(new Box(box1matl,
+                           b1, b2));
+	Material* trimatl = new LambertianMaterial(Color(1, 1, 0), .6, .4);
+	float x = (b1[0] < 0) ? (b1[0]+b2[0])/2 : b1[0]+(b2[0]-b1[0])/2; 
+	if (b1[0] < 0 && b2[0] < 0) x = b1[0]-(abs(b2[0])-abs(b1[0]))/2;
+	Point top = Point(x,(b2[2]-b1[2])/2,(b1[2]+b2[2])/2);
+	
+  scene->addObject(new Triangle(trimatl,Point(b1.x(),b2.y(),b1.z()), top, Point(b2.x(), b2.y(), b1.z())));	
+	scene->addObject(new Triangle(trimatl,Point(b1.x(),b2.y(),b2.z()), top, Point(b2.x(), b2.y(), b2.z())));	
+	scene->addObject(new Triangle(trimatl,Point(b1.x(),b2.y(),b1.z()), top, Point(b1.x(), b2.y(), b2.z())));											 											 
+	scene->addObject(new Triangle(trimatl,Point(b2.x(),b2.y(),b1.z()), top, Point(b2.x(), b2.y(), b2.z())));	
+
+
+	Material* spherematl = new LambertianMaterial(Color(1, 0, 0), .6, .4);
+  top.setY( top.y()+ 1.0);
+	scene->addObject(new Sphere(spherematl,
+                              top, sphere_size));
+  Material* ringmatl = new LambertianMaterial(Color(.25, .25, 1), .6, .4);
+  
+	scene->addObject(new Ring(ringmatl,
+                            top, Vector(rv(), rv(), rv()), sphere_size+0.4, sphere_size+1.0));
+  scene->addObject(new Ring(ringmatl,
+                            top, Vector(rv(), rv(), rv()), sphere_size+1.4, sphere_size+2.0));
+
+}
 
 Scene* Raytracer::make_scene()
 {
