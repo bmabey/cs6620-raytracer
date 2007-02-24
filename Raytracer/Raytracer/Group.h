@@ -28,7 +28,7 @@ public:
 	
 	vector<Object*> objects;
 	
-private:
+protected:
 	int num_objects;
 };
 

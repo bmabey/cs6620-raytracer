@@ -268,7 +268,7 @@ void myGlutDisplay(	void )
 {
 	glClearColor(0, 0, 0, 0);
 	glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
-	glDrawPixels(512, 512, GL_RGB, GL_UNSIGNED_BYTE, image->RGBcanvas);
+	glDrawPixels(1024, 1024, GL_RGB, GL_UNSIGNED_BYTE, image->RGBcanvas);
 	glutSwapBuffers();
 /*	
 static bool once = false;
@@ -360,7 +360,7 @@ int main(int argc,	char* argv[])
 	//
 	glutInitDisplayMode(GLUT_RGB|GLUT_DOUBLE|GLUT_DEPTH);
 	//glutInitWindowSize(1000, 600);
-	glutInitWindowSize(512 + 256, 512);
+	glutInitWindowSize(1024 + 256, 1024);
 	glutInitWindowPosition(100,100);
 	glutInit(&argc, argv);
 	main_window = glutCreateWindow("CS6620 - Raytracer");

@@ -17,6 +17,8 @@
 		7023F8DF0B8D6D7A00C01F4B /* PhongMaterial.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7023F8D90B8D6D7A00C01F4B /* PhongMaterial.h */; };
 		70261A3C0B73BCF100208D82 /* Point.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70261A3A0B73BCF100208D82 /* Point.cpp */; };
 		70261A3D0B73BCF100208D82 /* Point.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 70261A3B0B73BCF100208D82 /* Point.h */; };
+		7033EDB20B8FA4D70092AF77 /* Domino.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7033EDB00B8FA4D70092AF77 /* Domino.h */; };
+		7033EDB30B8FA4D70092AF77 /* Domino.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7033EDB10B8FA4D70092AF77 /* Domino.cpp */; };
 		703E054B0B784C3E00788D87 /* Triangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 703E05490B784C3E00788D87 /* Triangle.cpp */; };
 		703E054C0B784C3E00788D87 /* Triangle.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 703E054A0B784C3E00788D87 /* Triangle.h */; };
 		703E05A00B78560500788D87 /* Disk.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 703E059E0B78560500788D87 /* Disk.cpp */; };
@@ -110,6 +112,7 @@
 				7023F8DB0B8D6D7A00C01F4B /* DielectricMaterial.h in CopyFiles */,
 				7023F8DD0B8D6D7A00C01F4B /* MetalMaterial.h in CopyFiles */,
 				7023F8DF0B8D6D7A00C01F4B /* PhongMaterial.h in CopyFiles */,
+				7033EDB20B8FA4D70092AF77 /* Domino.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
@@ -126,6 +129,8 @@
 		7023F8D90B8D6D7A00C01F4B /* PhongMaterial.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = PhongMaterial.h; path = ../Raytracer/PhongMaterial.h; sourceTree = SOURCE_ROOT; };
 		70261A3A0B73BCF100208D82 /* Point.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = Point.cpp; path = ../Raytracer/Point.cpp; sourceTree = SOURCE_ROOT; };
 		70261A3B0B73BCF100208D82 /* Point.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = Point.h; path = ../Raytracer/Point.h; sourceTree = SOURCE_ROOT; };
+		7033EDB00B8FA4D70092AF77 /* Domino.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Domino.h; sourceTree = "<group>"; };
+		7033EDB10B8FA4D70092AF77 /* Domino.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Domino.cpp; sourceTree = "<group>"; };
 		703E05490B784C3E00788D87 /* Triangle.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = Triangle.cpp; path = ../Raytracer/Triangle.cpp; sourceTree = SOURCE_ROOT; };
 		703E054A0B784C3E00788D87 /* Triangle.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = Triangle.h; path = ../Raytracer/Triangle.h; sourceTree = SOURCE_ROOT; };
 		703E059E0B78560500788D87 /* Disk.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = Disk.cpp; path = ../Raytracer/Disk.cpp; sourceTree = SOURCE_ROOT; };
@@ -267,6 +272,8 @@
 				70C82BD20B724B99008F301F /* main.cpp */,
 				70C82BC50B724B3D008F301F /* OpenGL.framework */,
 				70C82BBF0B724B1F008F301F /* GLUT.framework */,
+				7033EDB00B8FA4D70092AF77 /* Domino.h */,
+				7033EDB10B8FA4D70092AF77 /* Domino.cpp */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -353,6 +360,7 @@
 				7023F8DA0B8D6D7A00C01F4B /* DielectricMaterial.cpp in Sources */,
 				7023F8DC0B8D6D7A00C01F4B /* MetalMaterial.cpp in Sources */,
 				7023F8DE0B8D6D7A00C01F4B /* PhongMaterial.cpp in Sources */,
+				7033EDB30B8FA4D70092AF77 /* Domino.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
