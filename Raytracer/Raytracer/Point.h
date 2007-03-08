@@ -18,7 +18,12 @@ class Point
 
 public:
 	Point() { };
-	Point(float x, float y, float z);
+	Point(float x, float y, float z)
+	{
+		mCoord[0] = x;
+		mCoord[1] = y;
+		mCoord[2] = z;
+	}
 	
 	//Setters
 	void setX(float x) { mCoord[0] = x; }
@@ -34,8 +39,10 @@ public:
 	float operator[](int index) const { return mCoord[index]; }
 	
 	//Operations with other vectors, points
+	friend Point operator+(const Point& p1, const Point& p2);
 	friend Point operator+(const Point& p, const Vector& v);
 	friend Point operator-(const Point& p, const Vector& v);
+	friend Point operator/(const Point&p, float s);
 	
 	//Modifing opers
 	Point& operator=(const Point& rhs);

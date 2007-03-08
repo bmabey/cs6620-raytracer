@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		701A23910B82D6D600563884 /* Heightfield.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 701A238F0B82D6D600563884 /* Heightfield.cpp */; };
 		701A23920B82D6D600563884 /* Heightfield.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 701A23900B82D6D600563884 /* Heightfield.h */; };
+		702018B00B9DFAC400AAD591 /* Timer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 702018AE0B9DFAC400AAD591 /* Timer.cpp */; };
+		702018B10B9DFAC400AAD591 /* Timer.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 702018AF0B9DFAC400AAD591 /* Timer.h */; };
 		7023F8DA0B8D6D7A00C01F4B /* DielectricMaterial.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7023F8D40B8D6D7A00C01F4B /* DielectricMaterial.cpp */; };
 		7023F8DB0B8D6D7A00C01F4B /* DielectricMaterial.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7023F8D50B8D6D7A00C01F4B /* DielectricMaterial.h */; };
 		7023F8DC0B8D6D7A00C01F4B /* MetalMaterial.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7023F8D60B8D6D7A00C01F4B /* MetalMaterial.cpp */; };
@@ -113,6 +115,7 @@
 				7023F8DD0B8D6D7A00C01F4B /* MetalMaterial.h in CopyFiles */,
 				7023F8DF0B8D6D7A00C01F4B /* PhongMaterial.h in CopyFiles */,
 				7033EDB20B8FA4D70092AF77 /* Domino.h in CopyFiles */,
+				702018B10B9DFAC400AAD591 /* Timer.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
@@ -121,6 +124,8 @@
 /* Begin PBXFileReference section */
 		701A238F0B82D6D600563884 /* Heightfield.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = Heightfield.cpp; path = ../Raytracer/Heightfield.cpp; sourceTree = SOURCE_ROOT; };
 		701A23900B82D6D600563884 /* Heightfield.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = Heightfield.h; path = ../Raytracer/Heightfield.h; sourceTree = SOURCE_ROOT; };
+		702018AE0B9DFAC400AAD591 /* Timer.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = Timer.cpp; path = ../Raytracer/Timer.cpp; sourceTree = SOURCE_ROOT; };
+		702018AF0B9DFAC400AAD591 /* Timer.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = Timer.h; path = ../Raytracer/Timer.h; sourceTree = SOURCE_ROOT; };
 		7023F8D40B8D6D7A00C01F4B /* DielectricMaterial.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = DielectricMaterial.cpp; path = ../Raytracer/DielectricMaterial.cpp; sourceTree = SOURCE_ROOT; };
 		7023F8D50B8D6D7A00C01F4B /* DielectricMaterial.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = DielectricMaterial.h; path = ../Raytracer/DielectricMaterial.h; sourceTree = SOURCE_ROOT; };
 		7023F8D60B8D6D7A00C01F4B /* MetalMaterial.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = MetalMaterial.cpp; path = ../Raytracer/MetalMaterial.cpp; sourceTree = SOURCE_ROOT; };
@@ -212,6 +217,8 @@
 		08FB7795FE84155DC02AAC07 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				702018AE0B9DFAC400AAD591 /* Timer.cpp */,
+				702018AF0B9DFAC400AAD591 /* Timer.h */,
 				7023F8D40B8D6D7A00C01F4B /* DielectricMaterial.cpp */,
 				7023F8D50B8D6D7A00C01F4B /* DielectricMaterial.h */,
 				7023F8D60B8D6D7A00C01F4B /* MetalMaterial.cpp */,
@@ -361,6 +368,7 @@
 				7023F8DC0B8D6D7A00C01F4B /* MetalMaterial.cpp in Sources */,
 				7023F8DE0B8D6D7A00C01F4B /* PhongMaterial.cpp in Sources */,
 				7033EDB30B8FA4D70092AF77 /* Domino.cpp in Sources */,
+				702018B00B9DFAC400AAD591 /* Timer.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

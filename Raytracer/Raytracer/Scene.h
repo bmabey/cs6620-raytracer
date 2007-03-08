@@ -33,6 +33,7 @@ public:
 	//void render(int xres, int yres, const RenderContext* context);
 	void preprocess(int xres, int yres);
 	void render();
+	void renderThread();
 	//Setters
 	void setBackground(Background* color) { background = color; }
 	void setAmbient(const Color& color) { ambient = color; }
@@ -54,8 +55,12 @@ public:
 	int maxRayDepth;
   float minAttenuation;
 private:
+	int getCurrentLine();
 	int mXRes;
 	int mYRes;
+	int mCurrentLine;
+	int mThreadStatus;
+	RenderContext mContext;
 
 };
 

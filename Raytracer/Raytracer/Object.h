@@ -13,6 +13,7 @@
 #include "Ray.h"
 #include "HitRecord.h"
 #include "RenderContext.h"
+//#include "BoundingBox.h"
 
 class Object
 {
@@ -23,6 +24,8 @@ public:
 	virtual ~Object() { }
 	virtual void preprocess() { } 
 	virtual bool intersect(HitRecord& hit, const RenderContext& context, const Ray& ray) const = 0;
+	
+	//BoundingBox boundingBox;
 
 	
 };

@@ -20,6 +20,7 @@
 #include "Color.h"
 #include "Scene.h"
 #include "Plane.h"
+#include "Primitive.h"
 #include "SolidBackground.h"
 #include "PinholeCamera.h"
 #include "BlankMaterial.h"
@@ -28,8 +29,11 @@
 #include "MetalMaterial.h"
 #include "DielectricMaterial.h"
 #include "Vector.h"
+#include "BVH.h"
 #include "Point.h"
+#include "Group.h"
 #include "PointLight.h"
+#include "Timer.h"
 #include <iostream>
 #include <stdlib.h>
 #include <time.h>
@@ -37,10 +41,14 @@
 
 using std::cout;
 
-Raytracer::Raytracer()
+Raytracer::Raytracer(int width, int height)
+: mWidth(width), mHeight(height)
 {
+	Timer::currentSeconds();
 	the_scene = make_scene();
-	the_scene->preprocess(1024,1024);
+	double end_build = Timer::currentSeconds();
+	cout << "Build time: "<< end_build << "\n";
+	the_scene->preprocess(mWidth,mHeight);
 }
 Raytracer::~Raytracer()
 {
@@ -48,9 +56,171 @@ Raytracer::~Raytracer()
 }
 void Raytracer::run()
 {
+	double render_start = Timer::currentSeconds();
 	the_scene->render();
+	cout << "Render Time: " << Timer::currentSeconds() - render_start << "\n";
 	the_scene->image->writePPM();
 }
+
+static void error()
+{
+  cerr << "Error reading triangle mesh\n";
+  exit(1);
+}
+
+
+Scene* Raytracer::make_scene()
+{
+  Scene* scene = new Scene();
+  scene->setBackground(new SolidBackground(Color(0.1, 0.6, 0.9)));
+  
+
+  
+
+  Material* pedestalmatl = new MetalMaterial(Color(0.96, 0.89, 0.37), 200);
+ /*
+ objects.push_back(new Box(pedestalmatl,
+                           Point(-0.08, 0.024, -0.08), Point(0.08, 0.033, 0.08)));
+  Material* pedestalmatl2 = new LambertianMaterial(Color(0.9, 0.1, 0.3), 0.7, 0.3);
+  objects.push_back(new Box(pedestalmatl2,
+                           Point(-0.15, 0, -0.15), Point(0.15, 0.024, 0.15)));
+
+*/
+  Material* bunnymatl = new PhongMaterial(Color(0.6, 0.4, .3), 0.6, 0.4,
+                                          Color(1,1,1), 80);
+
+  ifstream in("cow.tm");
+  if(!in)
+    error();
+  bool have_normals, have_something_else;
+  in >> have_normals >> have_something_else;
+  int numverts;
+  in >> numverts;
+  if(!in)
+    error();
+  cerr << "reading " << numverts << " vertices...";
+  vector<Point> verts(numverts);
+  for(int i=0;i<numverts;i++){
+    double x,y,z;
+    in >> x >> y >> z;
+    if(!in)
+      error();
+    verts[i] = Point(x,y,z);
+  }
+  int numtris = 8599;
+  //in >> numtris;
+  cerr << " reading " << numtris << " triangles...";
+  for(int i=0;i<numtris;i++){
+    int i1, i2, i3;
+    in >> i1 >> i2 >> i3;
+				//cout << "Line #" << i << "\n";
+    if(!in)
+      error();
+    objects.push_back( new Triangle(bunnymatl, verts[i1], verts[i2], verts[i3]) );
+  }
+  cerr << " done\n";
+	
+scene->addObject(new Plane(new MetalMaterial(Color(139.0/255.0, 69.0/255.0, 19.0/255.0), 60),
+												 Vector(0,1,0), Point(0,-3.5,0.0)));
+scene->addObject(new Plane(new MetalMaterial(Color(139.0/255.0, 69.0/255.0, 19.0/255.0), 60),
+											 Vector(0,0,1), Point(0,0.0,20.0)));  
+	scene->addObject(new BVH(objects));
+
+/*
+
+	triangles
+	v -10 -4 -10
+	v 10 -4 -10
+	v 10 -4 10
+	v -10 -4 10
+	surface 0.4 0.4 0.4 0.1 0.1 0.6 100.0 0.8 0.0 1.0
+	f 0 1 2 3
+	end
+*/
+  scene->setAmbient(Color(1.0, 1.0, 1.0));
+  scene->addLight(new PointLight(Point(-10, 20, -10), Color(.9,.9,.9)));
+  scene->addLight(new PointLight(Point(-40, -70, 50), Color(.3,.1,.1)));
+
+  scene->setCamera(new PinholeCamera(Point(14.0f,0.0f,20.0f),
+                                     Point(0.0f, 0.0f, 0.0f),
+                                     Vector(0, 1, 0),
+                                     35));
+  scene->setMaxRayDepth(25);
+  scene->setMinAttenuation(.01);
+
+  return scene;
+}
+
+//Requried bunny scence
+/*
+Scene* Raytracer::make_scene()
+{
+  Scene* scene = new Scene();
+  scene->setBackground(new SolidBackground(Color(0.1, 0.6, 0.9)));
+  
+
+  
+
+  Material* pedestalmatl = new MetalMaterial(Color(0.96, 0.89, 0.37), 200);
+ objects.push_back(new Box(pedestalmatl,
+                           Point(-0.08, 0.024, -0.08), Point(0.08, 0.033, 0.08)));
+  Material* pedestalmatl2 = new LambertianMaterial(Color(0.9, 0.1, 0.3), 0.7, 0.3);
+  objects.push_back(new Box(pedestalmatl2,
+                           Point(-0.15, 0, -0.15), Point(0.15, 0.024, 0.15)));
+
+
+  Material* bunnymatl = new PhongMaterial(Color(0.6, 0.4, .3), 0.6, 0.4,
+                                          Color(1,1,1), 80);
+
+  ifstream in("bunny.tm");
+  if(!in)
+    error();
+  bool have_normals, have_something_else;
+  in >> have_normals >> have_something_else;
+  int numverts;
+  in >> numverts;
+  if(!in)
+    error();
+  cerr << "reading " << numverts << " vertices...";
+  vector<Point> verts(numverts);
+  for(int i=0;i<numverts;i++){
+    double x,y,z;
+    in >> x >> y >> z;
+    if(!in)
+      error();
+    verts[i] = Point(x,y,z);
+  }
+  int numtris;
+  in >> numtris;
+  cerr << " reading " << numtris << " triangles...";
+  for(int i=0;i<numtris;i++){
+    int i1, i2, i3;
+    in >> i1 >> i2 >> i3;
+    if(!in)
+      error();
+    objects.push_back( new Triangle(bunnymatl, verts[i1], verts[i2], verts[i3]) );
+  }
+  cerr << " done\n";
+    
+	scene->addObject(new BVH(objects));
+
+  scene->setAmbient(Color(.4, .4, .4));
+  scene->addLight(new PointLight(Point(20, 70, 100), Color(.9,.9,.9)));
+  scene->addLight(new PointLight(Point(-40, -70, 50), Color(.3,.1,.1)));
+
+  scene->setCamera(new PinholeCamera(Point(-.7,.5,.7),
+                                     Point(-0.04, .10, -0.00),
+                                     Vector(0, 1, 0),
+                                     12));
+  scene->setMaxRayDepth(25);
+  scene->setMinAttenuation(.01);
+
+  return scene;
+}
+
+/*
+
+
 
 //generates a psuedo-random integer between 0 and max
 int randint(int max)
@@ -135,6 +305,7 @@ void makeDomino(Scene* scene, Material* body_material, Material* paint_material,
 		base.setX(corner.x()+x_space+disc_radius);
 		base.setY(base.y()+y_space+disc_diameter); 
 	}
+	
 }
 
 float randfloat()
@@ -145,6 +316,9 @@ Color random_color()
 {
 	return Color(randfloat(),randfloat(),randfloat());
 }
+
+
+
 //HW5 Creative
 Scene* Raytracer::make_scene()
 {
@@ -161,9 +335,9 @@ Scene* Raytracer::make_scene()
 
 
 	
-	scene->addObject(new Sphere(new PhongMaterial(Color(1.0, 0.0, 0.0), 0.6, 0.4, Color(1,1,1), 70), Point(35, 20, 20), 20));
-	scene->addObject(new Sphere(new PhongMaterial(Color(1.0, 1.0, 0.0), 0.6, 0.4, Color(1,1,1), 70), Point(-10, 20, 40), 20));
-	scene->addObject(new Sphere(new PhongMaterial(Color(0.0, 0.0, 1.0), 0.6, 0.4, Color(1,1,1), 70), Point(-60, 20, 40), 20));
+	scene->addObject(new Sphere(new PhongMaterial(Color(1.0, 0.0, 0.0), 0.6, 0.4, Color(1,1,1), 70), Point(35, 20, 20), 10));
+	scene->addObject(new Sphere(new PhongMaterial(Color(1.0, 1.0, 0.0), 0.6, 0.4, Color(1,1,1), 70), Point(-10, 20, 40), 10));
+	scene->addObject(new Sphere(new PhongMaterial(Color(0.0, 0.0, 1.0), 0.6, 0.4, Color(1,1,1), 70), Point(-60, 20, 40), 10));
 	Material* ball_matl = new MetalMaterial(Color(0.8, 0.8, 0.8), 100);
 	double eta = 2.5;
 	Material* transp_matl = new DielectricMaterial(eta, 200);
@@ -177,17 +351,17 @@ Scene* Raytracer::make_scene()
 	Material* white_phong = new PhongMaterial(Color(0.0, 0.0, 0.0), 0.6, 0.4, Color(1,1,1), 30);
 
 	
-	int num_in_line = 40;
+	int num_in_line = 3;
 	
   
 	
-		Material* mats[6][4];
+		Material* mats[8][4];
 		
-		mats[0][0] = transp_matl;	mats[0][1] = red_phong;
-		mats[0][2] = red_phong; mats[0][3] = whiteLambert;
+		mats[0][0] = transp_matl;	mats[0][1] = blue_phong;
+		mats[0][2] = blue_phong; mats[0][3] = whiteLambert;
 		
-		mats[1][0] = black_phong;	mats[1][1] = red_phong;
-		mats[1][2] = red_phong; mats[1][3] = black_phong;
+		mats[1][0] = whiteLambert;	mats[1][1] = blue_phong;
+		mats[1][2] = blue_phong; mats[1][3] = whiteLambert;
 		
 		mats[2][0] = transp_matl;	mats[2][1] = whiteLambert;
 		mats[2][2] = black_phong; mats[2][3] = whiteLambert;
@@ -195,16 +369,22 @@ Scene* Raytracer::make_scene()
 		mats[3][0] = whiteLambert;	mats[3][1] = black_phong;
 		mats[3][2] = transp_matl; mats[3][3] = black_phong;
 		
-		mats[4][0] = transp_matl;	mats[4][1] = blue_phong;
-		mats[4][2] = blue_phong; mats[4][3] = whiteLambert;
+
+		mats[4][0] = transp_matl;	mats[4][1] = red_phong;
+		mats[4][2] = red_phong; mats[4][3] = whiteLambert;
 		
-		mats[5][0] = whiteLambert;	mats[5][1] = blue_phong;
-		mats[5][2] = blue_phong; mats[5][3] = whiteLambert;
+		mats[5][0] = black_phong;	mats[5][1] = red_phong;
+		mats[5][2] = red_phong; mats[5][3] = black_phong;
 		
+		mats[6][0] = transp_matl;	mats[6][1] = yellow_phong;
+		mats[6][2] = yellow_phong; mats[6][3] = whiteLambert;
 		
-	float start_x = 0.0;
+		mats[7][0] = yellow_phong;	mats[7][1] = black_phong;
+		mats[7][2] = black_phong; mats[7][3] = yellow_phong;
+		
+	float start_x = 4.0;
 	Point corner(start_x, 0, -50);
-	for (int i = 0; i < 6; i++)
+	for (int i = 0; i < 8; i++)
 	{	
 		for( int j = 0; j < num_in_line; j++ )
 		{
@@ -218,7 +398,42 @@ Scene* Raytracer::make_scene()
 		}
 		start_x -= 2;
 		corner = Point(start_x, 0, -50);
+	}
+	/*
+	for (int i = 0; i < 10; i++)
+	{	
+		for( int j = 0; j < num_in_line; j++ )
+		{
+			int type = (i % 2 ==0) ? 2 : 3;
+			if (j % 2 == 0)
+				makeDomino(scene, mats[type][0], mats[type][1], corner);
+			else
+				makeDomino(scene,  mats[type][2],  mats[type][3], corner);
+	
+			corner.setZ(corner.z()+0.75);
+			corner.setX(corner.x()-0.25);
+		}
+		start_x -= 2;
+		corner = Point(start_x, 0, -50);
 	}	
+	corner = Point(8, 0, -50);
+	for (int i = 0; i < 10; i++)
+	{	
+		for( int j = 0; j < num_in_line; j++ )
+		{
+			int type = (i % 2 ==0) ? 2 : 3;
+			if (j % 2 == 0)
+				makeDomino(scene, mats[type][0], mats[type][1], corner);
+			else
+				makeDomino(scene,  mats[type][2],  mats[type][3], corner);
+	
+			corner.setZ(corner.z()+0.75);
+			corner.setX(corner.x()-0.25);
+		}
+		start_x += 2;
+		corner = Point(start_x, 0, -50);
+	}		
+	*/	
 
 //  Material* ringmatl = new LambertianMaterial(Color(.9, .9, .1), .2, .8);
 //  for(int i=0;i<15;i++){
@@ -240,6 +455,7 @@ Scene* Raytracer::make_scene()
 //                                   "mount_200_200.hf",
 //                                   Point(-4.5, 2.0, 2), Point(-1.5, 5.0 , 4)));
 
+/*
   scene->setAmbient(Color(.4, .4, .4));
   scene->addLight(new PointLight(Point(0, 100, -100), Color(1.0,1.0,1.0)));
 	scene->addLight(new PointLight(Point(-10, 100, -75), Color(1.0,1.0,1.0)));
@@ -252,7 +468,7 @@ Scene* Raytracer::make_scene()
 		Vector( 0, 1, 0 ),
 		90 ) );
 
-  scene->setMaxRayDepth(40);
+  scene->setMaxRayDepth(10);
   scene->setMinAttenuation(.01);
 
   return scene;

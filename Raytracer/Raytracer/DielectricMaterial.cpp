@@ -93,7 +93,7 @@ void DielectricMaterial::shade(Color& result, const RenderContext& context, cons
 	HitRecord temp_record;
 	if( (depth < context.getScene()->maxRayDepth) && (attenuation > context.getScene()->minAttenuation) )
 	{
-		cout << "attenuation=" << attenuation << ",  minAttenuation=" << context.getScene()->minAttenuation << "\n";
+		//cout << "attenuation=" << attenuation << ",  minAttenuation=" << context.getScene()->minAttenuation << "\n";
 
 		
 		//cout << "depth of " << depth << " < maxRayDepth of " << context.getScene()->maxRayDepth << "\n";

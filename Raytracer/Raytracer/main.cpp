@@ -8,7 +8,7 @@
 int main (int argc, char * const argv[]) 
 {
 
-	Raytracer rt;
+	Raytracer rt(512, 512);
 	/*Scene* scene = rt.make_scene();
 	scene->preprocess(512,512);
 	scene->render();

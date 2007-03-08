@@ -10,12 +10,7 @@
 
 #include "Vector.h"
 
-Point::Point(float x, float y, float z)
-{
-	mCoord[0] = x;
-	mCoord[1] = y;
-	mCoord[2] = z;
-}
+
 
 //Operations with other vectors, points
 
@@ -27,6 +22,16 @@ Point operator+(const Point& p, const Vector& v)
 Point operator-(const Point& p, const Vector& v)
 {
 	return Point(p.mCoord[0]-v.mCoord[0], p.mCoord[1]-v.mCoord[1], p.mCoord[2]-v.mCoord[2]);
+}
+
+Point operator+(const Point& p1, const Point& p2)
+{
+	return Point(p1.x() + p2.x(), p1.y() + p2.y(), p1.z() + p2.z());
+}
+
+Point operator/(const Point&p, float s)
+{
+	return Point(p.x()/s, p.y()/s, p.z()/s);
 }
 
 

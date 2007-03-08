@@ -8,14 +8,18 @@
 
 #ifndef _RAYTRACER_H_
 #define _RAYTRACER_H_ 1
+#include <vector>
+class Primitive;
 
+
+using namespace std;
 class Scene;
 
 class Raytracer
 {
 
 public:
-	Raytracer();
+	Raytracer(int width, int height);
 	~Raytracer();
 	Scene* make_scene();
 	void addSnowman(float x, float y, float z, Scene* scene, bool faceless);
@@ -23,6 +27,10 @@ public:
 	
 	Scene* the_scene;
 
+	private:
+		vector<Primitive*> objects;
+		int mHeight;
+		int mWidth;
 	
 };
 

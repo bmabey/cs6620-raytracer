@@ -72,7 +72,7 @@ bool Box::intersect(HitRecord& hit, const RenderContext& context, const Ray& ray
 	
 }
 
-//Overloaded for bounding box use
+//Overloaded for bounding box use --- Don't use this anymore- created a new BoundingBox class.
 bool Box::intersect(float& tnear, float& tfar, const Ray& ray) const
 {	
 	float txMin, txMax, tymMin, tymMax, tzmMin, tzmMax;

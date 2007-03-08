@@ -9,7 +9,19 @@
 #include "Sphere.h"
 #include "Material.h"
 #include "HitRecord.h"
+#include "Point.h"
+#include "BoundingBox.h"
 #include "RenderContext.h"
+
+
+
+
+Sphere::Sphere(Material* m, Point c, float r) : mCenter(c), mRadius(r), mRadius2(r*r) 
+{ 
+	material = m;
+	boundingBox = BoundingBox(Point(mCenter.x() - mRadius, mCenter.y() - mRadius, mCenter.z() - mRadius),
+														Point(mCenter.x() + mRadius, mCenter.y() + mRadius, mCenter.z() + mRadius));
+}
 
 bool Sphere::intersect(HitRecord& hit, const RenderContext& context, const Ray& ray) const
 {

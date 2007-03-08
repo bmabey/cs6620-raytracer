@@ -11,6 +11,7 @@
 #include "HitRecord.h"
 #include "RenderContext.h"
 
+
 Triangle::Triangle(Material* m, Point a, Point b, Point c) : 
 	mPointA(a), mPointB(b), mPointC(c),
 	A(a[0]-b[0]), B(a[1]-b[1]), C(a[2]-b[2]),
@@ -20,10 +21,12 @@ Triangle::Triangle(Material* m, Point a, Point b, Point c) :
 	Vector t1 = mPointB - mPointA;
 	Vector t2 = mPointC - mPointA;
 	mNormal = normalize( t1.cross(t2) );
+	boundingBox = BoundingBox(min(), max());
 }
 
 bool Triangle::intersect(HitRecord& hit, const RenderContext& context, const Ray& ray) const
 {
+	/*
 	float G = ray.d[0];
 	float H = ray.d[1];
 	float I = ray.d[2];
@@ -53,7 +56,32 @@ bool Triangle::intersect(HitRecord& hit, const RenderContext& context, const Ray
 	
 	double t = -( (F * AKmJB) + (H * JCmAL) + (D * BLmKC)) / denom; 
 	return hit.hit(t, this, material);
-	
+	*/
+
+	Vector e1 = mPointA - mPointC;
+	Vector e2 = mPointB - mPointC;
+	Vector r1 = cross(ray.direction(), e2);
+
+	float denom = dot(e1, r1);
+
+	if(fabs(denom) < 0.00000001)
+		return false;
+
+	float inv_denom = 1/denom;
+
+	Vector s = ray.o - mPointC;
+	float b1 = dot(s, r1)*inv_denom;
+
+	if((b1 < 0) || (b1 > 1))
+		return false;
+
+	Vector r2 = cross(s, e1);
+	float b2 = dot(ray.d, r2)*inv_denom;
+
+	if((b2 < 0) || ((b1 + b2) > 1))
+		return false;
+
+	return hit.hit(dot(e2, r2)*inv_denom, this, material);
 	
 }
 
