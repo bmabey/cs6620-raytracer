@@ -11,6 +11,7 @@
 
 #include <limits>
 #include "Material.h"
+#include "Vector.h"
 #include <assert.h>
 
 #define MAXSIZE 400
@@ -33,6 +34,7 @@ public:
 	const Primitive* primitive;
 	const Material* material;
 	char data[MAXSIZE];
+	Vector uvw;
 	
 };
 

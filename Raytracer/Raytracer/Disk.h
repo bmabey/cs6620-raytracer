@@ -18,12 +18,7 @@ class Disk : public Primitive
 {
 public:
 	Disk() { }
-	Disk(Material* m, Point c, Vector n, float r) : mCenter(c), mNormal(n), mRadius2(r*r) 
-	{ 
-		material = m; 
-		mNormal.normalize();
-		mNormalInverse = -mNormal;
-	}
+	Disk(Material* m, Point c, Vector n, float r);
 	bool intersect(HitRecord& hit, const RenderContext& context, const Ray& ray) const;
 	void getNormal(Vector& N, const HitRecord& hit, const Point& pos) const { N = mNormal; }
 private:		

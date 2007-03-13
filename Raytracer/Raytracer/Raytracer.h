@@ -10,7 +10,8 @@
 #define _RAYTRACER_H_ 1
 #include <vector>
 class Primitive;
-
+class Material;
+class Point;
 
 using namespace std;
 class Scene;
@@ -23,6 +24,7 @@ public:
 	~Raytracer();
 	Scene* make_scene();
 	void addSnowman(float x, float y, float z, Scene* scene, bool faceless);
+	void makeDomino(Scene* scene, Material* body_material, Material* paint_material, Point corner);
 	void run();
 	
 	Scene* the_scene;

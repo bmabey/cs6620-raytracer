@@ -13,10 +13,13 @@
 #include <cmath>
 #include <string>
 #include <fstream>
-#include <iostream>
 #include "Color.h"
-using namespace std;
+#include <iostream>
+#include <stdlib.h>
 
+
+
+using namespace std;
 typedef struct {
 	unsigned char r, g, b;
 } Pixel;
@@ -26,11 +29,13 @@ class Image
 public:
 	Image() : mWidth(512), mHeight(512) { }
 	Image(int width, int height);
+	Image(string filename) { readPPM(filename); }
 	
 	bool set(int x, int y, const Color& color);
 	void setAll(Color color);
 	void writePPM(ostream& out);
 	void writePPM();
+	void readPPM(string filename);
 	int getXRes() {return mWidth; }
 	int getYRes() {return mHeight; }
 

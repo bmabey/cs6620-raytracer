@@ -26,7 +26,11 @@
 #include "BlankMaterial.h"
 #include "LambertianMaterial.h"
 #include "PhongMaterial.h"
+#include "SpherePolar.h"
+#include "PhongImageMaterial.h"
+#include "PhongMarbleMaterial.h"
 #include "MetalMaterial.h"
+#include "CheckerMaterial.h"
 #include "DielectricMaterial.h"
 #include "Vector.h"
 #include "BVH.h"
@@ -36,10 +40,11 @@
 #include "Timer.h"
 #include <iostream>
 #include <stdlib.h>
-#include <time.h>
-#include <string.h>
 
-using std::cout;
+#include <string>
+
+using namespace std;
+
 
 Raytracer::Raytracer(int width, int height)
 : mWidth(width), mHeight(height)
@@ -69,6 +74,60 @@ static void error()
 }
 
 
+
+//HW7 required
+/*
+Scene* Raytracer::make_scene()
+{
+  Scene* scene = new Scene();
+  scene->setBackground(new SolidBackground(Color(.0, .2, .1)));
+
+
+  Material* image = new PhongImageMaterial(string("land_ocean_ice_cloud_8192.ppm"), 0.6, 0.4, Color(1,1,1), 80);
+  scene->addObject(new SpherePolar(image,
+                                   Point(-2, -0.5, 2), 1.6,
+                                   Vector(0,-.4,1), Vector(-1,-.2,0)));
+  Material* nightimage = new PhongImageMaterial(string("land_lights_16384.ppm"), 0.6, 0.4, Color(0,0,0), 80);
+  scene->addObject(new SpherePolar(nightimage,
+                                   Point(0, 2.0, 3.5), 1.6,
+                                   Vector(0,-.5,1), Vector(.5,1,0)));
+
+  Material* marble = new PhongMarbleMaterial(Color(0.1, 0.2, 0.5), // Color 1
+                                             Color(0.7, 0.8, 1.0), // Color 2
+                                             0.5, // scale
+                                             8, // octaves
+                                             20, // turbulence scale
+                                             1, // frequency scale
+                                             2, // lacunarity
+                                             0.6, // gain
+                                             0.6, 0.4, Color(1,1,1), 120);
+  scene->addObject(new Sphere(marble,
+                              Point(1.5, 1, 1.8), 1.6));
+
+  Material* ground = new CheckerMaterial(Point(0,0,0), Vector(0.5,0.5,0), Vector(-0.5,0.5,0),
+                                         new MetalMaterial(Color(0.8, 0.8, 0.8), 100),
+                                         new PhongMaterial(Color(0.5, 0.5, 0.5), 0.6, 0.4,
+                                                           Color(1,1,1), 60));
+  scene->addObject(new Triangle(ground,
+                                Point(-30,-30,-.1), Point(30,-30,-.1), Point(30,30,-.1)));
+  scene->addObject(new Triangle(ground,
+                                Point(-30,-30,-.1), Point(30,30,-.1), Point(-30,30,-.1)));
+
+  scene->setAmbient(Color(.4, .4, .4));
+  scene->addLight(new PointLight(Point(100, -80, 100), Color(1,1,1)));
+
+  scene->setCamera(new PinholeCamera(Point(1, -15, 4.0),
+                                     Point(-0.5,.75, 2),
+                                     Vector(0, 0, 1),
+                                     25));
+  scene->setMaxRayDepth(10);
+  scene->setMinAttenuation(.01);
+
+  return scene;
+}
+/* 
+HW #6 creative image The cow 
+
 Scene* Raytracer::make_scene()
 {
   Scene* scene = new Scene();
@@ -86,6 +145,7 @@ Scene* Raytracer::make_scene()
                            Point(-0.15, 0, -0.15), Point(0.15, 0.024, 0.15)));
 
 */
+/*
   Material* bunnymatl = new PhongMaterial(Color(0.6, 0.4, .3), 0.6, 0.4,
                                           Color(1,1,1), 80);
 
@@ -126,17 +186,7 @@ scene->addObject(new Plane(new MetalMaterial(Color(139.0/255.0, 69.0/255.0, 19.0
 											 Vector(0,0,1), Point(0,0.0,20.0)));  
 	scene->addObject(new BVH(objects));
 
-/*
 
-	triangles
-	v -10 -4 -10
-	v 10 -4 -10
-	v 10 -4 10
-	v -10 -4 10
-	surface 0.4 0.4 0.4 0.1 0.1 0.6 100.0 0.8 0.0 1.0
-	f 0 1 2 3
-	end
-*/
   scene->setAmbient(Color(1.0, 1.0, 1.0));
   scene->addLight(new PointLight(Point(-10, 20, -10), Color(.9,.9,.9)));
   scene->addLight(new PointLight(Point(-40, -70, 50), Color(.3,.1,.1)));
@@ -221,7 +271,7 @@ Scene* Raytracer::make_scene()
 /*
 
 
-
+*/
 //generates a psuedo-random integer between 0 and max
 int randint(int max)
 {	
@@ -262,13 +312,13 @@ int randint(int max)
 	 {1, 0, 1}}
 		 };
 
-void makeDomino(Scene* scene, Material* body_material, Material* paint_material, Point corner)
+void Raytracer::makeDomino(Scene* scene, Material* body_material, Material* paint_material, Point corner)
 { 
 	Vector size(1.0, 1.75, 0.2);
 	scene->addObject(new Box(body_material,corner, corner+size));
 	Point mid_corner(corner.x(), corner.y()+0.825, corner.z()-0.001);
 	Vector mid_size(1.0, 0.1, 0.1);
-	scene->addObject(new Box(paint_material, mid_corner, mid_corner+mid_size  ));
+	objects.push_back(new Box(paint_material, mid_corner, mid_corner+mid_size  ));
 	
 	Point center = Point(corner.x()+0.07+0.12, corner.y()+0.026+0.12, -0.001);											 
 	
@@ -287,7 +337,7 @@ void makeDomino(Scene* scene, Material* body_material, Material* paint_material,
 		for (int col = 0; col < 3; col++)
 		{
 
-			if (dominos[bottom_number][row][col]) scene->addObject(new Disk(paint_material, base,Vector(0,0,-1), 0.12));
+			if (dominos[bottom_number][row][col]) objects.push_back(new Disk(paint_material, base,Vector(0,0,-1), 0.12));
 			base.setX(base.x()+x_space+disc_diameter);
 		}
 		base.setX(corner.x()+x_space+disc_radius);
@@ -299,7 +349,7 @@ void makeDomino(Scene* scene, Material* body_material, Material* paint_material,
 	{		
 		for (int col = 0; col < 3; col++)
 		{
-			if (dominos[top_number][row][col]) scene->addObject(new Disk(paint_material, base,Vector(0,0,-1), 0.12));
+			if (dominos[top_number][row][col]) objects.push_back(new Disk(paint_material, base,Vector(0,0,-1), 0.12));
 			base.setX(base.x()+x_space+disc_diameter); 
 		}
 		base.setX(corner.x()+x_space+disc_radius);
@@ -334,10 +384,13 @@ Scene* Raytracer::make_scene()
 //                             Vector(0,0,1), Point(0,0,1.5)));
 
 
-	
-	scene->addObject(new Sphere(new PhongMaterial(Color(1.0, 0.0, 0.0), 0.6, 0.4, Color(1,1,1), 70), Point(35, 20, 20), 10));
-	scene->addObject(new Sphere(new PhongMaterial(Color(1.0, 1.0, 0.0), 0.6, 0.4, Color(1,1,1), 70), Point(-10, 20, 40), 10));
-	scene->addObject(new Sphere(new PhongMaterial(Color(0.0, 0.0, 1.0), 0.6, 0.4, Color(1,1,1), 70), Point(-60, 20, 40), 10));
+	 Material* image = new PhongImageMaterial(string("land_ocean_ice_cloud_1024.ppm"), 0.6, 0.4, Color(1,1,1), 500);
+	//scene->addObject(new PolarSphere(image, Point(35, 20, 20), 10));
+  objects.push_back(new SpherePolar(image,
+                                   Point(35, 20, 20), 10,
+                                   Vector(0,-.4,1), Vector(-1,-.2,0)));
+	//scene->addObject(new Sphere(image, Point(-10, 20, 40), 10));
+	//scene->addObject(new Sphere(image, Point(-60, 20, 40), 10));
 	Material* ball_matl = new MetalMaterial(Color(0.8, 0.8, 0.8), 100);
 	double eta = 2.5;
 	Material* transp_matl = new DielectricMaterial(eta, 200);
@@ -350,38 +403,78 @@ Scene* Raytracer::make_scene()
 	Material* black_phong = new PhongMaterial(Color(0.0, 0.0, 0.0), 0.6, 0.4, Color(1,1,1), 30);
 	Material* white_phong = new PhongMaterial(Color(0.0, 0.0, 0.0), 0.6, 0.4, Color(1,1,1), 30);
 
-	
-	int num_in_line = 3;
+		Material* blue_white_marble = new PhongMarbleMaterial(Color(0.1, 0.2, 0.5), // Color 1
+																				 Color(0.7, 0.8, 1.0), // Color 2
+																				 0.5, // scale
+																				 8, // octaves
+																				 20, // turbulence scale
+																				 1, // frequency scale
+																				 2, // lacunarity
+																				 0.6, // gain
+																				 0.6, 0.4, Color(1,1,1), 120);
+		Material* yellow_black_marble = new PhongMarbleMaterial(Color(1.0, 1.0, 0.0), // Color 1
+																				 Color(0.0, 0.0, 0.0), // Color 2
+																				 0.5, // scale
+																				 8, // octaves
+																				 20, // turbulence scale
+																				 1, // frequency scale
+																				 2, // lacunarity
+																				 0.6, // gain
+																				 0.6, 0.4, Color(1,1,1), 120);
+		Material* red_white_marble = new PhongMarbleMaterial(Color(1.0, 0.0, 0.0), // Color 1
+																				 Color(1.0, 1.0, 1.0), // Color 2
+																				 0.5, // scale
+																				 8, // octaves
+																				 20, // turbulence scale
+																				 1, // frequency scale
+																				 2, // lacunarity
+																				 0.6, // gain
+																				 0.6, 0.4, Color(1,1,1), 120);																				 																			
+		Material* green_white_marble = new PhongMarbleMaterial(Color(0.1, 1.0, 0.2), // Color 1
+																				 Color(1.0, 1.0, 1.0), // Color 2
+																				 0.5, // scale
+																				 8, // octaves
+																				 20, // turbulence scale
+																				 1, // frequency scale
+																				 2, // lacunarity
+																				 0.6, // gain
+																				 0.6, 0.4, Color(1,1,1), 120);
+																		
+	int num_in_line = 50;
 	
   
 	
 		Material* mats[8][4];
 		
 		mats[0][0] = transp_matl;	mats[0][1] = blue_phong;
-		mats[0][2] = blue_phong; mats[0][3] = whiteLambert;
+		mats[0][2] = yellow_black_marble; mats[0][3] = whiteLambert;
 		
-		mats[1][0] = whiteLambert;	mats[1][1] = blue_phong;
-		mats[1][2] = blue_phong; mats[1][3] = whiteLambert;
+		mats[1][0] = whiteLambert;	mats[1][1] = blue_white_marble;
+		mats[1][2] = blue_white_marble; mats[1][3] = whiteLambert;
 		
-		mats[2][0] = transp_matl;	mats[2][1] = whiteLambert;
+		mats[2][0] = transp_matl;	mats[2][1] = red_white_marble;
 		mats[2][2] = black_phong; mats[2][3] = whiteLambert;
 		
-		mats[3][0] = whiteLambert;	mats[3][1] = black_phong;
+		mats[3][0] = green_white_marble;	mats[3][1] = black_phong;
 		mats[3][2] = transp_matl; mats[3][3] = black_phong;
 		
 
 		mats[4][0] = transp_matl;	mats[4][1] = red_phong;
-		mats[4][2] = red_phong; mats[4][3] = whiteLambert;
+		mats[4][2] = red_white_marble; mats[4][3] = whiteLambert;
 		
-		mats[5][0] = black_phong;	mats[5][1] = red_phong;
-		mats[5][2] = red_phong; mats[5][3] = black_phong;
+		mats[5][0] = yellow_black_marble;	mats[5][1] = red_white_marble;
+		mats[5][2] = blue_white_marble; mats[5][3] = black_phong;
 		
 		mats[6][0] = transp_matl;	mats[6][1] = yellow_phong;
 		mats[6][2] = yellow_phong; mats[6][3] = whiteLambert;
 		
-		mats[7][0] = yellow_phong;	mats[7][1] = black_phong;
-		mats[7][2] = black_phong; mats[7][3] = yellow_phong;
+		mats[7][0] = blue_white_marble;	mats[7][1] = red_white_marble;
+		mats[7][2] = green_white_marble; mats[7][3] = yellow_phong;
 		
+		
+
+	
+	
 	float start_x = 4.0;
 	Point corner(start_x, 0, -50);
 	for (int i = 0; i < 8; i++)
@@ -389,6 +482,7 @@ Scene* Raytracer::make_scene()
 		for( int j = 0; j < num_in_line; j++ )
 		{
 			if (j % 2 == 0)
+				//objects.push_back(new Sphere(marble, Point(corner.x(),corner.y()+0.3,corner.z()), .6));
 				makeDomino(scene, mats[i][0], mats[i][1], corner);
 			else
 				makeDomino(scene,  mats[i][2],  mats[i][3], corner);
@@ -399,7 +493,7 @@ Scene* Raytracer::make_scene()
 		start_x -= 2;
 		corner = Point(start_x, 0, -50);
 	}
-	/*
+	
 	for (int i = 0; i < 10; i++)
 	{	
 		for( int j = 0; j < num_in_line; j++ )
@@ -433,29 +527,12 @@ Scene* Raytracer::make_scene()
 		start_x += 2;
 		corner = Point(start_x, 0, -50);
 	}		
-	*/	
+	
 
-//  Material* ringmatl = new LambertianMaterial(Color(.9, .9, .1), .2, .8);
-//  for(int i=0;i<15;i++){
-//    double r = .30;
-//    Point center(-9, 0, 1.6+r);
-//    Vector offset(2.35*r, 0, 0);
-//    scene->addObject(new Ring(ringmatl,
-//                              center+offset*i, Vector(0.2, -1, -0.2), r*0.5, r));
-//  }
-//  
-//	Material* ball_matl = new MetalMaterial(Color(0.8, 0.8, 0.8), 100);
-//  scene->addObject(new Sphere(ball_matl, Point(-7, 3.5, 2.4), 1.2));
-//	
-//	
-//  Material* hfmatl = new PhongMaterial(Color(0.7, 0.1, .3), 0.6, 0.4, Color(1,1,1), 30);
-//
-//
-//	scene->addObject(new Heightfield(hfmatl,
-//                                   "mount_200_200.hf",
-//                                   Point(-4.5, 2.0, 2), Point(-1.5, 5.0 , 4)));
 
-/*
+
+	scene->addObject(new BVH(objects));
+
   scene->setAmbient(Color(.4, .4, .4));
   scene->addLight(new PointLight(Point(0, 100, -100), Color(1.0,1.0,1.0)));
 	scene->addLight(new PointLight(Point(-10, 100, -75), Color(1.0,1.0,1.0)));
@@ -468,7 +545,7 @@ Scene* Raytracer::make_scene()
 		Vector( 0, 1, 0 ),
 		90 ) );
 
-  scene->setMaxRayDepth(10);
+  scene->setMaxRayDepth(30);
   scene->setMinAttenuation(.01);
 
   return scene;

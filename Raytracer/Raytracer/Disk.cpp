@@ -11,6 +11,16 @@
 #include "HitRecord.h"
 #include "RenderContext.h"
 
+Disk::Disk(Material* m, Point c, Vector n, float r) : mCenter(c), mNormal(n), mRadius2(r*r) 
+	{ 
+		material = m; 
+		mNormal.normalize();
+		mNormalInverse = -mNormal;
+		Point min(mCenter.x() - r, mCenter.y() - r, mCenter.z() - r);
+		Point max(mCenter.x() + r, mCenter.y() + r, mCenter.z() + r);
+		boundingBox = BoundingBox(min, max);
+	}
+
 bool Disk::intersect(HitRecord& hit, const RenderContext& context, const Ray& ray) const
 {
 	float t = dot( mNormalInverse, (ray.o - mCenter) ) / dot( mNormal, ray.d );
