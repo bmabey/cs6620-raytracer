@@ -58,6 +58,18 @@
 		708BBA4A0B67DCC300951074 /* Ray.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 708BBA480B67DCC300951074 /* Ray.cpp */; };
 		708BBA550B67DDAB00951074 /* Sphere.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 708BBA530B67DDAB00951074 /* Sphere.h */; };
 		708BBA560B67DDAB00951074 /* Sphere.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 708BBA540B67DDAB00951074 /* Sphere.cpp */; };
+		70934B560BB8C98300C30DDF /* Filter.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 70934B550BB8C98300C30DDF /* Filter.h */; };
+		70934B5C0BB8CA3C00C30DDF /* Sample.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 70934B5B0BB8CA3C00C30DDF /* Sample.h */; };
+		70934B6D0BB9691900C30DDF /* JitteredSample.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 70934B6B0BB9691900C30DDF /* JitteredSample.h */; };
+		70934B6E0BB9691900C30DDF /* JitteredSample.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70934B6C0BB9691900C30DDF /* JitteredSample.cpp */; };
+		70934B7B0BB969CE00C30DDF /* BoxFilter.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 70934B790BB969CE00C30DDF /* BoxFilter.h */; };
+		70934B7C0BB969CE00C30DDF /* BoxFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70934B7A0BB969CE00C30DDF /* BoxFilter.cpp */; };
+		70934C260BB971E400C30DDF /* SingleSample.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 70934C240BB971E400C30DDF /* SingleSample.h */; };
+		70934C270BB971E400C30DDF /* SingleSample.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70934C250BB971E400C30DDF /* SingleSample.cpp */; };
+		70934CB20BB97ABC00C30DDF /* TentFilter.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 70934CB00BB97ABC00C30DDF /* TentFilter.h */; };
+		70934CB30BB97ABC00C30DDF /* TentFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70934CB10BB97ABC00C30DDF /* TentFilter.cpp */; };
+		70934CE30BB97EB800C30DDF /* CubicSplineFilter.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 70934CE10BB97EB800C30DDF /* CubicSplineFilter.h */; };
+		70934CE40BB97EB800C30DDF /* CubicSplineFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70934CE20BB97EB800C30DDF /* CubicSplineFilter.cpp */; };
 		70D8D3CB0B5EB28400EC8467 /* Color.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 70D8D3C90B5EB28400EC8467 /* Color.h */; };
 		70D8D3CC0B5EB28400EC8467 /* Color.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70D8D3CA0B5EB28400EC8467 /* Color.cpp */; };
 		70D8D4980B5F295A00EC8467 /* Image.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 70D8D4960B5F295A00EC8467 /* Image.h */; };
@@ -128,6 +140,13 @@
 				70F8CB290BA6F4E600AEBB73 /* PhongMarbleMaterial.h in CopyFiles */,
 				70F8CB2F0BA6F50300AEBB73 /* CheckerMaterial.h in CopyFiles */,
 				70F8CC900BA70C4C00AEBB73 /* PerlinNoise.h in CopyFiles */,
+				70934B560BB8C98300C30DDF /* Filter.h in CopyFiles */,
+				70934B5C0BB8CA3C00C30DDF /* Sample.h in CopyFiles */,
+				70934B6D0BB9691900C30DDF /* JitteredSample.h in CopyFiles */,
+				70934B7B0BB969CE00C30DDF /* BoxFilter.h in CopyFiles */,
+				70934C260BB971E400C30DDF /* SingleSample.h in CopyFiles */,
+				70934CB20BB97ABC00C30DDF /* TentFilter.h in CopyFiles */,
+				70934CE30BB97EB800C30DDF /* CubicSplineFilter.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
@@ -186,6 +205,18 @@
 		708BBA480B67DCC300951074 /* Ray.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Ray.cpp; sourceTree = "<group>"; };
 		708BBA530B67DDAB00951074 /* Sphere.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sphere.h; sourceTree = "<group>"; };
 		708BBA540B67DDAB00951074 /* Sphere.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Sphere.cpp; sourceTree = "<group>"; };
+		70934B550BB8C98300C30DDF /* Filter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Filter.h; sourceTree = "<group>"; };
+		70934B5B0BB8CA3C00C30DDF /* Sample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sample.h; sourceTree = "<group>"; };
+		70934B6B0BB9691900C30DDF /* JitteredSample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JitteredSample.h; sourceTree = "<group>"; };
+		70934B6C0BB9691900C30DDF /* JitteredSample.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = JitteredSample.cpp; sourceTree = "<group>"; };
+		70934B790BB969CE00C30DDF /* BoxFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxFilter.h; sourceTree = "<group>"; };
+		70934B7A0BB969CE00C30DDF /* BoxFilter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BoxFilter.cpp; sourceTree = "<group>"; };
+		70934C240BB971E400C30DDF /* SingleSample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleSample.h; sourceTree = "<group>"; };
+		70934C250BB971E400C30DDF /* SingleSample.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SingleSample.cpp; sourceTree = "<group>"; };
+		70934CB00BB97ABC00C30DDF /* TentFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TentFilter.h; sourceTree = "<group>"; };
+		70934CB10BB97ABC00C30DDF /* TentFilter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TentFilter.cpp; sourceTree = "<group>"; };
+		70934CE10BB97EB800C30DDF /* CubicSplineFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CubicSplineFilter.h; sourceTree = "<group>"; };
+		70934CE20BB97EB800C30DDF /* CubicSplineFilter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CubicSplineFilter.cpp; sourceTree = "<group>"; };
 		70D8D3C90B5EB28400EC8467 /* Color.h */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.c.h; path = Color.h; sourceTree = "<group>"; tabWidth = 2; usesTabs = 1; };
 		70D8D3CA0B5EB28400EC8467 /* Color.cpp */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.cpp.cpp; path = Color.cpp; sourceTree = "<group>"; tabWidth = 2; usesTabs = 1; };
 		70D8D4960B5F295A00EC8467 /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; tabWidth = 2; usesTabs = 1; };
@@ -285,6 +316,8 @@
 				703E04B80B783F6700788D87 /* Triangle.h */,
 				703E04B90B783F6700788D87 /* Triangle.cpp */,
 				703E05510B784EC700788D87 /* Disk.h */,
+				70934C240BB971E400C30DDF /* SingleSample.h */,
+				70934C250BB971E400C30DDF /* SingleSample.cpp */,
 				703E05520B784EC700788D87 /* Disk.cpp */,
 				703E06480B785B6300788D87 /* Ring.h */,
 				703E06490B785B6300788D87 /* Ring.cpp */,
@@ -304,6 +337,16 @@
 				70F8CB280BA6F4E600AEBB73 /* PhongMarbleMaterial.cpp */,
 				70F8CB2D0BA6F50300AEBB73 /* CheckerMaterial.h */,
 				70F8CB2E0BA6F50300AEBB73 /* CheckerMaterial.cpp */,
+				70934B550BB8C98300C30DDF /* Filter.h */,
+				70934B5B0BB8CA3C00C30DDF /* Sample.h */,
+				70934B6B0BB9691900C30DDF /* JitteredSample.h */,
+				70934B790BB969CE00C30DDF /* BoxFilter.h */,
+				70934B7A0BB969CE00C30DDF /* BoxFilter.cpp */,
+				70934B6C0BB9691900C30DDF /* JitteredSample.cpp */,
+				70934CB00BB97ABC00C30DDF /* TentFilter.h */,
+				70934CB10BB97ABC00C30DDF /* TentFilter.cpp */,
+				70934CE10BB97EB800C30DDF /* CubicSplineFilter.h */,
+				70934CE20BB97EB800C30DDF /* CubicSplineFilter.cpp */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -397,6 +440,11 @@
 				70F8CB2A0BA6F4E600AEBB73 /* PhongMarbleMaterial.cpp in Sources */,
 				70F8CB300BA6F50300AEBB73 /* CheckerMaterial.cpp in Sources */,
 				70F8CC8F0BA70C4C00AEBB73 /* PerlinNoise.cpp in Sources */,
+				70934B6E0BB9691900C30DDF /* JitteredSample.cpp in Sources */,
+				70934B7C0BB969CE00C30DDF /* BoxFilter.cpp in Sources */,
+				70934C270BB971E400C30DDF /* SingleSample.cpp in Sources */,
+				70934CB30BB97ABC00C30DDF /* TentFilter.cpp in Sources */,
+				70934CE40BB97EB800C30DDF /* CubicSplineFilter.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

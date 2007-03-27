@@ -20,7 +20,7 @@ class Raytracer
 {
 
 public:
-	Raytracer(int width, int height);
+	Raytracer(int width, int height, int start_line, int num_lines);
 	~Raytracer();
 	Scene* make_scene();
 	void addSnowman(float x, float y, float z, Scene* scene, bool faceless);

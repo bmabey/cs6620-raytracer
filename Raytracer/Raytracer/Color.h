@@ -20,8 +20,9 @@ public:
 	
 	//setters...
 	void setR(float r) { mR = r; }
-	void setG(float g) { mR = g; }
-	void setB(float b) { mR = b; }
+	void setG(float g) { mG = g; }
+	void setB(float b) { mB = b; }
+	void reset(float c = 0.0f) { mR = mG = mB = c; }  
 	
 	//Getters
 	float getR() const { return mR; }

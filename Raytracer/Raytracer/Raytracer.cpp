@@ -38,6 +38,12 @@
 #include "Group.h"
 #include "PointLight.h"
 #include "Timer.h"
+#include "BoxFilter.h"
+#include "TentFilter.h"
+#include "CubicSplineFilter.h"
+#include "SingleSample.h"
+#include "JitteredSample.h"
+#include "Scene.h"
 #include <iostream>
 #include <stdlib.h>
 
@@ -46,14 +52,17 @@
 using namespace std;
 
 
-Raytracer::Raytracer(int width, int height)
+Raytracer::Raytracer(int width, int height,  int start_line, int num_lines)
 : mWidth(width), mHeight(height)
 {
 	Timer::currentSeconds();
 	the_scene = make_scene();
+	the_scene->setSample(new SingleSample(), 1);
+	//the_scene->setFilter(new CubicSplineFilter());
 	double end_build = Timer::currentSeconds();
 	cout << "Build time: "<< end_build << "\n";
 	the_scene->preprocess(mWidth,mHeight);
+	the_scene->setLinesToRender(start_line, num_lines);
 }
 Raytracer::~Raytracer()
 {
@@ -64,7 +73,8 @@ void Raytracer::run()
 	double render_start = Timer::currentSeconds();
 	the_scene->render();
 	cout << "Render Time: " << Timer::currentSeconds() - render_start << "\n";
-	the_scene->image->writePPM();
+	//the_scene->image->writePPM();
+	the_scene->output_lines();
 }
 
 static void error()
@@ -440,7 +450,7 @@ Scene* Raytracer::make_scene()
 																				 0.6, // gain
 																				 0.6, 0.4, Color(1,1,1), 120);
 																		
-	int num_in_line = 50;
+	int num_in_line = 40;
 	
   
 	
@@ -545,12 +555,13 @@ Scene* Raytracer::make_scene()
 		Vector( 0, 1, 0 ),
 		90 ) );
 
-  scene->setMaxRayDepth(30);
+  scene->setMaxRayDepth(25);
   scene->setMinAttenuation(.01);
 
   return scene;
 }
 /*
+
 //HW5 Required
 
 Scene* Raytracer::make_scene()
@@ -601,7 +612,7 @@ Scene* Raytracer::make_scene()
                                      Vector(0, 0, 1),
                                      15));
 
-/*
+
 	Point p( 8, -18, 7.5 );
 	Point lookat( -4.7, 2.5, 1.5 );
 	lookat = Point(-3, 3.5, 2);
@@ -708,7 +719,7 @@ Scene* Raytracer::make_scene()
   return scene;
 }
 
-Assignment 3
+//Assignment 3
 
 int rv()
 {
@@ -796,5 +807,5 @@ Scene* Raytracer::make_scene()
 
   return scene;
 }
+
 */
-	
