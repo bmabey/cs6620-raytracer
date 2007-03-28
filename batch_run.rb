@@ -11,9 +11,26 @@ class Node
     @name = name
     @daemon = daemon
     @output=[]
+    good_node?
+    puts "#{name} is a bad node." unless @good_node
+  end
+  
+  def good_node?
+    return @good_node if @good_node
+    p_ssh = IO.popen("ssh #{@name} ls")
+    @good_node = false
+    begin
+      unless IO.select([p_ssh], nil, nil, 5).first.empty?
+        @good_node = true if p_ssh.readlines.join()["cs6620"]
+      end
+    rescue
+      @good_node = false
+    end
+    @good_node
   end
   
   def run
+    return unless @good_node 
     job = @daemon.get_job
     while !job.nil?
       puts "Starting ssh #{@name} #{job}"
@@ -33,7 +50,7 @@ end
 class JobDaemon
   attr_reader :nodes
   attr_reader :jobs
-  def initialize(bad_nodes, resolution, step, output_name) 
+  def initialize(resolution, step, output_name) 
     @nodes = []
     @jobs = []
     @step = step
@@ -43,7 +60,9 @@ class JobDaemon
     @steps = resolution / step
     @steps.times {|i| @jobs << base_job_command.sub("START_LINE", (i*step).to_s)}
 
-    1.upto(30) { |i| @nodes << Node.new("lab4-#{i}", self) unless bad_nodes.detect{|n| n == i} }
+    1.upto(30) { |i| @nodes << Node.new("lab4-#{i}", self) }
+    1.upto(48) { |i| @nodes << Node.new("lab1-#{i}", self) }
+    @nodes.delete_if {|node| !node.good_node? }
   end
   
   def get_job
@@ -68,7 +87,7 @@ class JobDaemon
       exit
     end
     all_output = all_output.sort_by{|output| 1-output[:start_line]}
-    all_output.each{|o| puts "Line: ##{o[:start_line]}"}
+    #all_output.each{|o| puts "Line: ##{o[:start_line]}"}
     wall_time = all_output.inject(0.0){|m,o| m = m + o[:render_time]}
     #Send it to a PPM
     out_file = File.new("#{@output_name}.ppm","w")
@@ -81,6 +100,7 @@ class JobDaemon
     end
     out_file.close
     #Now convert it to a PNG using imagemagick
+    puts "Total Nodes in cluster: #{@nodes.size}"
     puts "Cluster Render Time: #{cluster_time}"
     puts "Wall time: #{wall_time}"
     puts "Converting #{@output_name}.ppm to #{@output_name}.png..."
@@ -90,5 +110,5 @@ class JobDaemon
   
 end
 
-daemon =JobDaemon.new([1,6,22,23], 1024, 4, "dominoes_jittered81_cubicsplinefilter")
+daemon =JobDaemon.new(1024, 2, "dominoes_jittered81_cubicsplinefilter")
 daemon.run

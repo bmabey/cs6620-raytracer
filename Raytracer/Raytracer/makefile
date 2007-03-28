@@ -1,7 +1,7 @@
 cpp = g++
 cpp = gcc
 #linux makefile
-CFLAGS = -L -g -lpthread -lglut -lGLU -lGL -lglui
+CFLAGS = -L -g -lpthread -lglut -lGL
 FLAGS = -lm -Wno-deprecated
 POINTLIB = Point.o
 VECTORLIB = Vector.o
