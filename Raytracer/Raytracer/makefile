@@ -1,124 +1,168 @@
-APP_NAME   = raytracer
-CPP_FLAGS  = -c
+cpp = g++
+cpp = gcc
+#linux makefile
+CFLAGS = -L -g -lpthread -lglut -lGLU -lGL -lglui
+FLAGS = -lm -Wno-deprecated
+POINTLIB = Point.o
+VECTORLIB = Vector.o
+RAYLIB = Ray.o
+COLORLIB = Color.o
+IMAGELIB = Image.o
+SPHERELIB = Sphere.o
+SPHEREPOLARLIB = SpherePolar.o
+DISKLIB = Disk.o
+BOXLIB = Box.o
+BOUNDINGBOXLIB = BoundingBox.o
+RINGLIB = Ring.o
+TRIANGLELIB = Triangle.o
+PLANELIB = Plane.o
+HEIGHTFIELDLIB = Heightfield.o
+HITRECORDLIB = HitRecord.o
+LAMBERTIANMATERIALLIB = LambertianMaterial.o
+PHONGMATERIALLIB = PhongMaterial.o
+PHONGMARBLEMATERIALLIB = PhongMarbleMaterial.o
+PHONGIMAGEMATERIALLIB = PhongImageMaterial.o
+DIELECTRICMATERIALLIB = DielectricMaterial.o
+METALMATERIALLIB = MetalMaterial.o
+CHECKERMATERIALLIB = CheckerMaterial.o
+GROUPLIB = Group.o
+BOUNDINGVOLUMEHIERARCHYLIB = BVH.o
+POINTLIGHTLIB = PointLight.o
+SCENELIB = Scene.o
+CONSTANTBACKGROUNDLIB = SolidBackground.o
+PINHOLECAMERALIB = PinholeCamera.o
+TIMELIB = Timer.o
+PERLINNOISELIB = PerlinNoise.o
+RAYTRACERLIB = Raytracer.o
+BOXFILTERLIB = BoxFilter.o
+TENTFILTERLIB = TentFilter.o
+CUBICFILTERLIB = CubicSplineFilter.o
+JITTEREDSAMPLELIB = JitteredSample.o
+SINGLESAMPLELIB = SingleSample.o
 
-$(APP_NAME): main.o Raytracer.o Vector.o Point.o Image.o Sphere.o Group.o HitRecord.o LambertianMaterial.o PinholeCamera.o Plane.o PointLight.o RenderContext.o Scene.o Color.o Disk.o Ring.o Triangle.o Box.o Heightfield.o PhongMaterial.o MetalMaterial.o DielectricMaterial.o BoundingBox.o BVH.o CheckerMaterial.o PhongImageMaterial.o SpherePolar.o PerlinNoise.o PhongMarbleMaterial.o SingleSample.o JitteredSample.o BoxFilter.o TentFilter.o CubicSplineFilter.o Timer.o
-	g++ -O2 main.o Raytracer.o Vector.o Point.o Image.o Sphere.o Group.o HitRecord.o LambertianMaterial.o PinholeCamera.o Plane.o PointLight.o RenderContext.o Scene.o Color.o Disk.o Ring.o Triangle.o Box.o Heightfield.o PhongMaterial.o MetalMaterial.o DielectricMaterial.o BoundingBox.o BVH.o CheckerMaterial.o PhongImageMaterial.o SpherePolar.o PerlinNoise.o PhongMarbleMaterial.o SingleSample.o JitteredSample.o BoxFilter.o TentFilter.o CubicSplineFilter.o Timer.o -o $(APP_NAME)
+OBJECT = $(RAYTRACERLIB) $(VECTORLIB) $(POINTLIB) $(RAYLIB) $(COLORLIB) $(IMAGELIB) $(SPHERELIB) $(SPHEREPOLARLIB) $(VIEWERLIB) $(HITRECORDLIB) $(LAMBERTIANMATERIALLIB)  $(PHONGMATERIALLIB) $(PHONGMARBLEMATERIALLIB) $(PHONGIMAGEMATERIALLIB) $(DIELECTRICMATERIALLIB) $(METALMATERIALLIB) $(CHECKERMATERIALLIB) $(GROUPLIB) $(BOUNDINGVOLUMEHIERARCHYLIB) $(POINTLIGHTLIB) $(SCENELIB) $(CONSTANTBACKGROUNDLIB) $(PINHOLECAMERALIB)  $(PLANELIB) $(HEIGHTFIELDLIB) $(DISKLIB) $(BOXLIB) $(BOUNDINGBOXLIB) $(RINGLIB) $(TRIANGLELIB) $(TIMELIB) $(PERLINNOISELIB) $(BOXFILTERLIB) $(TENTFILTERLIB) $(CUBICFILTERLIB) $(JITTEREDSAMPLELIB) $(SINGLESAMPLELIB) main.o
+MFLAGS = -g
+EXEC = raytracer
+
+$(EXEC): $(OBJECT)
+	$(cpp) $(OBJECT) $(CFLAGS) -o $(EXEC)
+
+$(VECTORLIB): Vector.cpp Vector.h
+	$(cpp)  -c Vector.cpp $(MFLAGS)
+
+$(POINTLIB): Point.cpp Point.h
+	$(cpp)  -c Point.cpp $(MFLAGS)
+
+$(RAYLIB): Ray.cpp Ray.h
+	$(cpp)  -c Ray.cpp $(MFLAGS)
+
+$(COLORLIB): Color.cpp Color.h
+	$(cpp)  -c Color.cpp $(MFLAGS)
+
+$(IMAGELIB): Image.cpp Image.h
+	$(cpp)  -c Image.cpp $(MFLAGS)
+
+$(SPHERELIB): Sphere.cpp Sphere.h
+	$(cpp)  -c Sphere.cpp $(MFLAGS)
+
+$(SPHEREPOLARLIB): SpherePolar.cpp SpherePolar.h
+	$(cpp)  -c SpherePolar.cpp $(MFLAGS)
+
+$(DISKLIB): Disk.cpp Disk.h
+	$(cpp)  -c Disk.cpp $(MFLAGS)
+
+$(BOXLIB): Box.cpp Box.h
+	$(cpp)  -c Box.cpp $(MFLAGS)
+
+$(BOUNDINGBOXLIB): BoundingBox.cpp BoundingBox.h
+	$(cpp)  -c BoundingBox.cpp $(MFLAGS)
+
+$(RINGLIB): Ring.cpp Ring.h
+	$(cpp)  -c Ring.cpp $(MFLAGS)
+
+$(TRIANGLELIB): Triangle.cpp Triangle.h
+	$(cpp)  -c Triangle.cpp $(MFLAGS)
+
+$(PLANELIB): Plane.cpp Plane.h
+	$(cpp)  -c Plane.cpp $(MFLAGS)
+
+$(HEIGHTFIELDLIB): Heightfield.cpp Heightfield.h
+	$(cpp)  -c Heightfield.cpp $(MFLAGS)
+
+$(VIEWERLIB): Viewer.cpp Viewer.h
+	$(cpp)  -c Viewer.cpp $(MFLAGS)
+
+$(HITRECORDLIB): HitRecord.cpp HitRecord.h
+	$(cpp)   -c HitRecord.cpp $(MFLAGS)
+
+$(LAMBERTIANMATERIALLIB): LambertianMaterial.cpp LambertianMaterial.h
+	$(cpp)   -c LambertianMaterial.cpp $(MFLAGS)
+
+$(PHONGMATERIALLIB): PhongMaterial.cpp PhongMaterial.h
+	$(cpp)   -c PhongMaterial.cpp $(MFLAGS)
+
+$(PHONGMARBLEMATERIALLIB): PhongMarbleMaterial.cpp PhongMarbleMaterial.h
+	$(cpp)   -c PhongMarbleMaterial.cpp $(MFLAGS)
+
+$(PHONGIMAGEMATERIALLIB): PhongImageMaterial.cpp PhongImageMaterial.h
+	$(cpp)   -c PhongImageMaterial.cpp $(MFLAGS)
+
+$(DIELECTRICMATERIALLIB): DielectricMaterial.cpp DielectricMaterial.h
+	$(cpp)   -c DielectricMaterial.cpp $(MFLAGS)
+
+$(METALMATERIALLIB): MetalMaterial.cpp MetalMaterial.h
+	$(cpp)   -c MetalMaterial.cpp $(MFLAGS)
+
+$(CHECKERMATERIALLIB): CheckerMaterial.cpp CheckerMaterial.h
+	$(cpp)   -c CheckerMaterial.cpp $(MFLAGS)
+
+$(GROUPLIB): Group.cpp Group.h
+	$(cpp)   -c Group.cpp $(MFLAGS)
+
+$(GRIDDEDGROUPLIB): GriddedGroup.cpp GriddedGroup.h
+	$(cpp)   -c GriddedGroup.cpp $(MFLAGS)
+
+$(BOUNDINGVOLUMEHIERARCHYLIB): BVH.cpp BVH.h
+	$(cpp)   -c BVH.cpp $(MFLAGS) 
+
+
+$(POINTLIGHTLIB): PointLight.cpp PointLight.h
+	$(cpp)   -c PointLight.cpp $(MFLAGS)
+
+$(SCENELIB): Scene.cpp Scene.h
+	$(cpp)   -c Scene.cpp $(MFLAGS) -lpthread
+
+$(CONSTANTBACKGROUNDLIB): SolidBackground.cpp SolidBackground.h
+	$(cpp)   -c SolidBackground.cpp $(MFLAGS)
+
+$(PINHOLECAMERALIB): PinholeCamera.cpp PinholeCamera.h
+	$(cpp)   -c PinholeCamera.cpp $(MFLAGS)
+
+$(TIMELIB): Timer.cpp Timer.h
+	$(cpp)   -c Timer.cpp $(MFLAGS)
+
+
+$(PERLINNOISELIB): PerlinNoise.cpp PerlinNoise.h
+	$(cpp)   -c PerlinNoise.cpp $(MFLAGS)
+
+$(BOXFILTERLIB): BoxFilter.cpp BoxFilter.h
+	$(cpp)   -c BoxFilter.cpp $(MFLAGS)
+$(TENTFILTERLIB): TentFilter.cpp TentFilter.h
+	$(cpp)   -c TentFilter.cpp $(MFLAGS)
+$(CUBICFILTERLIB): CubicSplineFilter.cpp CubicSplineFilter.h
+	$(cpp)   -c CubicSplineFilter.cpp $(MFLAGS)
+$(JITTEREDSAMPLELIB): JitteredSample.cpp JitteredSample.h
+	$(cpp)   -c JitteredSample.cpp $(MFLAGS)
+$(SINGLESAMPLELIB): SingleSample.cpp SingleSample.h
+	$(cpp)   -c SingleSample.cpp $(MFLAGS)	
 
 main.o: main.cpp
-	g++ $(CPP_FLAGS) main.cpp
+	$(cpp) $(MFLAGS) main.cpp -c
 
-Raytracer.o: Raytracer.cpp
-	g++ $(CPP_FLAGS) Raytracer.cpp
-	
-Timer.o: Timer.cpp
-	g++ $(CPP_FLAGS) Timer.cpp		
-	
-Vector.o: Vector.cpp
-	g++ $(CPP_FLAGS) Vector.cpp
-	
-Point.o: Point.cpp
-	g++ $(CPP_FLAGS) Point.cpp
-
-
-
-Image.o: Image.cpp
-	g++ $(CPP_FLAGS) Image.cpp
-
-Sphere.o: Sphere.cpp
-	g++ $(CPP_FLAGS) Sphere.cpp
-	
-Group.o: Group.cpp
-	g++ $(CPP_FLAGS) Group.cpp
-	
-HitRecord.o: HitRecord.cpp
-	g++ $(CPP_FLAGS) HitRecord.cpp
-	
-LambertianMaterial.o: LambertianMaterial.cpp
-	g++ $(CPP_FLAGS) LambertianMaterial.cpp
-	
-PinholeCamera.o: PinholeCamera.cpp
-	g++ $(CPP_FLAGS) PinholeCamera.cpp
-	
-Plane.o: Plane.cpp
-	g++ $(CPP_FLAGS) Plane.cpp
-	
-PointLight.o: PointLight.cpp
-	g++ $(CPP_FLAGS) PointLight.cpp
-	
-RenderContext.o: RenderContext.cpp
-	g++ $(CPP_FLAGS) RenderContext.cpp
-	
-Scene.o: Scene.cpp
-	g++ $(CPP_FLAGS) Scene.cpp
-	
-Color.o: Color.cpp
-	g++ $(CPP_FLAGS) Color.cpp
-	
-Disk.o: Disk.cpp
-	g++ $(CPP_FLAGS) Disk.cpp
-
-Ring.o: Ring.cpp
-	g++ $(CPP_FLAGS) Ring.cpp
-
-Triangle.o: Triangle.cpp
-	g++ $(CPP_FLAGS) Triangle.cpp
-
-Box.o: Box.cpp
-	g++ $(CPP_FLAGS) Box.cpp
-
-Heightfield.o: Heightfield.cpp
-	g++ $(CPP_FLAGS) Heightfield.cpp
-
-PhongMaterial.o: PhongMaterial.cpp
-	g++ $(CPP_FLAGS) PhongMaterial.cpp
-
-MetalMaterial.o: MetalMaterial.cpp
-	g++ $(CPP_FLAGS) MetalMaterial.cpp
-
-DielectricMaterial.o: DielectricMaterial.cpp
-	g++ $(CPP_FLAGS) DielectricMaterial.cpp
-
-BoundingBox.o: BoundingBox.cpp
-	g++ $(CPP_FLAGS) BoundingBox.cpp
-
-BVH.o: BVH.cpp
-	g++ $(CPP_FLAGS) BVH.cpp
-
-CheckerMaterial.o: CheckerMaterial.cpp
-	g++ $(CPP_FLAGS) CheckerMaterial.cpp
-
-PhongImageMaterial.o: PhongImageMaterial.cpp
-	g++ $(CPP_FLAGS) PhongImageMaterial.cpp
-
-SpherePolar.o: SpherePolar.cpp
-	g++ $(CPP_FLAGS) SpherePolar.cpp
-
-PerlinNoise.o: PerlinNoise.cpp
-	g++ $(CPP_FLAGS) PerlinNoise.cpp
-
-PhongMarbleMaterial.o: PhongMarbleMaterial.cpp
-	g++ $(CPP_FLAGS) PhongMarbleMaterial.cpp
-
-
-JitteredSample.o: JitteredSample.cpp
-	g++ $(CPP_FLAGS) JitteredSample.cpp
-
-SingleSample.o: SingleSample.cpp
-	g++ $(CPP_FLAGS) SingleSample.cpp
-
-BoxFilter.o: BoxFilter.cpp
-	g++ $(CPP_FLAGS) BoxFilter.cpp
-
-TentFilter.o: TentFilter.cpp
-	g++ $(CPP_FLAGS) TentFilter.cpp
-	
-CubicSplineFilter.o: CubicSplineFilter.cpp
-	g++ $(CPP_FLAGS) CubicSplineFilter.cpp
-
-explain:
-	@echo "APP_NAME   == $(APP_NAME)"
-	@echo "CPP_FLAGS  == $(CPP_FLAGS)"
 
 clean:
-	rm -f $(APP_NAME)
-	rm -f *.o
+	rm -f *.o *~
+
+run:
+	./raytrace
+
