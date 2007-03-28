@@ -57,8 +57,8 @@ Raytracer::Raytracer(int width, int height,  int start_line, int num_lines)
 {
 	Timer::currentSeconds();
 	the_scene = make_scene();
-	the_scene->setSample(new SingleSample(), 1);
-	//the_scene->setFilter(new CubicSplineFilter());
+	the_scene->setSample(new JitteredSample(), 8);
+	the_scene->setFilter(new CubicSplineFilter());
 	double end_build = Timer::currentSeconds();
 	cout << "Build time: "<< end_build << "\n";
 	the_scene->preprocess(mWidth,mHeight);
