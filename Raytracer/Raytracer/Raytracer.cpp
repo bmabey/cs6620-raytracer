@@ -36,6 +36,8 @@
 #include "BVH.h"
 #include "Point.h"
 #include "Group.h"
+#include "Instance.h"
+#include "Matrix.h"
 #include "PointLight.h"
 #include "Timer.h"
 #include "BoxFilter.h"
@@ -74,7 +76,8 @@ void Raytracer::run()
 	the_scene->render();
 	cout << "Render Time: " << Timer::currentSeconds() - render_start << "\n";
 	//the_scene->image->writePPM();
-	the_scene->output_lines();
+	//the_scene->output_lines();
+	the_scene->output();
 }
 
 static void error()
@@ -83,7 +86,80 @@ static void error()
   exit(1);
 }
 
+//HW9 - Instancing
+Scene* Raytracer::make_scene()
+{
+  Scene* scene = new Scene();
+  scene->setBackground(new SolidBackground(Color(0.1, 0.6, 0.9)));
+  
 
+  
+
+  Material* pedestalmatl = new MetalMaterial(Color(0.96, 0.89, 0.37), 200);
+// objects.push_back(new Box(pedestalmatl,
+//                           Point(-0.08, 0.024, -0.08), Point(0.08, 0.033, 0.08)));
+  Material* pedestalmatl2 = new LambertianMaterial(Color(0.9, 0.1, 0.3), 0.7, 0.3);
+  scene->addObject(new Box(pedestalmatl2,
+                           Point(-0.55, 0, -0.55), Point(0.55, 0.024, 0.55)));
+
+
+  Material* bunnymatl = new PhongMaterial(Color(0.6, 0.4, .3), 0.6, 0.4,
+                                          Color(1,1,1), 80);
+
+  ifstream in("bunny.tm");
+  if(!in)
+    error();
+  bool have_normals, have_something_else;
+  in >> have_normals >> have_something_else;
+  int numverts;
+  in >> numverts;
+  if(!in)
+    error();
+  cerr << "reading " << numverts << " vertices...";
+  vector<Point> verts(numverts);
+  for(int i=0;i<numverts;i++){
+    double x,y,z;
+    in >> x >> y >> z;
+    if(!in)
+      error();
+    verts[i] = Point(x,y,z);
+  }
+  int numtris;
+  in >> numtris;
+  cerr << " reading " << numtris << " triangles...";
+  for(int i=0;i<numtris;i++){
+    int i1, i2, i3;
+    in >> i1 >> i2 >> i3;
+    if(!in)
+      error();
+    objects.push_back( new Triangle(bunnymatl, verts[i1], verts[i2], verts[i3]) );
+  }
+  cerr << " done\n";
+  BVH* bunny = new BVH(objects);  
+	//scene->addObject(bunny);
+	
+//	scene->addObject(new Instance(scale(0.5, 0.5, 0.5), bunny));
+	//scene->addObject(new Instance(translate(0.0, 0.1, 0.0), bunny));
+	scene->addObject(new Instance(translate(0.6, 0.4, 0.00)*rotateY(0.523598775)*rotateX(0.523598775), bunny));
+	scene->addObject(new Instance(translate(-0.2, 0.3, 0.00)*rotateY(0.3)*rotateX(0.7), bunny));
+	scene->addObject(new Instance(translate(-0.3, 0.5, 0.00)*rotateY(0.22)*rotateX(0.8), bunny));
+	scene->addObject(new Instance(translate(-0.4, 0.5, 0.04)*rotateY(0.8)*rotateX(-0.8), bunny));
+	scene->addObject(new Instance(translate(-0.2, 0.5, 0.3)*rotateY(0.1)*rotateX(0.2)*rotateZ(0.4), bunny));
+	scene->addObject(new Instance(translate(0.3, 0.3, -0.4)*rotateY(0.6)*rotateX(0.7)*rotateZ(0.7)*scale(3,3,3), bunny));
+scene->addObject(new Instance(scale(2,2,2), bunny));
+  scene->setAmbient(Color(.4, .4, .4));
+  scene->addLight(new PointLight(Point(20, 70, 100), Color(.9,.9,.9)));
+  scene->addLight(new PointLight(Point(-40, -70, 50), Color(.3,.1,.1)));
+
+  scene->setCamera(new PinholeCamera(Point(-3,3,3),
+                                     Point(-0.04, .10, -0.00),
+                                     Vector(0, 1, 0),
+                                     12));
+  scene->setMaxRayDepth(25);
+  scene->setMinAttenuation(.01);
+
+  return scene;
+}
 
 //HW7 required
 /*
@@ -281,7 +357,7 @@ Scene* Raytracer::make_scene()
 /*
 
 
-*/
+
 //generates a psuedo-random integer between 0 and max
 int randint(int max)
 {	
@@ -381,7 +457,7 @@ Color random_color()
 
 //HW5 Creative
 Scene* Raytracer::make_scene()
-{
+{	
 	srand((unsigned)(time(0))); 
   Scene* scene = new Scene();
     scene->setBackground(new SolidBackground(Color(.5, .8, .9)));
@@ -450,7 +526,7 @@ Scene* Raytracer::make_scene()
 																				 0.6, // gain
 																				 0.6, 0.4, Color(1,1,1), 120);
 																		
-	int num_in_line = 40;
+	int num_in_line = 10;
 	
   
 	

@@ -59,6 +59,8 @@ void Scene::setLinesToRender(int start_line, int num_of_lines)
 
 }
 
+
+
 int Scene::getCurrentLine()
 {
  int c = mCurrentLine;
@@ -151,6 +153,12 @@ void Scene::renderThread()
 
 }
 
+
+void Scene::output()
+{
+	if (mMaxLine == mYRes) this->image->writePPM();
+	else this->output_lines();
+}
 
 void Scene::output_lines()
 {

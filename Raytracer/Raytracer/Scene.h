@@ -50,6 +50,7 @@ public:
 	void setMinAttenuation(float atten) {minAttenuation = atten; }
 
 	void output_lines();
+	void output();
 	
 	
 	vector<Light*> lights;

@@ -8,8 +8,8 @@
 int main (int argc, char * const argv[]) 
 {
 	int res = atoi(argv[1]);
-	int start_line = atoi(argv[2]);
-	int num_lines = atoi(argv[3]);
+	int start_line = (argc < 3) ? 0 : atoi(argv[2]);
+	int num_lines = (argc < 4) ? res : atoi(argv[3]);
 	cout << "Rendering scene at " << res << "x" << res << ".  Rendering lines: " << "\n" << start_line << "-" << start_line+num_lines << "\n";
 	Raytracer rt(res, res, start_line, num_lines);
 	

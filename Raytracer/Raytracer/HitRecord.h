@@ -12,6 +12,7 @@
 #include <limits>
 #include "Material.h"
 #include "Vector.h"
+#include "Point.h"
 #include <assert.h>
 
 #define MAXSIZE 400
@@ -35,6 +36,8 @@ public:
 	const Material* material;
 	char data[MAXSIZE];
 	Vector uvw;
+	Vector n; //The normal.. stored here for instancing
+	Point p;
 	
 };
 

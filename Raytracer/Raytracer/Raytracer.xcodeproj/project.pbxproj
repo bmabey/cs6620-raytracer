@@ -78,6 +78,10 @@
 		70D8D52D0B5F3FBF00EC8467 /* Point.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70D8D52B0B5F3FBF00EC8467 /* Point.cpp */; };
 		70D8D5400B5F42D400EC8467 /* Vector.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 70D8D53E0B5F42D400EC8467 /* Vector.h */; };
 		70D8D5410B5F42D400EC8467 /* Vector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70D8D53F0B5F42D400EC8467 /* Vector.cpp */; };
+		70E489720BCBF28E0046F09A /* Matrix.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 70E489700BCBF28E0046F09A /* Matrix.h */; };
+		70E489730BCBF28E0046F09A /* Matrix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70E489710BCBF28E0046F09A /* Matrix.cpp */; };
+		70E489B00BCBF9350046F09A /* Instance.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 70E489AE0BCBF9350046F09A /* Instance.h */; };
+		70E489B10BCBF9350046F09A /* Instance.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70E489AF0BCBF9350046F09A /* Instance.cpp */; };
 		70E94C800B717341007F4F0C /* BlankMaterial.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 70E94C7F0B717341007F4F0C /* BlankMaterial.h */; };
 		70F8C9B00BA6635F00AEBB73 /* PhongImageMaterial.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 70F8C9AE0BA6635F00AEBB73 /* PhongImageMaterial.h */; };
 		70F8C9B10BA6635F00AEBB73 /* PhongImageMaterial.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70F8C9AF0BA6635F00AEBB73 /* PhongImageMaterial.cpp */; };
@@ -147,6 +151,8 @@
 				70934C260BB971E400C30DDF /* SingleSample.h in CopyFiles */,
 				70934CB20BB97ABC00C30DDF /* TentFilter.h in CopyFiles */,
 				70934CE30BB97EB800C30DDF /* CubicSplineFilter.h in CopyFiles */,
+				70E489720BCBF28E0046F09A /* Matrix.h in CopyFiles */,
+				70E489B00BCBF9350046F09A /* Instance.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
@@ -225,6 +231,10 @@
 		70D8D52B0B5F3FBF00EC8467 /* Point.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Point.cpp; sourceTree = "<group>"; };
 		70D8D53E0B5F42D400EC8467 /* Vector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vector.h; sourceTree = "<group>"; };
 		70D8D53F0B5F42D400EC8467 /* Vector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Vector.cpp; sourceTree = "<group>"; };
+		70E489700BCBF28E0046F09A /* Matrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Matrix.h; sourceTree = "<group>"; };
+		70E489710BCBF28E0046F09A /* Matrix.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Matrix.cpp; sourceTree = "<group>"; };
+		70E489AE0BCBF9350046F09A /* Instance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Instance.h; sourceTree = "<group>"; };
+		70E489AF0BCBF9350046F09A /* Instance.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Instance.cpp; sourceTree = "<group>"; };
 		70E94C7F0B717341007F4F0C /* BlankMaterial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlankMaterial.h; sourceTree = "<group>"; };
 		70F8C9AE0BA6635F00AEBB73 /* PhongImageMaterial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhongImageMaterial.h; sourceTree = "<group>"; };
 		70F8C9AF0BA6635F00AEBB73 /* PhongImageMaterial.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PhongImageMaterial.cpp; sourceTree = "<group>"; };
@@ -347,6 +357,10 @@
 				70934CB10BB97ABC00C30DDF /* TentFilter.cpp */,
 				70934CE10BB97EB800C30DDF /* CubicSplineFilter.h */,
 				70934CE20BB97EB800C30DDF /* CubicSplineFilter.cpp */,
+				70E489700BCBF28E0046F09A /* Matrix.h */,
+				70E489710BCBF28E0046F09A /* Matrix.cpp */,
+				70E489AE0BCBF9350046F09A /* Instance.h */,
+				70E489AF0BCBF9350046F09A /* Instance.cpp */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -445,6 +459,8 @@
 				70934C270BB971E400C30DDF /* SingleSample.cpp in Sources */,
 				70934CB30BB97ABC00C30DDF /* TentFilter.cpp in Sources */,
 				70934CE40BB97EB800C30DDF /* CubicSplineFilter.cpp in Sources */,
+				70E489730BCBF28E0046F09A /* Matrix.cpp in Sources */,
+				70E489B10BCBF9350046F09A /* Instance.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
