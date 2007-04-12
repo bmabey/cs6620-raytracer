@@ -65,7 +65,7 @@ public:
 
 inline float det3(float a, float b, float c, float d, float e, float f, float g, float h, float i)
 {
-	return a*e*i + b*h*c + g*b*f - g*e*c - d*b*i - a*h*f;
+	return a*e*i + d*h*c + g*b*f - g*e*c - d*b*i - a*h*f;
 }
 
 #endif 
