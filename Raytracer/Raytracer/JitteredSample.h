@@ -18,7 +18,7 @@ class JitteredSample : public Sample
 public:
 	JitteredSample() { }
 	~JitteredSample() { }
-	void takeSamples(vector<Point>& samples) const;
+	void takeSamples(vector<Point>& samples);
  	
 	
 };

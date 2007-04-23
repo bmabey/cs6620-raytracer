@@ -13,9 +13,11 @@
 #include "RenderContext.h"
 #include <math.h>
 
+
 PinholeCamera::PinholeCamera(const Point& pos, const Point& lookAt, const Vector& up, float angle, float aspect)
 : position(pos), g((lookAt - pos))
 {
+	
 	g.normalize();
 	
 	u = cross(g, up);
@@ -27,7 +29,7 @@ PinholeCamera::PinholeCamera(const Point& pos, const Point& lookAt, const Vector
 	v = v*tan( (angle / 2.0) * Vector::PI / 180.0) / aspect;
 }
 
-void PinholeCamera::makeRay(Ray& ray, const RenderContext& context, double x, double y) const
+void PinholeCamera::makeRay(Ray& ray, const RenderContext& context, double x, double y,double a, double b) const
 {
 	ray.o = position;
 	ray.d = g + x*u + y*v;

@@ -103,7 +103,7 @@ void Scene::renderThread()
 		double y = 0.0;
 		
 		vector<Point> samples(mNumSamples, Point(0.5, 0.5, 0.0));
-		
+		vector<Point> cam_samples(mNumSamples, Point(0.0, 0.0, 0.0));
 		
 	  
 		
@@ -119,7 +119,7 @@ void Scene::renderThread()
 			  final.reset();
 				sampler->takeSamples(samples);
 				if(filter != NULL) filter->filterSamples(samples);
-				
+				if(camera->samples != NULL) camera->samples->takeSamples(cam_samples);
 				
 				for(int s = 0; s < mNumSamples; s++)
 				{
@@ -127,7 +127,7 @@ void Scene::renderThread()
 					y = 2 * (i - mYRes/2. + samples[s].y())/mYRes; 
 					
 					
-					camera->makeRay(ray, mContext, x , y);
+					camera->makeRay(ray, mContext, x , y, cam_samples[s].x(), cam_samples[s].y());
 					record.setTinf();
 					//bool intersect(HitRecord& hit, const RenderContext& context, const Ray& ray) const;
 					if(world->intersect(record, mContext, ray))

@@ -46,6 +46,7 @@
 #include "SingleSample.h"
 #include "JitteredSample.h"
 #include "Scene.h"
+#include "ThinLensCamera.h"
 #include <iostream>
 #include <stdlib.h>
 
@@ -86,6 +87,7 @@ static void error()
   exit(1);
 }
 
+/*
 //HW9 - Instancing
 Scene* Raytracer::make_scene()
 {
@@ -151,15 +153,16 @@ scene->addObject(new Instance(scale(2,2,2), bunny));
   scene->addLight(new PointLight(Point(20, 70, 100), Color(.9,.9,.9)));
   scene->addLight(new PointLight(Point(-40, -70, 50), Color(.3,.1,.1)));
 
-  scene->setCamera(new PinholeCamera(Point(-3,3,3),
-                                     Point(-0.04, .10, -0.00),
-                                     Vector(0, 1, 0),
-                                     12));
+	scene->setCamera(new ThinLensCamera(Point(-3,3,3),
+                                     	Point(-0.04, .10, -0.00),
+                                     	Vector(0, 1, 0),
+							12.0, 1.0, 17, 3));
   scene->setMaxRayDepth(25);
   scene->setMinAttenuation(.01);
 
   return scene;
 }
+*/
 
 //HW7 required
 /*
@@ -354,7 +357,7 @@ Scene* Raytracer::make_scene()
   return scene;
 }
 
-/*
+*/
 
 
 
@@ -626,10 +629,11 @@ Scene* Raytracer::make_scene()
 
 	Point p( -3, 5, -55.5 );
 	Point lookat = Point(0, 0, 0);
-	scene->setCamera( new PinholeCamera( p,
-		lookat,
-		Vector( 0, 1, 0 ),
-		90 ) );
+//	scene->setCamera( new PinholeCamera( p,
+//		lookat,
+//		Vector( 0, 1, 0 ),
+//		90 ) );
+	scene->setCamera(new ThinLensCamera(p,lookat,Vector(0, 1, 0),90, 1.0, 200, 2.0)); 
 
   scene->setMaxRayDepth(25);
   scene->setMinAttenuation(.01);

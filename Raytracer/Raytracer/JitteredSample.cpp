@@ -8,7 +8,7 @@
 
 #include "JitteredSample.h"
 
-void JitteredSample::takeSamples(vector<Point>& samples) const
+void JitteredSample::takeSamples(vector<Point>& samples)
 {
 	int num_samples = samples.size();
 	int sqrt_samples = (int)(sqrt(num_samples));

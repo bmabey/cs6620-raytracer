@@ -19,7 +19,7 @@ class Sample
 public:
 	Sample() { }
 	virtual ~Sample() { }
-	virtual void takeSamples(vector<Point>& samples) const = 0;
+	virtual void takeSamples(vector<Point>& samples) = 0;
  	
 	
 };

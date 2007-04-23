@@ -22,9 +22,9 @@ public:
 	PinholeCamera() {}
 	PinholeCamera(const Point& pos, const Point& lookAt, const Vector& up,  float angle, float aspect = 1.0f);
 	~PinholeCamera() {}
-	void makeRay(Ray& ray, const RenderContext& context, double x, double y) const ;
+	void makeRay(Ray& ray, const RenderContext& context, double x, double y,double a, double b) const ;
 
-	
+private:
 	Point position;
 	Vector g, u, v;
 };
