@@ -358,7 +358,7 @@ Scene* Raytracer::make_scene()
 }
 
 */
-
+/*
 
 
 //generates a psuedo-random integer between 0 and max
@@ -640,7 +640,8 @@ Scene* Raytracer::make_scene()
 
   return scene;
 }
-/*
+*/
+
 
 //HW5 Required
 
@@ -697,17 +698,18 @@ Scene* Raytracer::make_scene()
 	Point lookat( -4.7, 2.5, 1.5 );
 	lookat = Point(-3, 3.5, 2);
 	Vector direction = lookat - p;
-	scene->setCamera( new PinholeCamera( p + ( 0.9 * direction ),
+	scene->setCamera(new ThinLensCamera(p,lookat,Vector(0, 0, 1),15, 1.0, 25, 2.0)); 
+	/*scene->setCamera( new PinholeCamera( p + ( 0.9 * direction ),
 		lookat,
 		Vector( 0, 0, 1 ),
-		15 ) );
+		15 ) );*/
 
-  scene->setMaxRayDepth(25);
+  scene->setMaxRayDepth(30);
   scene->setMinAttenuation(.01);
 
   return scene;
 }
-
+/*
 
 
 //Assignment 4

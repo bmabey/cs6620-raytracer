@@ -244,6 +244,18 @@
 			701FCD930BDC9E5C00DED6CF /* PBXTextBookmark */ = 701FCD930BDC9E5C00DED6CF /* PBXTextBookmark */;
 			701FCD940BDC9E5C00DED6CF /* PBXTextBookmark */ = 701FCD940BDC9E5C00DED6CF /* PBXTextBookmark */;
 			701FCD950BDC9E5C00DED6CF /* PBXTextBookmark */ = 701FCD950BDC9E5C00DED6CF /* PBXTextBookmark */;
+			701FCDA30BDCA57700DED6CF /* PBXTextBookmark */ = 701FCDA30BDCA57700DED6CF /* PBXTextBookmark */;
+			701FCDA40BDCA57700DED6CF /* PBXTextBookmark */ = 701FCDA40BDCA57700DED6CF /* PBXTextBookmark */;
+			701FCDA50BDCA57700DED6CF /* PBXTextBookmark */ = 701FCDA50BDCA57700DED6CF /* PBXTextBookmark */;
+			701FCDA60BDCA57700DED6CF /* PBXTextBookmark */ = 701FCDA60BDCA57700DED6CF /* PBXTextBookmark */;
+			701FCDAE0BDCA6DB00DED6CF /* PBXTextBookmark */ = 701FCDAE0BDCA6DB00DED6CF /* PBXTextBookmark */;
+			701FCDAF0BDCA6DB00DED6CF /* PBXTextBookmark */ = 701FCDAF0BDCA6DB00DED6CF /* PBXTextBookmark */;
+			701FCDB00BDCA6DB00DED6CF /* PBXTextBookmark */ = 701FCDB00BDCA6DB00DED6CF /* PBXTextBookmark */;
+			701FCDB10BDCA6DB00DED6CF /* PBXTextBookmark */ = 701FCDB10BDCA6DB00DED6CF /* PBXTextBookmark */;
+			701FCDB50BDCA76100DED6CF /* PBXTextBookmark */ = 701FCDB50BDCA76100DED6CF /* PBXTextBookmark */;
+			701FCDB60BDCA76100DED6CF /* PBXTextBookmark */ = 701FCDB60BDCA76100DED6CF /* PBXTextBookmark */;
+			701FCDB70BDCA76100DED6CF /* PBXTextBookmark */ = 701FCDB70BDCA76100DED6CF /* PBXTextBookmark */;
+			701FCDB80BDCA76100DED6CF /* PBXTextBookmark */ = 701FCDB80BDCA76100DED6CF /* PBXTextBookmark */;
 			702017D10B9DECEE00AAD591 = 702017D10B9DECEE00AAD591 /* PBXTextBookmark */;
 			7020187A0B9DF98600AAD591 = 7020187A0B9DF98600AAD591 /* PBXTextBookmark */;
 			7020189A0B9DFAAD00AAD591 = 7020189A0B9DFAAD00AAD591 /* PBXTextBookmark */;
@@ -590,7 +602,7 @@
 		fRef = 702619F00B73BA1800208D82 /* Raytracer.cpp */;
 		name = "Raytracer.cpp: 634";
 		rLen = 0;
-		rLoc = 19883;
+		rLoc = 19885;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -617,7 +629,7 @@
 		fRef = 702619F00B73BA1800208D82 /* Raytracer.cpp */;
 		name = "Raytracer.cpp: 634";
 		rLen = 0;
-		rLoc = 19883;
+		rLoc = 19885;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -778,7 +790,7 @@
 		fRef = 702619F00B73BA1800208D82 /* Raytracer.cpp */;
 		name = "Raytracer.cpp: 634";
 		rLen = 0;
-		rLoc = 19883;
+		rLoc = 19885;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -1081,7 +1093,7 @@
 		fRef = 702619F00B73BA1800208D82 /* Raytracer.cpp */;
 		name = "Raytracer.cpp: 634";
 		rLen = 0;
-		rLoc = 19883;
+		rLoc = 19885;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -1347,7 +1359,7 @@
 		fRef = 702619F00B73BA1800208D82 /* Raytracer.cpp */;
 		name = "Raytracer.cpp: 634";
 		rLen = 0;
-		rLoc = 19883;
+		rLoc = 19885;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -1387,7 +1399,7 @@
 		fRef = 702619F00B73BA1800208D82 /* Raytracer.cpp */;
 		name = "Raytracer.cpp: 635";
 		rLen = 0;
-		rLoc = 19883;
+		rLoc = 19885;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -1467,7 +1479,7 @@
 		fRef = 702619F00B73BA1800208D82 /* Raytracer.cpp */;
 		name = "Raytracer.cpp: 638";
 		rLen = 0;
-		rLoc = 19883;
+		rLoc = 19885;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -1487,7 +1499,7 @@
 		fRef = 702619F00B73BA1800208D82 /* Raytracer.cpp */;
 		name = "Raytracer.cpp: 632";
 		rLen = 89;
-		rLoc = 19682;
+		rLoc = 19684;
 		rType = 0;
 		vrLen = 1655;
 		vrLoc = 3049;
@@ -1507,7 +1519,7 @@
 		fRef = 702619F00B73BA1800208D82 /* Raytracer.cpp */;
 		name = "Raytracer.cpp: 636";
 		rLen = 0;
-		rLoc = 19852;
+		rLoc = 19854;
 		rType = 0;
 		vrLen = 1632;
 		vrLoc = 15895;
@@ -1537,7 +1549,7 @@
 		fRef = 702619F00B73BA1800208D82 /* Raytracer.cpp */;
 		name = "Raytracer.cpp: 638";
 		rLen = 0;
-		rLoc = 19883;
+		rLoc = 19885;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -1577,7 +1589,7 @@
 		fRef = 702619F00B73BA1800208D82 /* Raytracer.cpp */;
 		name = "Raytracer.cpp: 638";
 		rLen = 0;
-		rLoc = 19883;
+		rLoc = 19885;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -1587,7 +1599,7 @@
 		fRef = 702619F00B73BA1800208D82 /* Raytracer.cpp */;
 		name = "Raytracer.cpp: 636";
 		rLen = 0;
-		rLoc = 19846;
+		rLoc = 19848;
 		rType = 0;
 		vrLen = 1011;
 		vrLoc = 19260;
@@ -1617,7 +1629,7 @@
 		fRef = 702619F00B73BA1800208D82 /* Raytracer.cpp */;
 		name = "Raytracer.cpp: 638";
 		rLen = 0;
-		rLoc = 19883;
+		rLoc = 19885;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -1627,7 +1639,7 @@
 		fRef = 702619F00B73BA1800208D82 /* Raytracer.cpp */;
 		name = "Raytracer.cpp: 636";
 		rLen = 0;
-		rLoc = 19846;
+		rLoc = 19848;
 		rType = 0;
 		vrLen = 1011;
 		vrLoc = 19260;
@@ -1657,7 +1669,7 @@
 		fRef = 702619F00B73BA1800208D82 /* Raytracer.cpp */;
 		name = "Raytracer.cpp: 638";
 		rLen = 0;
-		rLoc = 19883;
+		rLoc = 19885;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -1667,7 +1679,7 @@
 		fRef = 702619F00B73BA1800208D82 /* Raytracer.cpp */;
 		name = "Raytracer.cpp: 636";
 		rLen = 0;
-		rLoc = 19849;
+		rLoc = 19851;
 		rType = 0;
 		vrLen = 1011;
 		vrLoc = 19260;
@@ -1697,7 +1709,7 @@
 		fRef = 702619F00B73BA1800208D82 /* Raytracer.cpp */;
 		name = "Raytracer.cpp: 638";
 		rLen = 0;
-		rLoc = 19883;
+		rLoc = 19885;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -1707,7 +1719,7 @@
 		fRef = 702619F00B73BA1800208D82 /* Raytracer.cpp */;
 		name = "Raytracer.cpp: 636";
 		rLen = 0;
-		rLoc = 19846;
+		rLoc = 19848;
 		rType = 0;
 		vrLen = 1011;
 		vrLoc = 19260;
@@ -1737,7 +1749,7 @@
 		fRef = 702619F00B73BA1800208D82 /* Raytracer.cpp */;
 		name = "Raytracer.cpp: 638";
 		rLen = 0;
-		rLoc = 19883;
+		rLoc = 19885;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -1747,7 +1759,7 @@
 		fRef = 702619F00B73BA1800208D82 /* Raytracer.cpp */;
 		name = "Raytracer.cpp: 636";
 		rLen = 0;
-		rLoc = 19846;
+		rLoc = 19848;
 		rType = 0;
 		vrLen = 1010;
 		vrLoc = 19260;
@@ -1777,7 +1789,7 @@
 		fRef = 702619F00B73BA1800208D82 /* Raytracer.cpp */;
 		name = "Raytracer.cpp: 638";
 		rLen = 0;
-		rLoc = 19883;
+		rLoc = 19885;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -1787,7 +1799,7 @@
 		fRef = 702619F00B73BA1800208D82 /* Raytracer.cpp */;
 		name = "Raytracer.cpp: 636";
 		rLen = 0;
-		rLoc = 19849;
+		rLoc = 19851;
 		rType = 0;
 		vrLen = 1012;
 		vrLoc = 19260;
@@ -1817,7 +1829,7 @@
 		fRef = 702619F00B73BA1800208D82 /* Raytracer.cpp */;
 		name = "Raytracer.cpp: 638";
 		rLen = 0;
-		rLoc = 19883;
+		rLoc = 19885;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -1827,7 +1839,7 @@
 		fRef = 702619F00B73BA1800208D82 /* Raytracer.cpp */;
 		name = "Raytracer.cpp: 636";
 		rLen = 0;
-		rLoc = 19849;
+		rLoc = 19851;
 		rType = 0;
 		vrLen = 1011;
 		vrLoc = 19260;
@@ -1857,7 +1869,7 @@
 		fRef = 702619F00B73BA1800208D82 /* Raytracer.cpp */;
 		name = "Raytracer.cpp: 638";
 		rLen = 0;
-		rLoc = 19883;
+		rLoc = 19885;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -1867,7 +1879,7 @@
 		fRef = 702619F00B73BA1800208D82 /* Raytracer.cpp */;
 		name = "Raytracer.cpp: 636";
 		rLen = 0;
-		rLoc = 19849;
+		rLoc = 19851;
 		rType = 0;
 		vrLen = 1011;
 		vrLoc = 19260;
@@ -1883,6 +1895,126 @@
 		vrLoc = 0;
 	};
 	701FCD950BDC9E5C00DED6CF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 705381D40B6BE78C006649E0 /* Scene.h */;
+		name = "Scene.h: output";
+		rLen = 0;
+		rLoc = 1174;
+		rType = 0;
+		vrLen = 975;
+		vrLoc = 574;
+	};
+	701FCDA30BDCA57700DED6CF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 702619F00B73BA1800208D82 /* Raytracer.cpp */;
+		name = "Raytracer.cpp: 638";
+		rLen = 0;
+		rLoc = 19885;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	701FCDA40BDCA57700DED6CF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 702619F00B73BA1800208D82 /* Raytracer.cpp */;
+		name = "Raytracer.cpp: 701";
+		rLen = 0;
+		rLoc = 21889;
+		rType = 0;
+		vrLen = 1240;
+		vrLoc = 21115;
+	};
+	701FCDA50BDCA57700DED6CF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 704CB33B0B6DA8D000B15ACE /* PinholeCamera.cpp */;
+		name = "PinholeCamera.cpp: 15";
+		rLen = 0;
+		rLoc = 215;
+		rType = 0;
+		vrLen = 745;
+		vrLoc = 0;
+	};
+	701FCDA60BDCA57700DED6CF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 705381D40B6BE78C006649E0 /* Scene.h */;
+		name = "Scene.h: output";
+		rLen = 0;
+		rLoc = 1174;
+		rType = 0;
+		vrLen = 975;
+		vrLoc = 574;
+	};
+	701FCDAE0BDCA6DB00DED6CF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 702619F00B73BA1800208D82 /* Raytracer.cpp */;
+		name = "Raytracer.cpp: 638";
+		rLen = 0;
+		rLoc = 19885;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	701FCDAF0BDCA6DB00DED6CF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 702619F00B73BA1800208D82 /* Raytracer.cpp */;
+		name = "Raytracer.cpp: 701";
+		rLen = 0;
+		rLoc = 21889;
+		rType = 0;
+		vrLen = 1240;
+		vrLoc = 21115;
+	};
+	701FCDB00BDCA6DB00DED6CF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 704CB33B0B6DA8D000B15ACE /* PinholeCamera.cpp */;
+		name = "PinholeCamera.cpp: 15";
+		rLen = 0;
+		rLoc = 215;
+		rType = 0;
+		vrLen = 745;
+		vrLoc = 0;
+	};
+	701FCDB10BDCA6DB00DED6CF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 705381D40B6BE78C006649E0 /* Scene.h */;
+		name = "Scene.h: output";
+		rLen = 0;
+		rLoc = 1174;
+		rType = 0;
+		vrLen = 975;
+		vrLoc = 574;
+	};
+	701FCDB50BDCA76100DED6CF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 702619F00B73BA1800208D82 /* Raytracer.cpp */;
+		name = "Raytracer.cpp: 638";
+		rLen = 0;
+		rLoc = 19885;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	701FCDB60BDCA76100DED6CF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 702619F00B73BA1800208D82 /* Raytracer.cpp */;
+		name = "Raytracer.cpp: 701";
+		rLen = 0;
+		rLoc = 21889;
+		rType = 0;
+		vrLen = 1374;
+		vrLoc = 19960;
+	};
+	701FCDB70BDCA76100DED6CF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 704CB33B0B6DA8D000B15ACE /* PinholeCamera.cpp */;
+		name = "PinholeCamera.cpp: 15";
+		rLen = 0;
+		rLoc = 215;
+		rType = 0;
+		vrLen = 745;
+		vrLoc = 0;
+	};
+	701FCDB80BDCA76100DED6CF /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 705381D40B6BE78C006649E0 /* Scene.h */;
 		name = "Scene.h: output";
@@ -2145,9 +2277,9 @@
 	};
 	702619F00B73BA1800208D82 /* Raytracer.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1386, 12488}}";
-			sepNavSelRange = "{19847, 0}";
-			sepNavVisRect = "{{0, 8581}, {1386, 561}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1386, 12516}}";
+			sepNavSelRange = "{21889, 0}";
+			sepNavVisRect = "{{0, 9046}, {1386, 561}}";
 			sepNavWindowFrame = "{{61, 148}, {1087, 833}}";
 		};
 	};
@@ -3038,7 +3170,7 @@
 		fRef = 702619F00B73BA1800208D82 /* Raytracer.cpp */;
 		name = "Raytracer.cpp: 634";
 		rLen = 0;
-		rLoc = 19883;
+		rLoc = 19885;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
